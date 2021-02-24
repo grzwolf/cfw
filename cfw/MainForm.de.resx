@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="listLeftToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="listLeftToolStripMenuItem.Text" xml:space="preserve">
+    <value>Liste</value>
+  </data>
+  <data name="detailsLeftToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="filenameToolStripMenuItemLHS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="filenameToolStripMenuItemLHS.Text" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="extensionToolStripMenuItemLHS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="extensionToolStripMenuItemLHS.Text" xml:space="preserve">
+    <value>Dateierweiterung</value>
+  </data>
+  <data name="LeftSortOrderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="LeftSortOrderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sortierung</value>
+  </data>
+  <data name="drivesToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="drivesToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Laufwerke</value>
+  </data>
+  <data name="treeViewToolStripMenuItemLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="treeViewToolStripMenuItemLeft.Text" xml:space="preserve">
+    <value>Baumansicht</value>
+  </data>
+  <data name="PreviewFileLeftToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="PreviewFileLeftToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vorschau</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 6</value>
+  </data>
+  <data name="refreshLeftToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="refreshLeftToolStripMenuItem.Text" xml:space="preserve">
+    <value>Neu Lesen                    Ctrl-R</value>
+  </data>
+  <data name="toolStripMenuItemLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="toolStripMenuItemLeft.Text" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="toolStripMenuItem_FindFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="toolStripMenuItem_FindFile.Text" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
+  <data name="topLevelNoSubfoldersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="topLevelNoSubfoldersToolStripMenuItem.Text" xml:space="preserve">
+    <value>oberste Ebenen</value>
+  </data>
+  <data name="includingSubfoldersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="includingSubfoldersToolStripMenuItem.Text" xml:space="preserve">
+    <value>mit Unterordnern</value>
+  </data>
+  <data name="compareFoldersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="compareFoldersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vergleichen</value>
+  </data>
+  <data name="fileAttributeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="fileAttributeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="mD5SumToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="mD5SumToolStripMenuItem.Text" xml:space="preserve">
+    <value>MD5 Summe</value>
+  </data>
+  <data name="zIPFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 6</value>
+  </data>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ansicht</value>
+  </data>
+  <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="moveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="moveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verschieben</value>
+  </data>
+  <data name="newFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="newFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ordner neu</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="renameToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="renameToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Umbenennen</value>
+  </data>
+  <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 6</value>
+  </data>
+  <data name="deleteEmptyDirectoriesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="deleteEmptyDirectoriesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lösche leere Verzeichnisse</value>
+  </data>
+  <data name="winMergeTwoFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="winMergeTwoFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>WinMerge links &amp;&amp; rechts</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>Dateien</value>
+  </data>
+  <data name="commandWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kommando Fenster</value>
+  </data>
+  <data name="commandToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
+  </data>
+  <data name="commandToolStripMenuItem.Text" xml:space="preserve">
+    <value>Werkzeuge</value>
+  </data>
+  <data name="largeToolStripMenuItem.Text" xml:space="preserve">
+    <value>groß</value>
+  </data>
+  <data name="fontSizeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="fontSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Listen Fonts</value>
+  </data>
+  <data name="listViewFitColumnsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="listViewFitColumnsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spaltenbreite automatisch</value>
+  </data>
+  <data name="previewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="previewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vorschau von Dateien</value>
+  </data>
+  <data name="folderHistoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="folderHistoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="assignF1F2F11F12ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="assignF1F2F11F12ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zuordnen F1 F2 F11 F12</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Englisch</value>
+  </data>
+  <data name="germanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
+  </data>
+  <data name="germanToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 6</value>
+  </data>
+  <data name="restartAsAdministratorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="restartAsAdministratorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start CFW als Administrator</value>
+  </data>
+  <data name="listRightToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="listRightToolStripMenuItem.Text" xml:space="preserve">
+    <value>Liste</value>
+  </data>
+  <data name="detailsRightToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="filenameToolStripMenuItemRHS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="filenameToolStripMenuItemRHS.Text" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="extensionToolStripMenuItemRHS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="extensionToolStripMenuItemRHS.Text" xml:space="preserve">
+    <value>Dateierweiterung</value>
+  </data>
+  <data name="RightSortOrderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="RightSortOrderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sortierung</value>
+  </data>
+  <data name="drivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="drivesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Laufwerke</value>
+  </data>
+  <data name="treeViewToolStripMenuItemRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="treeViewToolStripMenuItemRight.Text" xml:space="preserve">
+    <value>Baumansicht</value>
+  </data>
+  <data name="PreviewFileRightToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="PreviewFileRightToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vorschau</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 6</value>
+  </data>
+  <data name="refreshRightToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="refreshRightToolStripMenuItem.Text" xml:space="preserve">
+    <value>Neu Lesen                    Ctrl-R</value>
+  </data>
+  <data name="toolStripMenuItemRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="toolStripMenuItemRight.Text" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="buttonF6.Text" xml:space="preserve">
+    <value>F6 - Schieben</value>
+  </data>
+  <data name="buttonF3.Text" xml:space="preserve">
+    <value>F3 - Ansicht</value>
+  </data>
+  <data name="buttonF4.Text" xml:space="preserve">
+    <value>F4 - Bearb.</value>
+  </data>
+  <data name="buttonF5.Text" xml:space="preserve">
+    <value>F5 - Kopie</value>
+  </data>
+  <data name="labelLeft.Text" xml:space="preserve">
+    <value>links</value>
+  </data>
+  <data name="buttonF7.Text" xml:space="preserve">
+    <value>F7 - Ordner</value>
+  </data>
+  <data name="buttonF8.Text" xml:space="preserve">
+    <value>F8 - Lösche</value>
+  </data>
+  <data name="buttonF9.Text" xml:space="preserve">
+    <value>F9 - Name</value>
+  </data>
+  <data name="labelRight.Text" xml:space="preserve">
+    <value>rechts</value>
+  </data>
+  <data name="columnHeaderRFilename.Text" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="columnHeaderRDate.Text" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="columnHeaderRSize.Text" xml:space="preserve">
+    <value>Größe</value>
+  </data>
+  <data name="columnHeaderRType.Text" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="columnHeaderLFilename.Text" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="columnHeaderLDate.Text" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="columnHeaderLSize.Text" xml:space="preserve">
+    <value>Größe</value>
+  </data>
+  <data name="columnHeaderLType.Text" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="selectFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="selectFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ordner wählen</value>
+  </data>
+  <data name="toolStripMenuItemClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="toolStripMenuItemClipboard.Text" xml:space="preserve">
+    <value>Kopiere Pfad in Zwischenablage</value>
+  </data>
+  <data name="toolStripMenuItemProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 22</value>
+  </data>
+  <data name="toolStripMenuItemProperties.Text" xml:space="preserve">
+    <value>Eigenschaften</value>
+  </data>
+  <data name="contextMenuStripButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 70</value>
+  </data>
+  <data name="toolStripMenuItemCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="toolStripMenuItemCopy.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="toolStripMenuItemAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="toolStripMenuItemAll.Text" xml:space="preserve">
+    <value>Auswahl alles</value>
+  </data>
+  <data name="contextMenuStripCommandOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 48</value>
+  </data>
+  <data name="closeMenuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="closeMenuToolStripMenuItem.Text" xml:space="preserve">
+    <value>abbrechen</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 6</value>
+  </data>
+  <data name="selectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="selectAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Auswählen</value>
+  </data>
+  <data name="deselectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="deselectAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>keine Auswahl</value>
+  </data>
+  <data name="invertSelectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="invertSelectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Umkehren</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 6</value>
+  </data>
+  <data name="copySelectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="copySelectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="moveSelectionF6ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="moveSelectionF6ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verschieben </value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 6</value>
+  </data>
+  <data name="renameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
+    <value>Umbenennen</value>
+  </data>
+  <data name="newToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="newToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ordner neu</value>
+  </data>
+  <data name="deleteSelectionF7ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="deleteSelectionF7ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 6</value>
+  </data>
+  <data name="copyFilePathToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="copyFilePathToolStripMenuItem.Text" xml:space="preserve">
+    <value>Link kopieren</value>
+  </data>
+  <data name="copyFilePathAsObjectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="copyFilePathAsObjectToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Einfügen</value>
+  </data>
+  <data name="openWithToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
+    <value>Öffnen mit ...</value>
+  </data>
+  <data name="linkOnDesktopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="linkOnDesktopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Shortcut Desktop</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eigenschaften</value>
+  </data>
+  <data name="contextMenuStripListItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 358</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Commander für Windows   </value>
+  </data>
+</root>
