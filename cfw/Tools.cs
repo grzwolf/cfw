@@ -285,8 +285,9 @@ namespace GrzTools {
                     List<FlatImage> ilc = formatter.Deserialize(stream) as List<FlatImage>;
                     for ( int index = 0; index < ilc.Count; index++ ) {
                         Image img = ilc[index].Image;
-                        //                        string key = ilc[index]._key;
-                        il.Add(img);
+                        if ( img != null ) {
+                            il.Add(img);
+                        }
                     }
                 }
             } catch { }

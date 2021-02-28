@@ -39,27 +39,27 @@ namespace cfw {
     [PermissionSetAttribute(SecurityAction.InheritanceDemand, Name = "FullTrust")]
 
     public partial class MainForm : Form, IMessageFilter {
-        readonly string DRVC = "Computer";                                  // default path
-        readonly Panel m_Panel;                                             // holds status on 2xlistview, 2x button, 2x labels  
+        readonly string DRVC = "Computer";                         // default path
+        readonly Panel m_Panel;                                    // holds status on 2xlistview, 2x button, 2x labels  
         bool m_bShowPanels = true;                                 // cmd status or listview status  
         readonly CommandHistory m_CommandHistory = new CommandHistory();    // command history
         bool m_bStealFocus = true;                                 // normally the cmd line has the focus  
         readonly ListViewColumnSorter[][] m_lvwColumnSorter;
-        readonly GrzTools.FastFileFind m_fff;                               // fast file find
+        readonly GrzTools.FastFileFind m_fff;                      // fast file find
         bool m_bListViewAutoSelect = false;                        // listview autoselect while trying to "move" an item further down / up 
-        readonly ShfoWorker m_shfo;                                         // wrapper for SHFileOperation
+        readonly ShfoWorker m_shfo;                                // wrapper for SHFileOperation
         bool m_bFileSystemChangeActionLeft = true;                 // file system update only once per timer tick 
         bool m_bFileSystemChangeActionRight = true;
         ListViewHitTestInfo m_hitinfoRename;                       // edit listview subitem
-        readonly TextBox m_editbox = new TextBox();                         // edit listview subitem 
+        readonly TextBox m_editbox = new TextBox();                // edit listview subitem 
         string m_original = "";                                    // edit listview subitem 
         bool m_bKeepFocused = false;                               // edit listview subitem TBD: "Computer" needs this flag to avoid m_editbox.LostFocus msg when opening the context menu, while "ListView" doesn't   
         DateTime m_dtLastLoad = DateTime.Now;                      // block resize events when listview columns are automatically adjusted
-        bool m_bBlockListViewActivity = false;                               // block resize during full load a large folder (winsxs)      
+        bool m_bBlockListViewActivity = false;                     // block resize during full load a large folder (winsxs)      
         DateTime m_dtLostFocus = DateTime.Now;                     // prevent rename per mouseclick on F7 short after focus from edit control was lost
-        readonly int m_PointerDownMessage = 0;                              // it's WM_LBUTTONDOWN 0x201 for mouse / 0x246 for touch/pen down
-        readonly int m_PointerUpMessage = 0;                                // it's WM_LBUTTONUP 0x202 for mouse / 0x247 for touch/pen down
-        readonly ToolTip m_toolTip;                                         // a general tooltip
+        readonly int m_PointerDownMessage = 0;                     // it's WM_LBUTTONDOWN 0x201 for mouse / 0x246 for touch/pen down
+        readonly int m_PointerUpMessage = 0;                       // it's WM_LBUTTONUP 0x202 for mouse / 0x247 for touch/pen down
+        readonly ToolTip m_toolTip;                                // a general tooltip
         bool m_bDoc;                                               // preview what files? 
         bool m_bImg;
         bool m_bZip;
@@ -77,11 +77,11 @@ namespace cfw {
         bool m_bSizing = false;                                    // prevents flicker in selected ListView items, when size of form is changing
         bool m_bLeftMouseHitItem = false;                          // listview autoselect when mouse leaves the listview: this is an indicator, that the starting mouse click hit a valid item
         string m_LastPreview = "";                                 // the file last pre viewed: prevents a tiny flicker whne changing the file selection  
-        readonly string[] m_ExtensionIconIndexArray;                        // files' associated icons extensions 
+        readonly string[] m_ExtensionIconIndexArray;               // files' associated icons extensions 
         readonly string dummytext = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU";
-        //        Stopwatch m_sw;                                            // multi purpose stopeatch 
+        //        Stopwatch m_sw;                                  // multi purpose stopeatch 
         bool m_shfoIsActive = false;                               // indicator for active SHFO 
-        readonly Image m_imgAdm = null;                                     // admin image for F1, F2, F11, F12 buttons 
+        readonly Image m_imgAdm = null;                            // admin image for F1, F2, F11, F12 buttons 
         BackgroundWorker m_outputWorker = new BackgroundWorker();  // communication with cmd proces via bgw 
         BackgroundWorker m_errorWorker = new BackgroundWorker();
         private StreamWriter m_inputWriter;
@@ -283,8 +283,8 @@ namespace cfw {
             SetDoubleBuffered(this.cfwListViewL4);
             SetDoubleBuffered(this.cfwListViewR4);
             // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form via extension class - works pretty well, even in RDP sessions -- pretty much the same as above
-            //            listViewLeft.MakeDoubleBuffered(true);
-            //            listViewRight.MakeDoubleBuffered(true);
+            // listViewLeft.MakeDoubleBuffered(true);
+            // listViewRight.MakeDoubleBuffered(true);
 
             // init the panels' maintainer
             this.m_Panel = new Panel(this);
@@ -341,6 +341,8 @@ namespace cfw {
             // INI: splitter position
             this.m_iSplitterPosition = int.Parse(ini.IniReadValue("cfw", "Splitter Position", "-1"));
             this.setSplitContainerBar(this.m_iSplitterPosition);
+            // INI: Computer at folder select
+            this.folderSelectStartsFromComputerToolStripMenuItem.Checked = bool.Parse(ini.IniReadValue("cfw", "ComputerAtFolderSelect", "true"));
             // INI: Computer view shows shared folder or not 
             this.computerShowsShareFoldersToolStripMenuItem.Checked = bool.Parse(ini.IniReadValue("cfw", "SharedFolders", "true"));
             // INI: Computer view shows folders with size info or not 
@@ -549,6 +551,7 @@ namespace cfw {
         //}
 
         void setTabControlText(Side side, int index, string text) {
+            text = text.EndsWith("\\") ? text.Substring(0, text.Length - 1) : text;
             string txt = text.Length > 3 ? Path.GetFileName(text) : text;
             if ( txt.Length > 54 ) {
                 txt = "..  " + txt.Substring(txt.Length - 50);
@@ -3071,7 +3074,7 @@ namespace cfw {
                     lv.SelectedIndices.Add(0);
                     lv.FocusedItem = this.m_Panel.listview(side).Items[0];
                 } else {
-                    this.m_Panel.RenderListviewLabel(side);                                          // should happen when drive is empty
+                    this.m_Panel.RenderListviewLabel(side);                                   // should happen when drive is empty
                 }
             }
 
@@ -3088,7 +3091,7 @@ namespace cfw {
                 lv.EnsureVisible(ndx);
             }
 
-            this.m_dtLastLoad = DateTime.Now;                                                   // block resize events when listview columns are automatically adjusted
+            this.m_dtLastLoad = DateTime.Now;                                              // block resize events when listview columns are automatically adjusted
             if ( this.listViewFitColumnsToolStripMenuItem.Checked ) {                      // show listview column widths depending on "fit" or "nofit"
                 lv.EndUpdate();    // w/o this lv.ClientSize.Width won't be correct in case a vertical scrollbar is shown due to the number of items 
                 lv.BeginUpdate();  //     - " -
@@ -3099,7 +3102,7 @@ namespace cfw {
                 lv.Columns[7].Width = 0;
             }
             lv.EndUpdate();                                                                // allow paint
-            this.m_dtLastLoad = DateTime.Now;                                                   // block resize events when listview columns are automatically adjusted
+            this.m_dtLastLoad = DateTime.Now;                                              // block resize events when listview columns are automatically adjusted
 
             // adjust prompt & command line
             if ( side == this.m_Panel.GetActiveSide() ) {
@@ -3443,19 +3446,13 @@ namespace cfw {
             string currentPath = this.m_Panel.button(side).Tag.ToString();
             this.RenderCommandline(currentPath);
 
-            // self made dialog
-            // show dlg and start with drives shown and current drive selected
+            // question of taste: start treeview where you come from OR always start treeview from PC root
             this.m_sff.Text = "Select Folder or File";
-            if ( GrzTools.FileTools.PathExists(currentPath, 500) ) {
-                //m_sff.DefaultPath = System.IO.Directory.GetDirectoryRoot(currentPath);
+            if ( !this.folderSelectStartsFromComputerToolStripMenuItem.Checked && GrzTools.FileTools.PathExists(currentPath, 500) ) {
                 this.m_sff.DefaultPath = currentPath;
             } else {
                 this.m_sff.DefaultPath = this.DRVC;
             }
-            // show dlg and start with current folder shown and selected
-            //m_sff.DefaultPath = currentPath;
-            // show dlg and start with Computer --> leave sff.DefaultPath empty
-            //            m_sff = new SelectFolderOrFile();
             if ( this.m_sffNeedsRefresh ) {
                 this.m_sff.RefreshRequest("mediachanged");
                 this.m_sffNeedsRefresh = false;
@@ -3479,7 +3476,6 @@ namespace cfw {
                     this.m_Panel.folders.InsertTopFolder(side, this.m_Panel.GetActiveTabIndex(side), path);
                 }
             }
-            //            m_sff.Dispose();
         }
         // a right click shall activate the corresponding listview - opening the context menu happens automatically via the buttons' "ContextMenuStrip" property 
         private void buttonLeftRight_Down(object sender, MouseEventArgs e) {
@@ -4885,6 +4881,8 @@ namespace cfw {
             ini.IniWriteValue("cfw", "wmpAudio", this.m_bWmpAudio.ToString());
             ini.IniWriteValue("cfw", "wmpVideo", this.m_bWmpVideo.ToString());
             ini.IniWriteValue("cfw", "cfwVideo", this.m_bCfwVideo.ToString());
+            // Computer at folder select
+            ini.IniWriteValue("cfw", "ComputerAtFolderSelect", this.folderSelectStartsFromComputerToolStripMenuItem.Checked.ToString());
             // show shared folders
             ini.IniWriteValue("cfw", "SharedFolders", this.computerShowsShareFoldersToolStripMenuItem.Checked.ToString());
             // show folders sizes

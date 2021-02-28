@@ -161,11 +161,56 @@ namespace cfw
             this.labelLeft = new System.Windows.Forms.Label();
             this.tabControlLeft = new System.Windows.Forms.TabControl();
             this.tabPageLeft0 = new System.Windows.Forms.TabPage();
+            this.cfwListViewL0 = new cfw.cfwListView();
+            this.columnHeaderLFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageListLv = new System.Windows.Forms.ImageList(this.components);
             this.tabPageLeft1 = new System.Windows.Forms.TabPage();
+            this.cfwListViewL1 = new cfw.cfwListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLeft2 = new System.Windows.Forms.TabPage();
+            this.cfwListViewL2 = new cfw.cfwListView();
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLeft3 = new System.Windows.Forms.TabPage();
+            this.cfwListViewL3 = new cfw.cfwListView();
+            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLeft4 = new System.Windows.Forms.TabPage();
+            this.cfwListViewL4 = new cfw.cfwListView();
+            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanelRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelRhsButtons = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRhsUp = new System.Windows.Forms.Button();
@@ -175,10 +220,55 @@ namespace cfw
             this.labelRight = new System.Windows.Forms.Label();
             this.tabControlRight = new System.Windows.Forms.TabControl();
             this.tabPageRight0 = new System.Windows.Forms.TabPage();
+            this.cfwListViewR0 = new cfw.cfwListView();
+            this.columnHeaderRFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderRDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderRSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderRType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageRight1 = new System.Windows.Forms.TabPage();
+            this.cfwListViewR1 = new cfw.cfwListView();
+            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageRight2 = new System.Windows.Forms.TabPage();
+            this.cfwListViewR2 = new cfw.cfwListView();
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader54 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageRight3 = new System.Windows.Forms.TabPage();
+            this.cfwListViewR3 = new cfw.cfwListView();
+            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader59 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader64 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageRight4 = new System.Windows.Forms.TabPage();
+            this.cfwListViewR4 = new cfw.cfwListView();
+            this.columnHeader65 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader66 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader67 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader70 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader71 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader72 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.richTextBoxCommandOutput = new System.Windows.Forms.RichTextBox();
             this.contextMenuStripCommandOutput = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -245,97 +335,8 @@ namespace cfw
             this.toolTipButtons = new System.Windows.Forms.ToolTip(this.components);
             this.timerDragDropDebouncer = new System.Windows.Forms.Timer(this.components);
             this.timerRunSize = new System.Windows.Forms.Timer(this.components);
-            this.cfwListViewL0 = new cfw.cfwListView();
-            this.columnHeaderLFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderLDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderLSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderLType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewL1 = new cfw.cfwListView();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewL2 = new cfw.cfwListView();
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewL3 = new cfw.cfwListView();
-            this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewL4 = new cfw.cfwListView();
-            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewR0 = new cfw.cfwListView();
-            this.columnHeaderRFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderRDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderRSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderRType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewR1 = new cfw.cfwListView();
-            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewR2 = new cfw.cfwListView();
-            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader54 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewR3 = new cfw.cfwListView();
-            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader59 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader64 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cfwListViewR4 = new cfw.cfwListView();
-            this.columnHeader65 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader66 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader67 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader70 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader71 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader72 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.previewCtl = new cfw.PreviewCtl();
+            this.folderSelectStartsFromComputerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelLeftFx.SuspendLayout();
@@ -797,6 +798,7 @@ namespace cfw
             this.toolStripSeparator9,
             this.computerShowsShareFoldersToolStripMenuItem,
             this.computerShowsFolderSizesToolStripMenuItem,
+            this.folderSelectStartsFromComputerToolStripMenuItem,
             this.toolStripSeparator17,
             this.autoNetworkScanToolStripMenuItem,
             this.cPUTemperatureMonitoringToolStripMenuItem,
@@ -1389,6 +1391,87 @@ namespace cfw
             this.tabPageLeft0.Tag = "tag";
             this.tabPageLeft0.UseVisualStyleBackColor = true;
             // 
+            // cfwListViewL0
+            // 
+            this.cfwListViewL0.AllowDrop = true;
+            this.cfwListViewL0.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewL0.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewL0.Buddy = null;
+            this.cfwListViewL0.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderLFilename,
+            this.columnHeaderLDate,
+            this.columnHeaderLSize,
+            this.columnHeaderLType,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader8});
+            resources.ApplyResources(this.cfwListViewL0, "cfwListViewL0");
+            this.cfwListViewL0.FullRowSelect = true;
+            this.cfwListViewL0.HideSelection = false;
+            this.cfwListViewL0.LargeImageList = this.imageListLv;
+            this.cfwListViewL0.Name = "cfwListViewL0";
+            this.cfwListViewL0.OwnerDraw = true;
+            this.cfwListViewL0.SmallImageList = this.imageListLv;
+            this.cfwListViewL0.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewL0.View = System.Windows.Forms.View.Details;
+            this.cfwListViewL0.VirtualMode = true;
+            this.cfwListViewL0.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewL0.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewL0.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewL0.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewL0.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewL0.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewL0.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
+            this.cfwListViewL0.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
+            this.cfwListViewL0.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewL0.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewL0.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewL0.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewL0.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewL0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewL0.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewL0.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewL0.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewL0.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeaderLFilename
+            // 
+            this.columnHeaderLFilename.Tag = "Name";
+            resources.ApplyResources(this.columnHeaderLFilename, "columnHeaderLFilename");
+            // 
+            // columnHeaderLDate
+            // 
+            this.columnHeaderLDate.Tag = "Date";
+            resources.ApplyResources(this.columnHeaderLDate, "columnHeaderLDate");
+            // 
+            // columnHeaderLSize
+            // 
+            this.columnHeaderLSize.Tag = "Size";
+            resources.ApplyResources(this.columnHeaderLSize, "columnHeaderLSize");
+            // 
+            // columnHeaderLType
+            // 
+            this.columnHeaderLType.Tag = "Type";
+            resources.ApplyResources(this.columnHeaderLType, "columnHeaderLType");
+            // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            // 
+            // columnHeader2
+            // 
+            resources.ApplyResources(this.columnHeader2, "columnHeader2");
+            // 
+            // columnHeader3
+            // 
+            resources.ApplyResources(this.columnHeader3, "columnHeader3");
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Tag = "ft";
+            resources.ApplyResources(this.columnHeader8, "columnHeader8");
+            // 
             // imageListLv
             // 
             this.imageListLv.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListLv.ImageStream")));
@@ -1415,6 +1498,87 @@ namespace cfw
             this.tabPageLeft1.Tag = "tag";
             this.tabPageLeft1.UseVisualStyleBackColor = true;
             // 
+            // cfwListViewL1
+            // 
+            this.cfwListViewL1.AllowDrop = true;
+            this.cfwListViewL1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewL1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewL1.Buddy = null;
+            this.cfwListViewL1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16});
+            resources.ApplyResources(this.cfwListViewL1, "cfwListViewL1");
+            this.cfwListViewL1.FullRowSelect = true;
+            this.cfwListViewL1.HideSelection = false;
+            this.cfwListViewL1.LargeImageList = this.imageListLv;
+            this.cfwListViewL1.Name = "cfwListViewL1";
+            this.cfwListViewL1.OwnerDraw = true;
+            this.cfwListViewL1.SmallImageList = this.imageListLv;
+            this.cfwListViewL1.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewL1.View = System.Windows.Forms.View.Details;
+            this.cfwListViewL1.VirtualMode = true;
+            this.cfwListViewL1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewL1.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewL1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewL1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewL1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewL1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewL1.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
+            this.cfwListViewL1.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
+            this.cfwListViewL1.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewL1.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewL1.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewL1.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewL1.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewL1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewL1.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewL1.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewL1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewL1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Tag = "Name";
+            resources.ApplyResources(this.columnHeader9, "columnHeader9");
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Tag = "Date";
+            resources.ApplyResources(this.columnHeader10, "columnHeader10");
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Tag = "Size";
+            resources.ApplyResources(this.columnHeader11, "columnHeader11");
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Tag = "Type";
+            resources.ApplyResources(this.columnHeader12, "columnHeader12");
+            // 
+            // columnHeader13
+            // 
+            resources.ApplyResources(this.columnHeader13, "columnHeader13");
+            // 
+            // columnHeader14
+            // 
+            resources.ApplyResources(this.columnHeader14, "columnHeader14");
+            // 
+            // columnHeader15
+            // 
+            resources.ApplyResources(this.columnHeader15, "columnHeader15");
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Tag = "ft";
+            resources.ApplyResources(this.columnHeader16, "columnHeader16");
+            // 
             // tabPageLeft2
             // 
             this.tabPageLeft2.Controls.Add(this.cfwListViewL2);
@@ -1422,6 +1586,87 @@ namespace cfw
             this.tabPageLeft2.Name = "tabPageLeft2";
             this.tabPageLeft2.Tag = "tag";
             this.tabPageLeft2.UseVisualStyleBackColor = true;
+            // 
+            // cfwListViewL2
+            // 
+            this.cfwListViewL2.AllowDrop = true;
+            this.cfwListViewL2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewL2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewL2.Buddy = null;
+            this.cfwListViewL2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23,
+            this.columnHeader24});
+            resources.ApplyResources(this.cfwListViewL2, "cfwListViewL2");
+            this.cfwListViewL2.FullRowSelect = true;
+            this.cfwListViewL2.HideSelection = false;
+            this.cfwListViewL2.LargeImageList = this.imageListLv;
+            this.cfwListViewL2.Name = "cfwListViewL2";
+            this.cfwListViewL2.OwnerDraw = true;
+            this.cfwListViewL2.SmallImageList = this.imageListLv;
+            this.cfwListViewL2.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewL2.View = System.Windows.Forms.View.Details;
+            this.cfwListViewL2.VirtualMode = true;
+            this.cfwListViewL2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewL2.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewL2.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewL2.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewL2.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewL2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewL2.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
+            this.cfwListViewL2.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
+            this.cfwListViewL2.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewL2.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewL2.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewL2.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewL2.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewL2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewL2.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewL2.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewL2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewL2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Tag = "Name";
+            resources.ApplyResources(this.columnHeader17, "columnHeader17");
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Tag = "Date";
+            resources.ApplyResources(this.columnHeader18, "columnHeader18");
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Tag = "Size";
+            resources.ApplyResources(this.columnHeader19, "columnHeader19");
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Tag = "Type";
+            resources.ApplyResources(this.columnHeader20, "columnHeader20");
+            // 
+            // columnHeader21
+            // 
+            resources.ApplyResources(this.columnHeader21, "columnHeader21");
+            // 
+            // columnHeader22
+            // 
+            resources.ApplyResources(this.columnHeader22, "columnHeader22");
+            // 
+            // columnHeader23
+            // 
+            resources.ApplyResources(this.columnHeader23, "columnHeader23");
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Tag = "ft";
+            resources.ApplyResources(this.columnHeader24, "columnHeader24");
             // 
             // tabPageLeft3
             // 
@@ -1431,6 +1676,87 @@ namespace cfw
             this.tabPageLeft3.Tag = "tag";
             this.tabPageLeft3.UseVisualStyleBackColor = true;
             // 
+            // cfwListViewL3
+            // 
+            this.cfwListViewL3.AllowDrop = true;
+            this.cfwListViewL3.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewL3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewL3.Buddy = null;
+            this.cfwListViewL3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader25,
+            this.columnHeader26,
+            this.columnHeader27,
+            this.columnHeader28,
+            this.columnHeader29,
+            this.columnHeader30,
+            this.columnHeader31,
+            this.columnHeader32});
+            resources.ApplyResources(this.cfwListViewL3, "cfwListViewL3");
+            this.cfwListViewL3.FullRowSelect = true;
+            this.cfwListViewL3.HideSelection = false;
+            this.cfwListViewL3.LargeImageList = this.imageListLv;
+            this.cfwListViewL3.Name = "cfwListViewL3";
+            this.cfwListViewL3.OwnerDraw = true;
+            this.cfwListViewL3.SmallImageList = this.imageListLv;
+            this.cfwListViewL3.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewL3.View = System.Windows.Forms.View.Details;
+            this.cfwListViewL3.VirtualMode = true;
+            this.cfwListViewL3.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewL3.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewL3.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewL3.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewL3.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewL3.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewL3.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
+            this.cfwListViewL3.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
+            this.cfwListViewL3.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewL3.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewL3.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewL3.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewL3.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewL3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewL3.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewL3.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewL3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewL3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader25
+            // 
+            this.columnHeader25.Tag = "Name";
+            resources.ApplyResources(this.columnHeader25, "columnHeader25");
+            // 
+            // columnHeader26
+            // 
+            this.columnHeader26.Tag = "Date";
+            resources.ApplyResources(this.columnHeader26, "columnHeader26");
+            // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Tag = "Size";
+            resources.ApplyResources(this.columnHeader27, "columnHeader27");
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Tag = "Type";
+            resources.ApplyResources(this.columnHeader28, "columnHeader28");
+            // 
+            // columnHeader29
+            // 
+            resources.ApplyResources(this.columnHeader29, "columnHeader29");
+            // 
+            // columnHeader30
+            // 
+            resources.ApplyResources(this.columnHeader30, "columnHeader30");
+            // 
+            // columnHeader31
+            // 
+            resources.ApplyResources(this.columnHeader31, "columnHeader31");
+            // 
+            // columnHeader32
+            // 
+            this.columnHeader32.Tag = "ft";
+            resources.ApplyResources(this.columnHeader32, "columnHeader32");
+            // 
             // tabPageLeft4
             // 
             this.tabPageLeft4.Controls.Add(this.cfwListViewL4);
@@ -1438,6 +1764,87 @@ namespace cfw
             this.tabPageLeft4.Name = "tabPageLeft4";
             this.tabPageLeft4.Tag = "tag";
             this.tabPageLeft4.UseVisualStyleBackColor = true;
+            // 
+            // cfwListViewL4
+            // 
+            this.cfwListViewL4.AllowDrop = true;
+            this.cfwListViewL4.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewL4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewL4.Buddy = null;
+            this.cfwListViewL4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader33,
+            this.columnHeader34,
+            this.columnHeader35,
+            this.columnHeader36,
+            this.columnHeader37,
+            this.columnHeader38,
+            this.columnHeader39,
+            this.columnHeader40});
+            resources.ApplyResources(this.cfwListViewL4, "cfwListViewL4");
+            this.cfwListViewL4.FullRowSelect = true;
+            this.cfwListViewL4.HideSelection = false;
+            this.cfwListViewL4.LargeImageList = this.imageListLv;
+            this.cfwListViewL4.Name = "cfwListViewL4";
+            this.cfwListViewL4.OwnerDraw = true;
+            this.cfwListViewL4.SmallImageList = this.imageListLv;
+            this.cfwListViewL4.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewL4.View = System.Windows.Forms.View.Details;
+            this.cfwListViewL4.VirtualMode = true;
+            this.cfwListViewL4.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewL4.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewL4.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewL4.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewL4.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewL4.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewL4.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
+            this.cfwListViewL4.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
+            this.cfwListViewL4.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewL4.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewL4.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewL4.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewL4.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewL4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewL4.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewL4.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewL4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewL4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader33
+            // 
+            this.columnHeader33.Tag = "Name";
+            resources.ApplyResources(this.columnHeader33, "columnHeader33");
+            // 
+            // columnHeader34
+            // 
+            this.columnHeader34.Tag = "Date";
+            resources.ApplyResources(this.columnHeader34, "columnHeader34");
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Tag = "Size";
+            resources.ApplyResources(this.columnHeader35, "columnHeader35");
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Tag = "Type";
+            resources.ApplyResources(this.columnHeader36, "columnHeader36");
+            // 
+            // columnHeader37
+            // 
+            resources.ApplyResources(this.columnHeader37, "columnHeader37");
+            // 
+            // columnHeader38
+            // 
+            resources.ApplyResources(this.columnHeader38, "columnHeader38");
+            // 
+            // columnHeader39
+            // 
+            resources.ApplyResources(this.columnHeader39, "columnHeader39");
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Tag = "ft";
+            resources.ApplyResources(this.columnHeader40, "columnHeader40");
             // 
             // tableLayoutPanelRight
             // 
@@ -1529,6 +1936,87 @@ namespace cfw
             this.tabPageRight0.Tag = "tag";
             this.tabPageRight0.UseVisualStyleBackColor = true;
             // 
+            // cfwListViewR0
+            // 
+            this.cfwListViewR0.AllowDrop = true;
+            this.cfwListViewR0.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewR0.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewR0.Buddy = null;
+            this.cfwListViewR0.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderRFilename,
+            this.columnHeaderRDate,
+            this.columnHeaderRSize,
+            this.columnHeaderRType,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            resources.ApplyResources(this.cfwListViewR0, "cfwListViewR0");
+            this.cfwListViewR0.FullRowSelect = true;
+            this.cfwListViewR0.HideSelection = false;
+            this.cfwListViewR0.LargeImageList = this.imageListLv;
+            this.cfwListViewR0.Name = "cfwListViewR0";
+            this.cfwListViewR0.OwnerDraw = true;
+            this.cfwListViewR0.SmallImageList = this.imageListLv;
+            this.cfwListViewR0.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewR0.View = System.Windows.Forms.View.Details;
+            this.cfwListViewR0.VirtualMode = true;
+            this.cfwListViewR0.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewR0.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewR0.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewR0.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewR0.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewR0.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewR0.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
+            this.cfwListViewR0.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
+            this.cfwListViewR0.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewR0.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewR0.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewR0.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewR0.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewR0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewR0.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewR0.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewR0.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewR0.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeaderRFilename
+            // 
+            this.columnHeaderRFilename.Tag = "Name";
+            resources.ApplyResources(this.columnHeaderRFilename, "columnHeaderRFilename");
+            // 
+            // columnHeaderRDate
+            // 
+            this.columnHeaderRDate.Tag = "Date";
+            resources.ApplyResources(this.columnHeaderRDate, "columnHeaderRDate");
+            // 
+            // columnHeaderRSize
+            // 
+            this.columnHeaderRSize.Tag = "Size";
+            resources.ApplyResources(this.columnHeaderRSize, "columnHeaderRSize");
+            // 
+            // columnHeaderRType
+            // 
+            this.columnHeaderRType.Tag = "Type";
+            resources.ApplyResources(this.columnHeaderRType, "columnHeaderRType");
+            // 
+            // columnHeader4
+            // 
+            resources.ApplyResources(this.columnHeader4, "columnHeader4");
+            // 
+            // columnHeader5
+            // 
+            resources.ApplyResources(this.columnHeader5, "columnHeader5");
+            // 
+            // columnHeader6
+            // 
+            resources.ApplyResources(this.columnHeader6, "columnHeader6");
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Tag = "ft";
+            resources.ApplyResources(this.columnHeader7, "columnHeader7");
+            // 
             // tabPageRight1
             // 
             this.tabPageRight1.Controls.Add(this.cfwListViewR1);
@@ -1536,6 +2024,87 @@ namespace cfw
             this.tabPageRight1.Name = "tabPageRight1";
             this.tabPageRight1.Tag = "tag";
             this.tabPageRight1.UseVisualStyleBackColor = true;
+            // 
+            // cfwListViewR1
+            // 
+            this.cfwListViewR1.AllowDrop = true;
+            this.cfwListViewR1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewR1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewR1.Buddy = null;
+            this.cfwListViewR1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43,
+            this.columnHeader44,
+            this.columnHeader45,
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader48});
+            resources.ApplyResources(this.cfwListViewR1, "cfwListViewR1");
+            this.cfwListViewR1.FullRowSelect = true;
+            this.cfwListViewR1.HideSelection = false;
+            this.cfwListViewR1.LargeImageList = this.imageListLv;
+            this.cfwListViewR1.Name = "cfwListViewR1";
+            this.cfwListViewR1.OwnerDraw = true;
+            this.cfwListViewR1.SmallImageList = this.imageListLv;
+            this.cfwListViewR1.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewR1.View = System.Windows.Forms.View.Details;
+            this.cfwListViewR1.VirtualMode = true;
+            this.cfwListViewR1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewR1.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewR1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewR1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewR1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewR1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewR1.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
+            this.cfwListViewR1.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
+            this.cfwListViewR1.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewR1.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewR1.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewR1.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewR1.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewR1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewR1.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewR1.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewR1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewR1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Tag = "Name";
+            resources.ApplyResources(this.columnHeader41, "columnHeader41");
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Tag = "Date";
+            resources.ApplyResources(this.columnHeader42, "columnHeader42");
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Tag = "Size";
+            resources.ApplyResources(this.columnHeader43, "columnHeader43");
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Tag = "Type";
+            resources.ApplyResources(this.columnHeader44, "columnHeader44");
+            // 
+            // columnHeader45
+            // 
+            resources.ApplyResources(this.columnHeader45, "columnHeader45");
+            // 
+            // columnHeader46
+            // 
+            resources.ApplyResources(this.columnHeader46, "columnHeader46");
+            // 
+            // columnHeader47
+            // 
+            resources.ApplyResources(this.columnHeader47, "columnHeader47");
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Tag = "ft";
+            resources.ApplyResources(this.columnHeader48, "columnHeader48");
             // 
             // tabPageRight2
             // 
@@ -1545,6 +2114,87 @@ namespace cfw
             this.tabPageRight2.Tag = "tag";
             this.tabPageRight2.UseVisualStyleBackColor = true;
             // 
+            // cfwListViewR2
+            // 
+            this.cfwListViewR2.AllowDrop = true;
+            this.cfwListViewR2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewR2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewR2.Buddy = null;
+            this.cfwListViewR2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader49,
+            this.columnHeader50,
+            this.columnHeader51,
+            this.columnHeader52,
+            this.columnHeader53,
+            this.columnHeader54,
+            this.columnHeader55,
+            this.columnHeader56});
+            resources.ApplyResources(this.cfwListViewR2, "cfwListViewR2");
+            this.cfwListViewR2.FullRowSelect = true;
+            this.cfwListViewR2.HideSelection = false;
+            this.cfwListViewR2.LargeImageList = this.imageListLv;
+            this.cfwListViewR2.Name = "cfwListViewR2";
+            this.cfwListViewR2.OwnerDraw = true;
+            this.cfwListViewR2.SmallImageList = this.imageListLv;
+            this.cfwListViewR2.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewR2.View = System.Windows.Forms.View.Details;
+            this.cfwListViewR2.VirtualMode = true;
+            this.cfwListViewR2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewR2.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewR2.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewR2.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewR2.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewR2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewR2.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
+            this.cfwListViewR2.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
+            this.cfwListViewR2.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewR2.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewR2.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewR2.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewR2.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewR2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewR2.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewR2.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewR2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewR2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader49
+            // 
+            this.columnHeader49.Tag = "Name";
+            resources.ApplyResources(this.columnHeader49, "columnHeader49");
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Tag = "Date";
+            resources.ApplyResources(this.columnHeader50, "columnHeader50");
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Tag = "Size";
+            resources.ApplyResources(this.columnHeader51, "columnHeader51");
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.Tag = "Type";
+            resources.ApplyResources(this.columnHeader52, "columnHeader52");
+            // 
+            // columnHeader53
+            // 
+            resources.ApplyResources(this.columnHeader53, "columnHeader53");
+            // 
+            // columnHeader54
+            // 
+            resources.ApplyResources(this.columnHeader54, "columnHeader54");
+            // 
+            // columnHeader55
+            // 
+            resources.ApplyResources(this.columnHeader55, "columnHeader55");
+            // 
+            // columnHeader56
+            // 
+            this.columnHeader56.Tag = "ft";
+            resources.ApplyResources(this.columnHeader56, "columnHeader56");
+            // 
             // tabPageRight3
             // 
             this.tabPageRight3.Controls.Add(this.cfwListViewR3);
@@ -1553,6 +2203,87 @@ namespace cfw
             this.tabPageRight3.Tag = "tag";
             this.tabPageRight3.UseVisualStyleBackColor = true;
             // 
+            // cfwListViewR3
+            // 
+            this.cfwListViewR3.AllowDrop = true;
+            this.cfwListViewR3.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewR3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewR3.Buddy = null;
+            this.cfwListViewR3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader57,
+            this.columnHeader58,
+            this.columnHeader59,
+            this.columnHeader60,
+            this.columnHeader61,
+            this.columnHeader62,
+            this.columnHeader63,
+            this.columnHeader64});
+            resources.ApplyResources(this.cfwListViewR3, "cfwListViewR3");
+            this.cfwListViewR3.FullRowSelect = true;
+            this.cfwListViewR3.HideSelection = false;
+            this.cfwListViewR3.LargeImageList = this.imageListLv;
+            this.cfwListViewR3.Name = "cfwListViewR3";
+            this.cfwListViewR3.OwnerDraw = true;
+            this.cfwListViewR3.SmallImageList = this.imageListLv;
+            this.cfwListViewR3.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewR3.View = System.Windows.Forms.View.Details;
+            this.cfwListViewR3.VirtualMode = true;
+            this.cfwListViewR3.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewR3.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewR3.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewR3.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewR3.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewR3.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewR3.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
+            this.cfwListViewR3.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
+            this.cfwListViewR3.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewR3.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewR3.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewR3.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewR3.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewR3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewR3.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewR3.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewR3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewR3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader57
+            // 
+            this.columnHeader57.Tag = "Name";
+            resources.ApplyResources(this.columnHeader57, "columnHeader57");
+            // 
+            // columnHeader58
+            // 
+            this.columnHeader58.Tag = "Date";
+            resources.ApplyResources(this.columnHeader58, "columnHeader58");
+            // 
+            // columnHeader59
+            // 
+            this.columnHeader59.Tag = "Size";
+            resources.ApplyResources(this.columnHeader59, "columnHeader59");
+            // 
+            // columnHeader60
+            // 
+            this.columnHeader60.Tag = "Type";
+            resources.ApplyResources(this.columnHeader60, "columnHeader60");
+            // 
+            // columnHeader61
+            // 
+            resources.ApplyResources(this.columnHeader61, "columnHeader61");
+            // 
+            // columnHeader62
+            // 
+            resources.ApplyResources(this.columnHeader62, "columnHeader62");
+            // 
+            // columnHeader63
+            // 
+            resources.ApplyResources(this.columnHeader63, "columnHeader63");
+            // 
+            // columnHeader64
+            // 
+            this.columnHeader64.Tag = "ft";
+            resources.ApplyResources(this.columnHeader64, "columnHeader64");
+            // 
             // tabPageRight4
             // 
             this.tabPageRight4.Controls.Add(this.cfwListViewR4);
@@ -1560,6 +2291,87 @@ namespace cfw
             this.tabPageRight4.Name = "tabPageRight4";
             this.tabPageRight4.Tag = "tag";
             this.tabPageRight4.UseVisualStyleBackColor = true;
+            // 
+            // cfwListViewR4
+            // 
+            this.cfwListViewR4.AllowDrop = true;
+            this.cfwListViewR4.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cfwListViewR4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cfwListViewR4.Buddy = null;
+            this.cfwListViewR4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader65,
+            this.columnHeader66,
+            this.columnHeader67,
+            this.columnHeader68,
+            this.columnHeader69,
+            this.columnHeader70,
+            this.columnHeader71,
+            this.columnHeader72});
+            resources.ApplyResources(this.cfwListViewR4, "cfwListViewR4");
+            this.cfwListViewR4.FullRowSelect = true;
+            this.cfwListViewR4.HideSelection = false;
+            this.cfwListViewR4.LargeImageList = this.imageListLv;
+            this.cfwListViewR4.Name = "cfwListViewR4";
+            this.cfwListViewR4.OwnerDraw = true;
+            this.cfwListViewR4.SmallImageList = this.imageListLv;
+            this.cfwListViewR4.UseCompatibleStateImageBehavior = false;
+            this.cfwListViewR4.View = System.Windows.Forms.View.Details;
+            this.cfwListViewR4.VirtualMode = true;
+            this.cfwListViewR4.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
+            this.cfwListViewR4.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
+            this.cfwListViewR4.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
+            this.cfwListViewR4.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
+            this.cfwListViewR4.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
+            this.cfwListViewR4.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
+            this.cfwListViewR4.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
+            this.cfwListViewR4.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
+            this.cfwListViewR4.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
+            this.cfwListViewR4.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
+            this.cfwListViewR4.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
+            this.cfwListViewR4.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
+            this.cfwListViewR4.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
+            this.cfwListViewR4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
+            this.cfwListViewR4.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
+            this.cfwListViewR4.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
+            this.cfwListViewR4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
+            this.cfwListViewR4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
+            // 
+            // columnHeader65
+            // 
+            this.columnHeader65.Tag = "Name";
+            resources.ApplyResources(this.columnHeader65, "columnHeader65");
+            // 
+            // columnHeader66
+            // 
+            this.columnHeader66.Tag = "Date";
+            resources.ApplyResources(this.columnHeader66, "columnHeader66");
+            // 
+            // columnHeader67
+            // 
+            this.columnHeader67.Tag = "Size";
+            resources.ApplyResources(this.columnHeader67, "columnHeader67");
+            // 
+            // columnHeader68
+            // 
+            this.columnHeader68.Tag = "Type";
+            resources.ApplyResources(this.columnHeader68, "columnHeader68");
+            // 
+            // columnHeader69
+            // 
+            resources.ApplyResources(this.columnHeader69, "columnHeader69");
+            // 
+            // columnHeader70
+            // 
+            resources.ApplyResources(this.columnHeader70, "columnHeader70");
+            // 
+            // columnHeader71
+            // 
+            resources.ApplyResources(this.columnHeader71, "columnHeader71");
+            // 
+            // columnHeader72
+            // 
+            this.columnHeader72.Tag = "ft";
+            resources.ApplyResources(this.columnHeader72, "columnHeader72");
             // 
             // richTextBoxCommandOutput
             // 
@@ -2026,821 +2838,19 @@ namespace cfw
             this.timerRunSize.Enabled = true;
             this.timerRunSize.Tick += new System.EventHandler(this.timerRunSize_Tick);
             // 
-            // cfwListViewL0
-            // 
-            this.cfwListViewL0.AllowDrop = true;
-            this.cfwListViewL0.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewL0.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewL0.Buddy = null;
-            this.cfwListViewL0.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderLFilename,
-            this.columnHeaderLDate,
-            this.columnHeaderLSize,
-            this.columnHeaderLType,
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader8});
-            resources.ApplyResources(this.cfwListViewL0, "cfwListViewL0");
-            this.cfwListViewL0.FullRowSelect = true;
-            this.cfwListViewL0.HideSelection = false;
-            this.cfwListViewL0.LargeImageList = this.imageListLv;
-            this.cfwListViewL0.Name = "cfwListViewL0";
-            this.cfwListViewL0.OwnerDraw = true;
-            this.cfwListViewL0.SmallImageList = this.imageListLv;
-            this.cfwListViewL0.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewL0.View = System.Windows.Forms.View.Details;
-            this.cfwListViewL0.VirtualMode = true;
-            this.cfwListViewL0.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewL0.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewL0.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewL0.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewL0.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewL0.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewL0.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
-            this.cfwListViewL0.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
-            this.cfwListViewL0.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewL0.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewL0.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewL0.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewL0.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewL0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewL0.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewL0.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewL0.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewL0.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeaderLFilename
-            // 
-            this.columnHeaderLFilename.Tag = "Name";
-            resources.ApplyResources(this.columnHeaderLFilename, "columnHeaderLFilename");
-            // 
-            // columnHeaderLDate
-            // 
-            this.columnHeaderLDate.Tag = "Date";
-            resources.ApplyResources(this.columnHeaderLDate, "columnHeaderLDate");
-            // 
-            // columnHeaderLSize
-            // 
-            this.columnHeaderLSize.Tag = "Size";
-            resources.ApplyResources(this.columnHeaderLSize, "columnHeaderLSize");
-            // 
-            // columnHeaderLType
-            // 
-            this.columnHeaderLType.Tag = "Type";
-            resources.ApplyResources(this.columnHeaderLType, "columnHeaderLType");
-            // 
-            // columnHeader1
-            // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
-            // 
-            // columnHeader2
-            // 
-            resources.ApplyResources(this.columnHeader2, "columnHeader2");
-            // 
-            // columnHeader3
-            // 
-            resources.ApplyResources(this.columnHeader3, "columnHeader3");
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Tag = "ft";
-            resources.ApplyResources(this.columnHeader8, "columnHeader8");
-            // 
-            // cfwListViewL1
-            // 
-            this.cfwListViewL1.AllowDrop = true;
-            this.cfwListViewL1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewL1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewL1.Buddy = null;
-            this.cfwListViewL1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16});
-            resources.ApplyResources(this.cfwListViewL1, "cfwListViewL1");
-            this.cfwListViewL1.FullRowSelect = true;
-            this.cfwListViewL1.HideSelection = false;
-            this.cfwListViewL1.LargeImageList = this.imageListLv;
-            this.cfwListViewL1.Name = "cfwListViewL1";
-            this.cfwListViewL1.OwnerDraw = true;
-            this.cfwListViewL1.SmallImageList = this.imageListLv;
-            this.cfwListViewL1.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewL1.View = System.Windows.Forms.View.Details;
-            this.cfwListViewL1.VirtualMode = true;
-            this.cfwListViewL1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewL1.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewL1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewL1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewL1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewL1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewL1.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
-            this.cfwListViewL1.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
-            this.cfwListViewL1.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewL1.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewL1.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewL1.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewL1.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewL1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewL1.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewL1.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewL1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewL1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Tag = "Name";
-            resources.ApplyResources(this.columnHeader9, "columnHeader9");
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Tag = "Date";
-            resources.ApplyResources(this.columnHeader10, "columnHeader10");
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Tag = "Size";
-            resources.ApplyResources(this.columnHeader11, "columnHeader11");
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Tag = "Type";
-            resources.ApplyResources(this.columnHeader12, "columnHeader12");
-            // 
-            // columnHeader13
-            // 
-            resources.ApplyResources(this.columnHeader13, "columnHeader13");
-            // 
-            // columnHeader14
-            // 
-            resources.ApplyResources(this.columnHeader14, "columnHeader14");
-            // 
-            // columnHeader15
-            // 
-            resources.ApplyResources(this.columnHeader15, "columnHeader15");
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Tag = "ft";
-            resources.ApplyResources(this.columnHeader16, "columnHeader16");
-            // 
-            // cfwListViewL2
-            // 
-            this.cfwListViewL2.AllowDrop = true;
-            this.cfwListViewL2.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewL2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewL2.Buddy = null;
-            this.cfwListViewL2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader17,
-            this.columnHeader18,
-            this.columnHeader19,
-            this.columnHeader20,
-            this.columnHeader21,
-            this.columnHeader22,
-            this.columnHeader23,
-            this.columnHeader24});
-            resources.ApplyResources(this.cfwListViewL2, "cfwListViewL2");
-            this.cfwListViewL2.FullRowSelect = true;
-            this.cfwListViewL2.HideSelection = false;
-            this.cfwListViewL2.LargeImageList = this.imageListLv;
-            this.cfwListViewL2.Name = "cfwListViewL2";
-            this.cfwListViewL2.OwnerDraw = true;
-            this.cfwListViewL2.SmallImageList = this.imageListLv;
-            this.cfwListViewL2.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewL2.View = System.Windows.Forms.View.Details;
-            this.cfwListViewL2.VirtualMode = true;
-            this.cfwListViewL2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewL2.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewL2.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewL2.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewL2.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewL2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewL2.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
-            this.cfwListViewL2.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
-            this.cfwListViewL2.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewL2.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewL2.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewL2.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewL2.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewL2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewL2.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewL2.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewL2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewL2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Tag = "Name";
-            resources.ApplyResources(this.columnHeader17, "columnHeader17");
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Tag = "Date";
-            resources.ApplyResources(this.columnHeader18, "columnHeader18");
-            // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Tag = "Size";
-            resources.ApplyResources(this.columnHeader19, "columnHeader19");
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Tag = "Type";
-            resources.ApplyResources(this.columnHeader20, "columnHeader20");
-            // 
-            // columnHeader21
-            // 
-            resources.ApplyResources(this.columnHeader21, "columnHeader21");
-            // 
-            // columnHeader22
-            // 
-            resources.ApplyResources(this.columnHeader22, "columnHeader22");
-            // 
-            // columnHeader23
-            // 
-            resources.ApplyResources(this.columnHeader23, "columnHeader23");
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Tag = "ft";
-            resources.ApplyResources(this.columnHeader24, "columnHeader24");
-            // 
-            // cfwListViewL3
-            // 
-            this.cfwListViewL3.AllowDrop = true;
-            this.cfwListViewL3.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewL3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewL3.Buddy = null;
-            this.cfwListViewL3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader25,
-            this.columnHeader26,
-            this.columnHeader27,
-            this.columnHeader28,
-            this.columnHeader29,
-            this.columnHeader30,
-            this.columnHeader31,
-            this.columnHeader32});
-            resources.ApplyResources(this.cfwListViewL3, "cfwListViewL3");
-            this.cfwListViewL3.FullRowSelect = true;
-            this.cfwListViewL3.HideSelection = false;
-            this.cfwListViewL3.LargeImageList = this.imageListLv;
-            this.cfwListViewL3.Name = "cfwListViewL3";
-            this.cfwListViewL3.OwnerDraw = true;
-            this.cfwListViewL3.SmallImageList = this.imageListLv;
-            this.cfwListViewL3.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewL3.View = System.Windows.Forms.View.Details;
-            this.cfwListViewL3.VirtualMode = true;
-            this.cfwListViewL3.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewL3.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewL3.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewL3.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewL3.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewL3.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewL3.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
-            this.cfwListViewL3.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
-            this.cfwListViewL3.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewL3.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewL3.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewL3.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewL3.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewL3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewL3.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewL3.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewL3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewL3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader25
-            // 
-            this.columnHeader25.Tag = "Name";
-            resources.ApplyResources(this.columnHeader25, "columnHeader25");
-            // 
-            // columnHeader26
-            // 
-            this.columnHeader26.Tag = "Date";
-            resources.ApplyResources(this.columnHeader26, "columnHeader26");
-            // 
-            // columnHeader27
-            // 
-            this.columnHeader27.Tag = "Size";
-            resources.ApplyResources(this.columnHeader27, "columnHeader27");
-            // 
-            // columnHeader28
-            // 
-            this.columnHeader28.Tag = "Type";
-            resources.ApplyResources(this.columnHeader28, "columnHeader28");
-            // 
-            // columnHeader29
-            // 
-            resources.ApplyResources(this.columnHeader29, "columnHeader29");
-            // 
-            // columnHeader30
-            // 
-            resources.ApplyResources(this.columnHeader30, "columnHeader30");
-            // 
-            // columnHeader31
-            // 
-            resources.ApplyResources(this.columnHeader31, "columnHeader31");
-            // 
-            // columnHeader32
-            // 
-            this.columnHeader32.Tag = "ft";
-            resources.ApplyResources(this.columnHeader32, "columnHeader32");
-            // 
-            // cfwListViewL4
-            // 
-            this.cfwListViewL4.AllowDrop = true;
-            this.cfwListViewL4.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewL4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewL4.Buddy = null;
-            this.cfwListViewL4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader33,
-            this.columnHeader34,
-            this.columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37,
-            this.columnHeader38,
-            this.columnHeader39,
-            this.columnHeader40});
-            resources.ApplyResources(this.cfwListViewL4, "cfwListViewL4");
-            this.cfwListViewL4.FullRowSelect = true;
-            this.cfwListViewL4.HideSelection = false;
-            this.cfwListViewL4.LargeImageList = this.imageListLv;
-            this.cfwListViewL4.Name = "cfwListViewL4";
-            this.cfwListViewL4.OwnerDraw = true;
-            this.cfwListViewL4.SmallImageList = this.imageListLv;
-            this.cfwListViewL4.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewL4.View = System.Windows.Forms.View.Details;
-            this.cfwListViewL4.VirtualMode = true;
-            this.cfwListViewL4.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewL4.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewL4.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewL4.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewL4.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewL4.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewL4.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewLeft_RetrieveVirtualItem);
-            this.cfwListViewL4.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewLeft_SearchForVirtualItem);
-            this.cfwListViewL4.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewL4.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewL4.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewL4.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewL4.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewL4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewL4.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewL4.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewL4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewL4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader33
-            // 
-            this.columnHeader33.Tag = "Name";
-            resources.ApplyResources(this.columnHeader33, "columnHeader33");
-            // 
-            // columnHeader34
-            // 
-            this.columnHeader34.Tag = "Date";
-            resources.ApplyResources(this.columnHeader34, "columnHeader34");
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Tag = "Size";
-            resources.ApplyResources(this.columnHeader35, "columnHeader35");
-            // 
-            // columnHeader36
-            // 
-            this.columnHeader36.Tag = "Type";
-            resources.ApplyResources(this.columnHeader36, "columnHeader36");
-            // 
-            // columnHeader37
-            // 
-            resources.ApplyResources(this.columnHeader37, "columnHeader37");
-            // 
-            // columnHeader38
-            // 
-            resources.ApplyResources(this.columnHeader38, "columnHeader38");
-            // 
-            // columnHeader39
-            // 
-            resources.ApplyResources(this.columnHeader39, "columnHeader39");
-            // 
-            // columnHeader40
-            // 
-            this.columnHeader40.Tag = "ft";
-            resources.ApplyResources(this.columnHeader40, "columnHeader40");
-            // 
-            // cfwListViewR0
-            // 
-            this.cfwListViewR0.AllowDrop = true;
-            this.cfwListViewR0.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewR0.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewR0.Buddy = null;
-            this.cfwListViewR0.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderRFilename,
-            this.columnHeaderRDate,
-            this.columnHeaderRSize,
-            this.columnHeaderRType,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            resources.ApplyResources(this.cfwListViewR0, "cfwListViewR0");
-            this.cfwListViewR0.FullRowSelect = true;
-            this.cfwListViewR0.HideSelection = false;
-            this.cfwListViewR0.LargeImageList = this.imageListLv;
-            this.cfwListViewR0.Name = "cfwListViewR0";
-            this.cfwListViewR0.OwnerDraw = true;
-            this.cfwListViewR0.SmallImageList = this.imageListLv;
-            this.cfwListViewR0.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewR0.View = System.Windows.Forms.View.Details;
-            this.cfwListViewR0.VirtualMode = true;
-            this.cfwListViewR0.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewR0.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewR0.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewR0.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewR0.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewR0.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewR0.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
-            this.cfwListViewR0.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
-            this.cfwListViewR0.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewR0.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewR0.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewR0.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewR0.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewR0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewR0.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewR0.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewR0.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewR0.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeaderRFilename
-            // 
-            this.columnHeaderRFilename.Tag = "Name";
-            resources.ApplyResources(this.columnHeaderRFilename, "columnHeaderRFilename");
-            // 
-            // columnHeaderRDate
-            // 
-            this.columnHeaderRDate.Tag = "Date";
-            resources.ApplyResources(this.columnHeaderRDate, "columnHeaderRDate");
-            // 
-            // columnHeaderRSize
-            // 
-            this.columnHeaderRSize.Tag = "Size";
-            resources.ApplyResources(this.columnHeaderRSize, "columnHeaderRSize");
-            // 
-            // columnHeaderRType
-            // 
-            this.columnHeaderRType.Tag = "Type";
-            resources.ApplyResources(this.columnHeaderRType, "columnHeaderRType");
-            // 
-            // columnHeader4
-            // 
-            resources.ApplyResources(this.columnHeader4, "columnHeader4");
-            // 
-            // columnHeader5
-            // 
-            resources.ApplyResources(this.columnHeader5, "columnHeader5");
-            // 
-            // columnHeader6
-            // 
-            resources.ApplyResources(this.columnHeader6, "columnHeader6");
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Tag = "ft";
-            resources.ApplyResources(this.columnHeader7, "columnHeader7");
-            // 
-            // cfwListViewR1
-            // 
-            this.cfwListViewR1.AllowDrop = true;
-            this.cfwListViewR1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewR1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewR1.Buddy = null;
-            this.cfwListViewR1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader41,
-            this.columnHeader42,
-            this.columnHeader43,
-            this.columnHeader44,
-            this.columnHeader45,
-            this.columnHeader46,
-            this.columnHeader47,
-            this.columnHeader48});
-            resources.ApplyResources(this.cfwListViewR1, "cfwListViewR1");
-            this.cfwListViewR1.FullRowSelect = true;
-            this.cfwListViewR1.HideSelection = false;
-            this.cfwListViewR1.LargeImageList = this.imageListLv;
-            this.cfwListViewR1.Name = "cfwListViewR1";
-            this.cfwListViewR1.OwnerDraw = true;
-            this.cfwListViewR1.SmallImageList = this.imageListLv;
-            this.cfwListViewR1.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewR1.View = System.Windows.Forms.View.Details;
-            this.cfwListViewR1.VirtualMode = true;
-            this.cfwListViewR1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewR1.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewR1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewR1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewR1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewR1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewR1.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
-            this.cfwListViewR1.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
-            this.cfwListViewR1.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewR1.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewR1.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewR1.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewR1.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewR1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewR1.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewR1.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewR1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewR1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader41
-            // 
-            this.columnHeader41.Tag = "Name";
-            resources.ApplyResources(this.columnHeader41, "columnHeader41");
-            // 
-            // columnHeader42
-            // 
-            this.columnHeader42.Tag = "Date";
-            resources.ApplyResources(this.columnHeader42, "columnHeader42");
-            // 
-            // columnHeader43
-            // 
-            this.columnHeader43.Tag = "Size";
-            resources.ApplyResources(this.columnHeader43, "columnHeader43");
-            // 
-            // columnHeader44
-            // 
-            this.columnHeader44.Tag = "Type";
-            resources.ApplyResources(this.columnHeader44, "columnHeader44");
-            // 
-            // columnHeader45
-            // 
-            resources.ApplyResources(this.columnHeader45, "columnHeader45");
-            // 
-            // columnHeader46
-            // 
-            resources.ApplyResources(this.columnHeader46, "columnHeader46");
-            // 
-            // columnHeader47
-            // 
-            resources.ApplyResources(this.columnHeader47, "columnHeader47");
-            // 
-            // columnHeader48
-            // 
-            this.columnHeader48.Tag = "ft";
-            resources.ApplyResources(this.columnHeader48, "columnHeader48");
-            // 
-            // cfwListViewR2
-            // 
-            this.cfwListViewR2.AllowDrop = true;
-            this.cfwListViewR2.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewR2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewR2.Buddy = null;
-            this.cfwListViewR2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader49,
-            this.columnHeader50,
-            this.columnHeader51,
-            this.columnHeader52,
-            this.columnHeader53,
-            this.columnHeader54,
-            this.columnHeader55,
-            this.columnHeader56});
-            resources.ApplyResources(this.cfwListViewR2, "cfwListViewR2");
-            this.cfwListViewR2.FullRowSelect = true;
-            this.cfwListViewR2.HideSelection = false;
-            this.cfwListViewR2.LargeImageList = this.imageListLv;
-            this.cfwListViewR2.Name = "cfwListViewR2";
-            this.cfwListViewR2.OwnerDraw = true;
-            this.cfwListViewR2.SmallImageList = this.imageListLv;
-            this.cfwListViewR2.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewR2.View = System.Windows.Forms.View.Details;
-            this.cfwListViewR2.VirtualMode = true;
-            this.cfwListViewR2.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewR2.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewR2.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewR2.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewR2.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewR2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewR2.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
-            this.cfwListViewR2.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
-            this.cfwListViewR2.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewR2.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewR2.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewR2.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewR2.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewR2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewR2.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewR2.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewR2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewR2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader49
-            // 
-            this.columnHeader49.Tag = "Name";
-            resources.ApplyResources(this.columnHeader49, "columnHeader49");
-            // 
-            // columnHeader50
-            // 
-            this.columnHeader50.Tag = "Date";
-            resources.ApplyResources(this.columnHeader50, "columnHeader50");
-            // 
-            // columnHeader51
-            // 
-            this.columnHeader51.Tag = "Size";
-            resources.ApplyResources(this.columnHeader51, "columnHeader51");
-            // 
-            // columnHeader52
-            // 
-            this.columnHeader52.Tag = "Type";
-            resources.ApplyResources(this.columnHeader52, "columnHeader52");
-            // 
-            // columnHeader53
-            // 
-            resources.ApplyResources(this.columnHeader53, "columnHeader53");
-            // 
-            // columnHeader54
-            // 
-            resources.ApplyResources(this.columnHeader54, "columnHeader54");
-            // 
-            // columnHeader55
-            // 
-            resources.ApplyResources(this.columnHeader55, "columnHeader55");
-            // 
-            // columnHeader56
-            // 
-            this.columnHeader56.Tag = "ft";
-            resources.ApplyResources(this.columnHeader56, "columnHeader56");
-            // 
-            // cfwListViewR3
-            // 
-            this.cfwListViewR3.AllowDrop = true;
-            this.cfwListViewR3.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewR3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewR3.Buddy = null;
-            this.cfwListViewR3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader57,
-            this.columnHeader58,
-            this.columnHeader59,
-            this.columnHeader60,
-            this.columnHeader61,
-            this.columnHeader62,
-            this.columnHeader63,
-            this.columnHeader64});
-            resources.ApplyResources(this.cfwListViewR3, "cfwListViewR3");
-            this.cfwListViewR3.FullRowSelect = true;
-            this.cfwListViewR3.HideSelection = false;
-            this.cfwListViewR3.LargeImageList = this.imageListLv;
-            this.cfwListViewR3.Name = "cfwListViewR3";
-            this.cfwListViewR3.OwnerDraw = true;
-            this.cfwListViewR3.SmallImageList = this.imageListLv;
-            this.cfwListViewR3.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewR3.View = System.Windows.Forms.View.Details;
-            this.cfwListViewR3.VirtualMode = true;
-            this.cfwListViewR3.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewR3.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewR3.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewR3.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewR3.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewR3.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewR3.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
-            this.cfwListViewR3.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
-            this.cfwListViewR3.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewR3.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewR3.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewR3.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewR3.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewR3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewR3.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewR3.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewR3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewR3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader57
-            // 
-            this.columnHeader57.Tag = "Name";
-            resources.ApplyResources(this.columnHeader57, "columnHeader57");
-            // 
-            // columnHeader58
-            // 
-            this.columnHeader58.Tag = "Date";
-            resources.ApplyResources(this.columnHeader58, "columnHeader58");
-            // 
-            // columnHeader59
-            // 
-            this.columnHeader59.Tag = "Size";
-            resources.ApplyResources(this.columnHeader59, "columnHeader59");
-            // 
-            // columnHeader60
-            // 
-            this.columnHeader60.Tag = "Type";
-            resources.ApplyResources(this.columnHeader60, "columnHeader60");
-            // 
-            // columnHeader61
-            // 
-            resources.ApplyResources(this.columnHeader61, "columnHeader61");
-            // 
-            // columnHeader62
-            // 
-            resources.ApplyResources(this.columnHeader62, "columnHeader62");
-            // 
-            // columnHeader63
-            // 
-            resources.ApplyResources(this.columnHeader63, "columnHeader63");
-            // 
-            // columnHeader64
-            // 
-            this.columnHeader64.Tag = "ft";
-            resources.ApplyResources(this.columnHeader64, "columnHeader64");
-            // 
-            // cfwListViewR4
-            // 
-            this.cfwListViewR4.AllowDrop = true;
-            this.cfwListViewR4.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.cfwListViewR4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cfwListViewR4.Buddy = null;
-            this.cfwListViewR4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader65,
-            this.columnHeader66,
-            this.columnHeader67,
-            this.columnHeader68,
-            this.columnHeader69,
-            this.columnHeader70,
-            this.columnHeader71,
-            this.columnHeader72});
-            resources.ApplyResources(this.cfwListViewR4, "cfwListViewR4");
-            this.cfwListViewR4.FullRowSelect = true;
-            this.cfwListViewR4.HideSelection = false;
-            this.cfwListViewR4.LargeImageList = this.imageListLv;
-            this.cfwListViewR4.Name = "cfwListViewR4";
-            this.cfwListViewR4.OwnerDraw = true;
-            this.cfwListViewR4.SmallImageList = this.imageListLv;
-            this.cfwListViewR4.UseCompatibleStateImageBehavior = false;
-            this.cfwListViewR4.View = System.Windows.Forms.View.Details;
-            this.cfwListViewR4.VirtualMode = true;
-            this.cfwListViewR4.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewLeftRight_ColumnClick);
-            this.cfwListViewR4.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listViewLeftRight_ColumnWidthChanged);
-            this.cfwListViewR4.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listViewLeftRight_DrawColumnHeader);
-            this.cfwListViewR4.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listViewLeftRight_DrawItem);
-            this.cfwListViewR4.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listViewLeftRight_DrawSubItem);
-            this.cfwListViewR4.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewLeftRight_ItemSelectionChanged);
-            this.cfwListViewR4.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listViewRight_RetrieveVirtualItem);
-            this.cfwListViewR4.SearchForVirtualItem += new System.Windows.Forms.SearchForVirtualItemEventHandler(this.listViewRight_SearchForVirtualItem);
-            this.cfwListViewR4.SelectedIndexChanged += new System.EventHandler(this.listViewLeftRight_SelectedIndexChanged);
-            this.cfwListViewR4.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(this.listViewLeftRight_VirtualItemsSelectionRangeChanged);
-            this.cfwListViewR4.DragOver += new System.Windows.Forms.DragEventHandler(this.listViewLeftRight_DragOver);
-            this.cfwListViewR4.DragLeave += new System.EventHandler(this.listViewLeftRight_DragLeave);
-            this.cfwListViewR4.DoubleClick += new System.EventHandler(this.listViewLeftRight_DoubleClick);
-            this.cfwListViewR4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseDown);
-            this.cfwListViewR4.MouseEnter += new System.EventHandler(this.listViewLeftRight_MouseEnter);
-            this.cfwListViewR4.MouseLeave += new System.EventHandler(this.listViewLeftRight_MouseLeave);
-            this.cfwListViewR4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseMove);
-            this.cfwListViewR4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listViewLeftRight_MouseUp);
-            // 
-            // columnHeader65
-            // 
-            this.columnHeader65.Tag = "Name";
-            resources.ApplyResources(this.columnHeader65, "columnHeader65");
-            // 
-            // columnHeader66
-            // 
-            this.columnHeader66.Tag = "Date";
-            resources.ApplyResources(this.columnHeader66, "columnHeader66");
-            // 
-            // columnHeader67
-            // 
-            this.columnHeader67.Tag = "Size";
-            resources.ApplyResources(this.columnHeader67, "columnHeader67");
-            // 
-            // columnHeader68
-            // 
-            this.columnHeader68.Tag = "Type";
-            resources.ApplyResources(this.columnHeader68, "columnHeader68");
-            // 
-            // columnHeader69
-            // 
-            resources.ApplyResources(this.columnHeader69, "columnHeader69");
-            // 
-            // columnHeader70
-            // 
-            resources.ApplyResources(this.columnHeader70, "columnHeader70");
-            // 
-            // columnHeader71
-            // 
-            resources.ApplyResources(this.columnHeader71, "columnHeader71");
-            // 
-            // columnHeader72
-            // 
-            this.columnHeader72.Tag = "ft";
-            resources.ApplyResources(this.columnHeader72, "columnHeader72");
-            // 
             // previewCtl
             // 
             this.previewCtl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.previewCtl, "previewCtl");
             this.previewCtl.Name = "previewCtl";
+            // 
+            // folderSelectStartsFromComputerToolStripMenuItem
+            // 
+            this.folderSelectStartsFromComputerToolStripMenuItem.Checked = true;
+            this.folderSelectStartsFromComputerToolStripMenuItem.CheckOnClick = true;
+            this.folderSelectStartsFromComputerToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.folderSelectStartsFromComputerToolStripMenuItem.Name = "folderSelectStartsFromComputerToolStripMenuItem";
+            resources.ApplyResources(this.folderSelectStartsFromComputerToolStripMenuItem, "folderSelectStartsFromComputerToolStripMenuItem");
             // 
             // MainForm
             // 
@@ -3206,6 +3216,7 @@ namespace cfw
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectSearchTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runCfWAlwaysAsAdministratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem folderSelectStartsFromComputerToolStripMenuItem;
     }
 }
 
