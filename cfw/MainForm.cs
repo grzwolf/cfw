@@ -10804,7 +10804,7 @@ namespace cfw {
         }
         DateTime getMetaDateTime(string imgFileName) {
             DateTime dateTime = new DateTime();
-            IList<MetadataExtractor.Directory> directories = MetadataExtractor.ImageMetadataReader.ReadMetadata(imgFileName);
+            IList<MetadataExtractor.Directory> directories = (IList<MetadataExtractor.Directory>)MetadataExtractor.ImageMetadataReader.ReadMetadata(imgFileName);
             if ( directories == null ) {
                 return dateTime;
             }
