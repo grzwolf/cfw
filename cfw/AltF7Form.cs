@@ -98,9 +98,12 @@ namespace cfw {
             }
 
             // preset date range 
-            this.dateTimePickerStart.Value = DateTime.Today;
-            this.dateTimePickerStop.Value = DateTime.Today.AddDays(1);
-            ;
+            if ( this.radioButtonDateAll.Checked ) {
+                this.dateTimePickerStart.Value = this.dateTimePickerStart.MinDate;
+                this.dateTimePickerStop.Value = DateTime.Today.AddDays(+1);
+            }
+            //this.dateTimePickerStart.Value = DateTime.Today;
+            //this.dateTimePickerStop.Value = DateTime.Today.AddDays(1);
 
             // IMessageFilter
             // - also needed: class declaration "public partial class MainForm: Form, IMessageFilter"
@@ -1621,7 +1624,6 @@ namespace cfw {
             if ( this.radioButtonToday.Checked ) {
                 this.dateTimePickerStart.Value = DateTime.Today;
                 this.dateTimePickerStop.Value = DateTime.Today.AddDays(+1);
-                ;
             }
         }
         private void radioButtonLastWeek_CheckedChanged(object sender, EventArgs e) {
@@ -1634,6 +1636,18 @@ namespace cfw {
             if ( this.radioButtonLastMonth.Checked ) {
                 this.dateTimePickerStop.Value = DateTime.Today.AddDays(+1);
                 this.dateTimePickerStart.Value = DateTime.Today.AddMonths(-1);
+            }
+        }
+        private void radioButtonDateAll_CheckedChanged(object sender, EventArgs e) {
+            if ( this.radioButtonDateAll.Checked ) {
+                this.dateTimePickerStart.Value = this.dateTimePickerStart.MinDate;
+                this.dateTimePickerStop.Value = DateTime.Today.AddDays(+1);
+            }
+        }
+        private void radioButtonRange_CheckedChanged(object sender, EventArgs e) {
+            if ( this.radioButtonRange.Checked && this.dateTimePickerStart.Value == this.dateTimePickerStart.MinDate ) {
+                this.dateTimePickerStart.Value = DateTime.Today;
+                this.dateTimePickerStop.Value = DateTime.Today.AddDays(+1);
             }
         }
 
@@ -2018,5 +2032,6 @@ namespace cfw {
                 this.textBoxFilePattern.Text = text;
             }
         }
+
     }
 }

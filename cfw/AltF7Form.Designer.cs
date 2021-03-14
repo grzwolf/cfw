@@ -617,6 +617,7 @@
             this.radioButtonDateAll.Name = "radioButtonDateAll";
             this.radioButtonDateAll.TabStop = true;
             this.radioButtonDateAll.UseVisualStyleBackColor = true;
+            this.radioButtonDateAll.CheckedChanged += new System.EventHandler(this.radioButtonDateAll_CheckedChanged);
             // 
             // dateTimePickerStop
             // 
@@ -635,6 +636,7 @@
             resources.ApplyResources(this.radioButtonRange, "radioButtonRange");
             this.radioButtonRange.Name = "radioButtonRange";
             this.radioButtonRange.UseVisualStyleBackColor = true;
+            this.radioButtonRange.CheckedChanged += new System.EventHandler(this.radioButtonRange_CheckedChanged);
             // 
             // radioButtonLastMonth
             // 
