@@ -1,0 +1,2439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonRun.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>646, 53</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <metadata name="contextMenuStripOutput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="toolStripMenuItemOpenFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="toolStripMenuItemOpenFile.Text" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="toolStripMenuItemJumpToFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="toolStripMenuItemJumpToFile.Text" xml:space="preserve">
+    <value>Jump to file</value>
+  </data>
+  <data name="ToolStripMenuItemCloseJumpToFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="ToolStripMenuItemCloseJumpToFile.Text" xml:space="preserve">
+    <value>Close &amp;&amp; jump to file</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 6</value>
+  </data>
+  <data name="findToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="findToolStripMenuItem.Text" xml:space="preserve">
+    <value>Find text</value>
+  </data>
+  <data name="colorizeFindTextToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="colorizeFindTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="colorizeFindTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>Colorize Find text</value>
+  </data>
+  <data name="colorizeBuzzwordsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="colorizeBuzzwordsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="colorizeBuzzwordsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Colorize search text</value>
+  </data>
+  <data name="resetColorsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="resetColorsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reset all colors</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 6</value>
+  </data>
+  <data name="toolStripMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="toolStripMenuItemSelectAll.Text" xml:space="preserve">
+    <value>Select all text</value>
+  </data>
+  <data name="toolStripMenuItemCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="toolStripMenuItemCopy.Text" xml:space="preserve">
+    <value>Copy text</value>
+  </data>
+  <data name="toolStripMenuItemPaste.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="toolStripMenuItemPaste.Text" xml:space="preserve">
+    <value>Paste text</value>
+  </data>
+  <data name="toolStripMenuItemDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="toolStripMenuItemDelete.Text" xml:space="preserve">
+    <value>Delete text</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 6</value>
+  </data>
+  <data name="toolStripMenuItemClearWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="toolStripMenuItemClearWindow.Text" xml:space="preserve">
+    <value>Clear text output</value>
+  </data>
+  <data name="appendToOutputToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="appendToOutputToolStripMenuItem.Text" xml:space="preserve">
+    <value>Append text to output</value>
+  </data>
+  <data name="saveOutputToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="saveOutputToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save text output</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 6</value>
+  </data>
+  <data name="contextMenuStripOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 336</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripOutput.Name" xml:space="preserve">
+    <value>contextMenuStripOutput</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxOutput.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBoxOutput.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="textBoxOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 205</value>
+  </data>
+  <data name="textBoxOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 492</value>
+  </data>
+  <data name="textBoxOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="textBoxOutput.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxOutput.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;textBoxOutput.Name" xml:space="preserve">
+    <value>textBoxOutput</value>
+  </data>
+  <data name="&gt;&gt;textBoxOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxOutput.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxOutput.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="buttonDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 703</value>
+  </data>
+  <data name="buttonDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 24</value>
+  </data>
+  <data name="buttonDown.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="buttonDown.Text" xml:space="preserve">
+    <value>down</value>
+  </data>
+  <data name="buttonDown.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonDown.Name" xml:space="preserve">
+    <value>buttonDown</value>
+  </data>
+  <data name="&gt;&gt;buttonDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonDown.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonDown.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>filename mask</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>514, 17</value>
+  </metadata>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value>wildcards (* ?) are welcome</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonUp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="buttonUp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 703</value>
+  </data>
+  <data name="buttonUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 24</value>
+  </data>
+  <data name="buttonUp.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="buttonUp.Text" xml:space="preserve">
+    <value>up</value>
+  </data>
+  <data name="buttonUp.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonUp.Name" xml:space="preserve">
+    <value>buttonUp</value>
+  </data>
+  <data name="&gt;&gt;buttonUp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonUp.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonUp.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBoxFilePattern.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="textBoxFilePattern.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 9.75pt</value>
+  </data>
+  <data name="textBoxFilePattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 4</value>
+  </data>
+  <data name="textBoxFilePattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 22</value>
+  </data>
+  <data name="textBoxFilePattern.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBoxFilePattern.Text" xml:space="preserve">
+    <value>*.*</value>
+  </data>
+  <data name="textBoxFilePattern.ToolTip" xml:space="preserve">
+    <value>wildcards (* ?) as well as mulitiple masks are welcome</value>
+  </data>
+  <data name="&gt;&gt;textBoxFilePattern.Name" xml:space="preserve">
+    <value>textBoxFilePattern</value>
+  </data>
+  <data name="&gt;&gt;textBoxFilePattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxFilePattern.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxFilePattern.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBoxFind.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="textBoxFind.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 705</value>
+  </data>
+  <data name="textBoxFind.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 20</value>
+  </data>
+  <data name="textBoxFind.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="textBoxFind.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.Name" xml:space="preserve">
+    <value>textBoxFind</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonX.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="buttonX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>720, 703</value>
+  </data>
+  <data name="buttonX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 24</value>
+  </data>
+  <data name="buttonX.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="buttonX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="buttonX.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonX.Name" xml:space="preserve">
+    <value>buttonX</value>
+  </data>
+  <data name="&gt;&gt;buttonX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonX.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonX.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="comboBoxBuzzword.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="comboBoxBuzzword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 70</value>
+  </data>
+  <data name="comboBoxBuzzword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="comboBoxBuzzword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>419, 21</value>
+  </data>
+  <data name="comboBoxBuzzword.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="comboBoxBuzzword.ToolTip" xml:space="preserve">
+    <value>multiple buzzwords are welcome (separator)</value>
+  </data>
+  <data name="&gt;&gt;comboBoxBuzzword.Name" xml:space="preserve">
+    <value>comboBoxBuzzword</value>
+  </data>
+  <data name="&gt;&gt;comboBoxBuzzword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxBuzzword.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxBuzzword.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="checkBoxSearchText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxSearchText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxSearchText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxSearchText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 71</value>
+  </data>
+  <data name="checkBoxSearchText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxSearchText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 17</value>
+  </data>
+  <data name="checkBoxSearchText.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="checkBoxSearchText.Text" xml:space="preserve">
+    <value>'search text' in files:</value>
+  </data>
+  <data name="checkBoxSearchText.ToolTip" xml:space="preserve">
+    <value>search text in specified files: even in binaries, all text formats, PDF, DOCX, DOC, XLSX, XLS, XLT, PPT, MSG</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSearchText.Name" xml:space="preserve">
+    <value>checkBoxSearchText</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSearchText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSearchText.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSearchText.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 91</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 17</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="checkBoxAdvancedOptions.Text" xml:space="preserve">
+    <value>advanced options</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAdvancedOptions.Name" xml:space="preserve">
+    <value>checkBoxAdvancedOptions</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAdvancedOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAdvancedOptions.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAdvancedOptions.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="buttonBigFileSkip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonBigFileSkip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonBigFileSkip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 33</value>
+  </data>
+  <data name="buttonBigFileSkip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 34</value>
+  </data>
+  <data name="buttonBigFileSkip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonBigFileSkip.Text" xml:space="preserve">
+    <value>skip searching this huge file</value>
+  </data>
+  <data name="buttonBigFileSkip.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonBigFileSkip.Name" xml:space="preserve">
+    <value>buttonBigFileSkip</value>
+  </data>
+  <data name="&gt;&gt;buttonBigFileSkip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonBigFileSkip.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonBigFileSkip.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="progressBarCurrent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="progressBarCurrent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="progressBarCurrent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 136</value>
+  </data>
+  <data name="progressBarCurrent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="progressBarCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>637, 3</value>
+  </data>
+  <data name="progressBarCurrent.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="progressBarCurrent.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;progressBarCurrent.Name" xml:space="preserve">
+    <value>progressBarCurrent</value>
+  </data>
+  <data name="&gt;&gt;progressBarCurrent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBarCurrent.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;progressBarCurrent.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="progressBarTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="progressBarTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="progressBarTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 130</value>
+  </data>
+  <data name="progressBarTotal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="progressBarTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>637, 3</value>
+  </data>
+  <data name="progressBarTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;progressBarTotal.Name" xml:space="preserve">
+    <value>progressBarTotal</value>
+  </data>
+  <data name="&gt;&gt;progressBarTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBarTotal.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;progressBarTotal.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="labelHHlist.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="labelHHlist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelHHlist.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 113</value>
+  </data>
+  <data name="labelHHlist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>637, 13</value>
+  </data>
+  <data name="labelHHlist.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="labelHHlist.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;labelHHlist.Name" xml:space="preserve">
+    <value>labelHHlist</value>
+  </data>
+  <data name="&gt;&gt;labelHHlist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelHHlist.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;labelHHlist.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="checkBoxComputer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="checkBoxComputer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxComputer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxComputer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>661, 31</value>
+  </data>
+  <data name="checkBoxComputer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxComputer.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="checkBoxComputer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="checkBoxComputer.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="checkBoxComputer.Text" xml:space="preserve">
+    <value>entire PC</value>
+  </data>
+  <data name="&gt;&gt;checkBoxComputer.Name" xml:space="preserve">
+    <value>checkBoxComputer</value>
+  </data>
+  <data name="&gt;&gt;checkBoxComputer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxComputer.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxComputer.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="buttonGetLocation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="buttonGetLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonGetLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>646, 3</value>
+  </data>
+  <data name="buttonGetLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 24</value>
+  </data>
+  <data name="buttonGetLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonGetLocation.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;buttonGetLocation.Name" xml:space="preserve">
+    <value>buttonGetLocation</value>
+  </data>
+  <data name="&gt;&gt;buttonGetLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonGetLocation.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonGetLocation.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="textBoxProcessFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="textBoxProcessFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 5</value>
+  </data>
+  <data name="textBoxProcessFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 20</value>
+  </data>
+  <data name="textBoxProcessFile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="textBoxProcessFile.ToolTip" xml:space="preserve">
+    <value>multiple 'separator' separated folders are welcome</value>
+  </data>
+  <data name="&gt;&gt;textBoxProcessFile.Name" xml:space="preserve">
+    <value>textBoxProcessFile</value>
+  </data>
+  <data name="&gt;&gt;textBoxProcessFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxProcessFile.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxProcessFile.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="textBoxFolderPattern.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="textBoxFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 30</value>
+  </data>
+  <data name="textBoxFolderPattern.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="textBoxFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 20</value>
+  </data>
+  <data name="textBoxFolderPattern.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderPattern.Name" xml:space="preserve">
+    <value>textBoxFolderPattern</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderPattern.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderPattern.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="checkBoxSkip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxSkip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxSkip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxSkip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>594, 51</value>
+  </data>
+  <data name="checkBoxSkip.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxSkip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 17</value>
+  </data>
+  <data name="checkBoxSkip.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="checkBoxSkip.Text" xml:space="preserve">
+    <value>std</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkip.Name" xml:space="preserve">
+    <value>checkBoxSkip</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkip.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkip.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="textBoxFolderExcludes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="textBoxFolderExcludes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 50</value>
+  </data>
+  <data name="textBoxFolderExcludes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="textBoxFolderExcludes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 20</value>
+  </data>
+  <data name="textBoxFolderExcludes.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderExcludes.Name" xml:space="preserve">
+    <value>textBoxFolderExcludes</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderExcludes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderExcludes.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxFolderExcludes.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="checkBoxPathMustContain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxPathMustContain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxPathMustContain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxPathMustContain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 31</value>
+  </data>
+  <data name="checkBoxPathMustContain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxPathMustContain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="checkBoxPathMustContain.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkBoxPathMustContain.Text" xml:space="preserve">
+    <value>required</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustContain.Name" xml:space="preserve">
+    <value>checkBoxPathMustContain</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustContain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustContain.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustContain.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 51</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="checkBoxPathMustNotContain.Text" xml:space="preserve">
+    <value>excluded</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustNotContain.Name" xml:space="preserve">
+    <value>checkBoxPathMustNotContain</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustNotContain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustNotContain.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPathMustNotContain.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="labelFolderExcludes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="labelFolderExcludes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelFolderExcludes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelFolderExcludes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 8</value>
+  </data>
+  <data name="labelFolderExcludes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="labelFolderExcludes.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labelFolderExcludes.Text" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="&gt;&gt;labelFolderExcludes.Name" xml:space="preserve">
+    <value>labelFolderExcludes</value>
+  </data>
+  <data name="&gt;&gt;labelFolderExcludes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFolderExcludes.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;labelFolderExcludes.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 93</value>
+  </data>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="numericUpDownHugeFileLineCountLimit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>445, 2</value>
+  </data>
+  <data name="numericUpDownHugeFileLineCountLimit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="numericUpDownHugeFileLineCountLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 16</value>
+  </data>
+  <data name="numericUpDownHugeFileLineCountLimit.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="numericUpDownHugeFileLineCountLimit.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="numericUpDownHugeFileLineCountLimit.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHugeFileLineCountLimit.Name" xml:space="preserve">
+    <value>numericUpDownHugeFileLineCountLimit</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHugeFileLineCountLimit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHugeFileLineCountLimit.Parent" xml:space="preserve">
+    <value>panelTextOptions</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownHugeFileLineCountLimit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 1</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 3, 3, 3</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.Text" xml:space="preserve">
+    <value>'search text' skips binaries</value>
+  </data>
+  <data name="checkBoxSkipSearchingBinaryFiles.ToolTip" xml:space="preserve">
+    <value>Won't skip: PDF, DOCX, XLSX, DOC, XLS, XLT, PPT, MSG,</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkipSearchingBinaryFiles.Name" xml:space="preserve">
+    <value>checkBoxSkipSearchingBinaryFiles</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkipSearchingBinaryFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkipSearchingBinaryFiles.Parent" xml:space="preserve">
+    <value>panelTextOptions</value>
+  </data>
+  <data name="&gt;&gt;checkBoxSkipSearchingBinaryFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxAlwaysSkipLargeFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="checkBoxAlwaysSkipLargeFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxAlwaysSkipLargeFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxAlwaysSkipLargeFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 1</value>
+  </data>
+  <data name="checkBoxAlwaysSkipLargeFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="checkBoxAlwaysSkipLargeFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBoxAlwaysSkipLargeFiles.Text" xml:space="preserve">
+    <value>'search text' skips &gt;</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlwaysSkipLargeFiles.Name" xml:space="preserve">
+    <value>checkBoxAlwaysSkipLargeFiles</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlwaysSkipLargeFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlwaysSkipLargeFiles.Parent" xml:space="preserve">
+    <value>panelTextOptions</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAlwaysSkipLargeFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelLinesText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labelLinesText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelLinesText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelLinesText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 2</value>
+  </data>
+  <data name="labelLinesText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="labelLinesText.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="labelLinesText.Text" xml:space="preserve">
+    <value>lines</value>
+  </data>
+  <data name="&gt;&gt;labelLinesText.Name" xml:space="preserve">
+    <value>labelLinesText</value>
+  </data>
+  <data name="&gt;&gt;labelLinesText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelLinesText.Parent" xml:space="preserve">
+    <value>panelTextOptions</value>
+  </data>
+  <data name="&gt;&gt;labelLinesText.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBoxFilesOnly.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxFilesOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxFilesOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 1</value>
+  </data>
+  <data name="checkBoxFilesOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="checkBoxFilesOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxFilesOnly.Text" xml:space="preserve">
+    <value>file list</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOnly.Name" xml:space="preserve">
+    <value>checkBoxFilesOnly</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOnly.Parent" xml:space="preserve">
+    <value>panelTextOptions</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFilesOnly.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panelTextOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 142</value>
+  </data>
+  <data name="panelTextOptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelTextOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>634, 20</value>
+  </data>
+  <data name="panelTextOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;panelTextOptions.Name" xml:space="preserve">
+    <value>panelTextOptions</value>
+  </data>
+  <data name="&gt;&gt;panelTextOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelTextOptions.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;panelTextOptions.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="radioButtonSizeAll.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonSizeAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonSizeAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 0</value>
+  </data>
+  <data name="radioButtonSizeAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="radioButtonSizeAll.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="radioButtonSizeAll.Text" xml:space="preserve">
+    <value>any size</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSizeAll.Name" xml:space="preserve">
+    <value>radioButtonSizeAll</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSizeAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSizeAll.Parent" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSizeAll.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>546, 3</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Bytes</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButtonSmaller.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonSmaller.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonSmaller.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 1</value>
+  </data>
+  <data name="radioButtonSmaller.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="radioButtonSmaller.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
+  </data>
+  <data name="radioButtonSmaller.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="radioButtonSmaller.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSmaller.Name" xml:space="preserve">
+    <value>radioButtonSmaller</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSmaller.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSmaller.Parent" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;radioButtonSmaller.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="radioButtonEqual.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonEqual.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonEqual.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 1</value>
+  </data>
+  <data name="radioButtonEqual.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="radioButtonEqual.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
+  </data>
+  <data name="radioButtonEqual.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radioButtonEqual.Text" xml:space="preserve">
+    <value>=</value>
+  </data>
+  <data name="&gt;&gt;radioButtonEqual.Name" xml:space="preserve">
+    <value>radioButtonEqual</value>
+  </data>
+  <data name="&gt;&gt;radioButtonEqual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonEqual.Parent" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;radioButtonEqual.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radioButtonLarger.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonLarger.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonLarger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 1</value>
+  </data>
+  <data name="radioButtonLarger.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="radioButtonLarger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
+  </data>
+  <data name="radioButtonLarger.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="radioButtonLarger.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLarger.Name" xml:space="preserve">
+    <value>radioButtonLarger</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLarger.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLarger.Parent" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLarger.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkBoxOutputAddLine.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxOutputAddLine.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxOutputAddLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 1</value>
+  </data>
+  <data name="checkBoxOutputAddLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="checkBoxOutputAddLine.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxOutputAddLine.Text" xml:space="preserve">
+    <value>add line #</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOutputAddLine.Name" xml:space="preserve">
+    <value>checkBoxOutputAddLine</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOutputAddLine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOutputAddLine.Parent" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOutputAddLine.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="numericUpDownSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>445, 3</value>
+  </data>
+  <data name="numericUpDownSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="numericUpDownSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 16</value>
+  </data>
+  <data name="numericUpDownSize.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="numericUpDownSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="numericUpDownSize.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownSize.Name" xml:space="preserve">
+    <value>numericUpDownSize</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownSize.Parent" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownSize.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panelSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 162</value>
+  </data>
+  <data name="panelSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>634, 20</value>
+  </data>
+  <data name="panelSize.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="panelSize.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelSize.Name" xml:space="preserve">
+    <value>panelSize</value>
+  </data>
+  <data name="&gt;&gt;panelSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSize.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;panelSize.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="checkBoxLen248.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxLen248.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxLen248.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 2</value>
+  </data>
+  <data name="checkBoxLen248.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 17</value>
+  </data>
+  <data name="checkBoxLen248.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="checkBoxLen248.Text" xml:space="preserve">
+    <value>filenames &gt;248</value>
+  </data>
+  <data name="checkBoxLen248.ToolTip" xml:space="preserve">
+    <value>search for filenames &gt;248 characters; IGNORES all other settings</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLen248.Name" xml:space="preserve">
+    <value>checkBoxLen248</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLen248.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLen248.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLen248.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButtonDateAll.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonDateAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonDateAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 0</value>
+  </data>
+  <data name="radioButtonDateAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="radioButtonDateAll.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="radioButtonDateAll.Text" xml:space="preserve">
+    <value>all time</value>
+  </data>
+  <data name="&gt;&gt;radioButtonDateAll.Name" xml:space="preserve">
+    <value>radioButtonDateAll</value>
+  </data>
+  <data name="&gt;&gt;radioButtonDateAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonDateAll.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;radioButtonDateAll.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dateTimePickerStop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>543, 1</value>
+  </data>
+  <data name="dateTimePickerStop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 20</value>
+  </data>
+  <data name="dateTimePickerStop.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStop.Name" xml:space="preserve">
+    <value>dateTimePickerStop</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStop.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStop.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dateTimePickerStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>445, 1</value>
+  </data>
+  <data name="dateTimePickerStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 20</value>
+  </data>
+  <data name="dateTimePickerStart.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStart.Name" xml:space="preserve">
+    <value>dateTimePickerStart</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStart.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;dateTimePickerStart.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radioButtonRange.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonRange.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonRange.Location" type="System.Drawing.Point, System.Drawing">
+    <value>394, 1</value>
+  </data>
+  <data name="radioButtonRange.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="radioButtonRange.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
+  </data>
+  <data name="radioButtonRange.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="radioButtonRange.Text" xml:space="preserve">
+    <value>range</value>
+  </data>
+  <data name="&gt;&gt;radioButtonRange.Name" xml:space="preserve">
+    <value>radioButtonRange</value>
+  </data>
+  <data name="&gt;&gt;radioButtonRange.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonRange.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;radioButtonRange.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="radioButtonLastMonth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonLastMonth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonLastMonth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 1</value>
+  </data>
+  <data name="radioButtonLastMonth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="radioButtonLastMonth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="radioButtonLastMonth.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="radioButtonLastMonth.Text" xml:space="preserve">
+    <value> month</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastMonth.Name" xml:space="preserve">
+    <value>radioButtonLastMonth</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastMonth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastMonth.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastMonth.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="radioButtonToday.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonToday.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonToday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 1</value>
+  </data>
+  <data name="radioButtonToday.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="radioButtonToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 17</value>
+  </data>
+  <data name="radioButtonToday.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radioButtonToday.Text" xml:space="preserve">
+    <value>today</value>
+  </data>
+  <data name="&gt;&gt;radioButtonToday.Name" xml:space="preserve">
+    <value>radioButtonToday</value>
+  </data>
+  <data name="&gt;&gt;radioButtonToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonToday.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;radioButtonToday.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="radioButtonLastWeek.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonLastWeek.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonLastWeek.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 1</value>
+  </data>
+  <data name="radioButtonLastWeek.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="radioButtonLastWeek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 17</value>
+  </data>
+  <data name="radioButtonLastWeek.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="radioButtonLastWeek.Text" xml:space="preserve">
+    <value>week</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastWeek.Name" xml:space="preserve">
+    <value>radioButtonLastWeek</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastWeek.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastWeek.Parent" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;radioButtonLastWeek.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="panelDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 182</value>
+  </data>
+  <data name="panelDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>634, 20</value>
+  </data>
+  <data name="panelDate.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="panelDate.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelDate.Name" xml:space="preserve">
+    <value>panelDate</value>
+  </data>
+  <data name="&gt;&gt;panelDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelDate.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;panelDate.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="columnHeaderDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="columnHeaderDate.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="columnHeaderSize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="columnHeaderSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="columnHeaderSize.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="columnHeaderFile.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="columnHeaderFile.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="columnHeaderPath.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="columnHeaderPath.Width" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="columnHeaderExt.Text" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <metadata name="contextMenuStripListView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>321, 17</value>
+  </metadata>
+  <data name="openFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="openFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="jumpToFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="jumpToFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Jump to file</value>
+  </data>
+  <data name="closeAndJumpToFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="closeAndJumpToFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Close &amp;&amp; jump to file</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 6</value>
+  </data>
+  <data name="winmergePairOfFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="winmergePairOfFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Winmerge pair of files</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 6</value>
+  </data>
+  <data name="copyListItemsToClipBoardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="copyListItemsToClipBoardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy selection as text</value>
+  </data>
+  <data name="copySelectedFilesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F5</value>
+  </data>
+  <data name="copySelectedFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="copySelectedFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy selected files</value>
+  </data>
+  <data name="copySelectedFilesToClipBoardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="copySelectedFilesToClipBoardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy selected files to ClipBoard</value>
+  </data>
+  <data name="deleteSelectedFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 22</value>
+  </data>
+  <data name="deleteSelectedFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete selected files to trash</value>
+  </data>
+  <data name="contextMenuStripListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 192</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripListView.Name" xml:space="preserve">
+    <value>contextMenuStripListView</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listViewOutput.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listViewOutput.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="listViewOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>646, 205</value>
+  </data>
+  <data name="listViewOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 492</value>
+  </data>
+  <data name="listViewOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="listViewOutput.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;listViewOutput.Name" xml:space="preserve">
+    <value>listViewOutput</value>
+  </data>
+  <data name="&gt;&gt;listViewOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listViewOutput.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;listViewOutput.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="checkBoxLiveRefresh.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxLiveRefresh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxLiveRefresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 184</value>
+  </data>
+  <data name="checkBoxLiveRefresh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 2, 0, 0</value>
+  </data>
+  <data name="checkBoxLiveRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="checkBoxLiveRefresh.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="checkBoxLiveRefresh.Text" xml:space="preserve">
+    <value>live refresh</value>
+  </data>
+  <data name="checkBoxLiveRefresh.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLiveRefresh.Name" xml:space="preserve">
+    <value>checkBoxLiveRefresh</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLiveRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLiveRefresh.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxLiveRefresh.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="checkBoxKeepOutput.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxKeepOutput.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxKeepOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 165</value>
+  </data>
+  <data name="checkBoxKeepOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 0</value>
+  </data>
+  <data name="checkBoxKeepOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 17</value>
+  </data>
+  <data name="checkBoxKeepOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="checkBoxKeepOutput.Text" xml:space="preserve">
+    <value>keep output</value>
+  </data>
+  <data name="checkBoxKeepOutput.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;checkBoxKeepOutput.Name" xml:space="preserve">
+    <value>checkBoxKeepOutput</value>
+  </data>
+  <data name="&gt;&gt;checkBoxKeepOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxKeepOutput.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxKeepOutput.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="textBoxSeparator.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 8.25pt</value>
+  </data>
+  <data name="textBoxSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="textBoxSeparator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="textBoxSeparator.MaxLength" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBoxSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 20</value>
+  </data>
+  <data name="textBoxSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBoxSeparator.Text" xml:space="preserve">
+    <value>;</value>
+  </data>
+  <data name="&gt;&gt;textBoxSeparator.Name" xml:space="preserve">
+    <value>textBoxSeparator</value>
+  </data>
+  <data name="&gt;&gt;textBoxSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxSeparator.Parent" xml:space="preserve">
+    <value>panelSeparator</value>
+  </data>
+  <data name="&gt;&gt;textBoxSeparator.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelSeparator.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSeparator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 3</value>
+  </data>
+  <data name="labelSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="labelSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeparator.Text" xml:space="preserve">
+    <value>separator</value>
+  </data>
+  <data name="&gt;&gt;labelSeparator.Name" xml:space="preserve">
+    <value>labelSeparator</value>
+  </data>
+  <data name="&gt;&gt;labelSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSeparator.Parent" xml:space="preserve">
+    <value>panelSeparator</value>
+  </data>
+  <data name="&gt;&gt;labelSeparator.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 142</value>
+  </data>
+  <data name="panelSeparator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
+  </data>
+  <data name="panelSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;panelSeparator.Name" xml:space="preserve">
+    <value>panelSeparator</value>
+  </data>
+  <data name="&gt;&gt;panelSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelSeparator.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;panelSeparator.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="checkBoxMatchCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxMatchCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxMatchCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>545, 70</value>
+  </data>
+  <data name="checkBoxMatchCase.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxMatchCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="checkBoxMatchCase.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxMatchCase.Text" xml:space="preserve">
+    <value>case sensitive</value>
+  </data>
+  <data name="checkBoxMatchCase.ToolTip" xml:space="preserve">
+    <value>'search text' only, not for file names </value>
+  </data>
+  <data name="&gt;&gt;checkBoxMatchCase.Name" xml:space="preserve">
+    <value>checkBoxMatchCase</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMatchCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMatchCase.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMatchCase.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="previewCtl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="previewCtl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 205</value>
+  </data>
+  <data name="previewCtl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 492</value>
+  </data>
+  <data name="previewCtl.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;previewCtl.Name" xml:space="preserve">
+    <value>previewCtl</value>
+  </data>
+  <data name="&gt;&gt;previewCtl.Type" xml:space="preserve">
+    <value>cfw.PreviewCtl, cfw, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;previewCtl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;previewCtl.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="checkBoxPreview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>643, 110</value>
+  </data>
+  <data name="checkBoxPreview.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="checkBoxPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="checkBoxPreview.Text" xml:space="preserve">
+    <value>preview</value>
+  </data>
+  <data name="checkBoxPreview.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreview.Name" xml:space="preserve">
+    <value>checkBoxPreview</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreview.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPreview.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="checkBoxExact.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxExact.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxExact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 30</value>
+  </data>
+  <data name="checkBoxExact.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="checkBoxExact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="checkBoxExact.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="checkBoxExact.Text" xml:space="preserve">
+    <value>exact match</value>
+  </data>
+  <data name="&gt;&gt;checkBoxExact.Name" xml:space="preserve">
+    <value>checkBoxExact</value>
+  </data>
+  <data name="&gt;&gt;checkBoxExact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxExact.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;checkBoxExact.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>749, 730</value>
+  </data>
+  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBoxOutput" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonDown" Row="12" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="buttonUp" Row="12" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="textBoxFilePattern" Row="0" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="textBoxFind" Row="12" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;Control Name="buttonX" Row="12" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxBuzzword" Row="3" RowSpan="1" Column="2" ColumnSpan="5" /&gt;&lt;Control Name="checkBoxSearchText" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxAdvancedOptions" Row="4" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="buttonBigFileSkip" Row="1" RowSpan="2" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="progressBarCurrent" Row="7" RowSpan="1" Column="0" ColumnSpan="9" /&gt;&lt;Control Name="progressBarTotal" Row="6" RowSpan="1" Column="0" ColumnSpan="9" /&gt;&lt;Control Name="buttonRun" Row="2" RowSpan="3" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="labelHHlist" Row="5" RowSpan="1" Column="0" ColumnSpan="9" /&gt;&lt;Control Name="checkBoxComputer" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="buttonGetLocation" Row="0" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="textBoxProcessFile" Row="0" RowSpan="1" Column="5" ColumnSpan="4" /&gt;&lt;Control Name="textBoxFolderPattern" Row="1" RowSpan="1" Column="6" ColumnSpan="3" /&gt;&lt;Control Name="checkBoxSkip" Row="2" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="textBoxFolderExcludes" Row="2" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxPathMustContain" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxPathMustNotContain" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="labelFolderExcludes" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonCancel" Row="4" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="panelTextOptions" Row="8" RowSpan="1" Column="0" ColumnSpan="9" /&gt;&lt;Control Name="panelSize" Row="9" RowSpan="1" Column="0" ColumnSpan="9" /&gt;&lt;Control Name="panelDate" Row="10" RowSpan="1" Column="0" ColumnSpan="9" /&gt;&lt;Control Name="listViewOutput" Row="11" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxLiveRefresh" Row="10" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxKeepOutput" Row="9" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="panelSeparator" Row="8" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxMatchCase" Row="3" RowSpan="1" Column="7" ColumnSpan="2" /&gt;&lt;Control Name="previewCtl" Row="11" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxPreview" Row="5" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxExact" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,87,Absolute,36,Absolute,107,Percent,50,Absolute,74,Absolute,75,Absolute,114,Percent,50,Absolute,52,Absolute,106" /&gt;&lt;Rows Styles="Absolute,30,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,6,Absolute,6,Absolute,20,Absolute,20,Absolute,20,Percent,100,Absolute,30" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="buttonRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 54</value>
+  </data>
+  <data name="buttonRun.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="buttonRun.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.Name" xml:space="preserve">
+    <value>buttonRun</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;buttonRun.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <metadata name="timerBigFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>205, 17</value>
+  </metadata>
+  <metadata name="timerUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>600, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>749, 730</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>765, 768</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>File Search</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOpenFile.Name" xml:space="preserve">
+    <value>toolStripMenuItemOpenFile</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemOpenFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemJumpToFile.Name" xml:space="preserve">
+    <value>toolStripMenuItemJumpToFile</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemJumpToFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemCloseJumpToFile.Name" xml:space="preserve">
+    <value>ToolStripMenuItemCloseJumpToFile</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemCloseJumpToFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;findToolStripMenuItem.Name" xml:space="preserve">
+    <value>findToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;findToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorizeFindTextToolStripMenuItem.Name" xml:space="preserve">
+    <value>colorizeFindTextToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;colorizeFindTextToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorizeBuzzwordsToolStripMenuItem.Name" xml:space="preserve">
+    <value>colorizeBuzzwordsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;colorizeBuzzwordsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;resetColorsToolStripMenuItem.Name" xml:space="preserve">
+    <value>resetColorsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;resetColorsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSelectAll.Name" xml:space="preserve">
+    <value>toolStripMenuItemSelectAll</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemSelectAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemCopy.Name" xml:space="preserve">
+    <value>toolStripMenuItemCopy</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemPaste.Name" xml:space="preserve">
+    <value>toolStripMenuItemPaste</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemPaste.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemDelete.Name" xml:space="preserve">
+    <value>toolStripMenuItemDelete</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearWindow.Name" xml:space="preserve">
+    <value>toolStripMenuItemClearWindow</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;appendToOutputToolStripMenuItem.Name" xml:space="preserve">
+    <value>appendToOutputToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;appendToOutputToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveOutputToolStripMenuItem.Name" xml:space="preserve">
+    <value>saveOutputToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;saveOutputToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderDate.Name" xml:space="preserve">
+    <value>columnHeaderDate</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderSize.Name" xml:space="preserve">
+    <value>columnHeaderSize</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFile.Name" xml:space="preserve">
+    <value>columnHeaderFile</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderPath.Name" xml:space="preserve">
+    <value>columnHeaderPath</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderExt.Name" xml:space="preserve">
+    <value>columnHeaderExt</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileToolStripMenuItem.Name" xml:space="preserve">
+    <value>openFileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openFileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;jumpToFileToolStripMenuItem.Name" xml:space="preserve">
+    <value>jumpToFileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;jumpToFileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;closeAndJumpToFileToolStripMenuItem.Name" xml:space="preserve">
+    <value>closeAndJumpToFileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;closeAndJumpToFileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
+    <value>toolStripSeparator6</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;winmergePairOfFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>winmergePairOfFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;winmergePairOfFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copyListItemsToClipBoardToolStripMenuItem.Name" xml:space="preserve">
+    <value>copyListItemsToClipBoardToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;copyListItemsToClipBoardToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copySelectedFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>copySelectedFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;copySelectedFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copySelectedFilesToClipBoardToolStripMenuItem.Name" xml:space="preserve">
+    <value>copySelectedFilesToClipBoardToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;copySelectedFilesToClipBoardToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteSelectedFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteSelectedFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteSelectedFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timerBigFile.Name" xml:space="preserve">
+    <value>timerBigFile</value>
+  </data>
+  <data name="&gt;&gt;timerBigFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timerUpdate.Name" xml:space="preserve">
+    <value>timerUpdate</value>
+  </data>
+  <data name="&gt;&gt;timerUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AltF7Form</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

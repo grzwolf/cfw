@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4491F5D-440F-47A3-B527-EA3F569F8DFC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cfw</RootNamespace>
+    <AssemblyName>cfw</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Cfw.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Be.Windows.Forms.HexBox.1.6.1\lib\net40\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>.\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>.\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PortableDeviceApiLib">
+      <HintPath>.\Interop.PortableDeviceApiLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.PortableDeviceTypesLib">
+      <HintPath>.\Interop.PortableDeviceTypesLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MetadataExtractor, Version=2.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetadataExtractor.2.4.3\lib\net45\MetadataExtractor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>.\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>.\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Visio">
+      <HintPath>.\Microsoft.Office.Interop.Visio.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Visio.SaveAsWeb">
+      <HintPath>.\Microsoft.Office.Interop.Visio.SaveAsWeb.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>.\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MsgReader, Version=2.0.0.0, Culture=neutral, PublicKeyToken=47f99f3a9a2648df, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSGReader.2.0.0\lib\MsgReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OFFICE, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>.\OFFICE.DLL</HintPath>
+    </Reference>
+    <Reference Include="OpenHardwareMonitorLib">
+      <HintPath>.\OpenHardwareMonitorLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.10.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfiumViewer.2.10.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XmpCore, Version=6.1.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XmpCore.6.1.10\lib\net35\XmpCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgainMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgainMessage.Designer.cs">
+      <DependentUpon>AgainMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltF7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltF7Form.Designer.cs">
+      <DependentUpon>AltF7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignFKeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignFKeys.Designer.cs">
+      <DependentUpon>AssignFKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttributesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttributesEditor.designer.cs">
+      <DependentUpon>AttributesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CancelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelDialog.Designer.cs">
+      <DependentUpon>CancelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CDOpenClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDOpenClose.Designer.cs">
+      <DependentUpon>CDOpenClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMB.Designer.cs">
+      <DependentUpon>CustomMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomTrackBar.designer.cs">
+      <DependentUpon>CustomTrackBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlyingLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlyingLabel.Designer.cs">
+      <DependentUpon>FlyingLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HexEdit.Designer.cs">
+      <DependentUpon>HexEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HexView.Designer.cs">
+      <DependentUpon>HexView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HexViewerForm.Designer.cs">
+      <DependentUpon>HexViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBox.designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IpEtc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IpEtc.Designer.cs">
+      <DependentUpon>IpEtc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loupe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loupe.Designer.cs">
+      <DependentUpon>Loupe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagnifyingGlass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyStringResource.de.Designer.cs">
+      <DependentUpon>MyStringResource.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CopyProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CopyProgressForm.designer.cs">
+      <DependentUpon>CopyProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crmdDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crmdDialog.Designer.cs">
+      <DependentUpon>crmdDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocView.Designer.cs">
+      <DependentUpon>DocView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileComparer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileComparer.Designer.cs">
+      <DependentUpon>FileComparer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileSystemTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileSystemTreeView.Designer.cs">
+      <DependentUpon>FileSystemTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileView.Designer.cs">
+      <DependentUpon>FileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileViewer.Designer.cs">
+      <DependentUpon>FileViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageBox.designer.cs">
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBoxGridDisplayMode.cs" />
+    <Compile Include="ImageBoxGridScale.cs" />
+    <Compile Include="ImgView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImgView.Designer.cs">
+      <DependentUpon>ImgView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyStringResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyStringResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetworkMapping.Designer.cs">
+      <DependentUpon>NetworkMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortableDevice.cs" />
+    <Compile Include="PortAccess.cs" />
+    <Compile Include="PortIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PortIO.Designer.cs">
+      <DependentUpon>PortIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PreviewCtl.Designer.cs">
+      <DependentUpon>PreviewCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewMode.Designer.cs">
+      <DependentUpon>PreviewMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyForm.Designer.cs">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RS232Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RS232Form.Designer.cs">
+      <DependentUpon>RS232Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectFolderOrFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectFolderOrFile.Designer.cs">
+      <DependentUpon>SelectFolderOrFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShellContextMenu.cs" />
+    <Compile Include="ShowShortcuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowShortcuts.Designer.cs">
+      <DependentUpon>ShowShortcuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleInput.Designer.cs">
+      <DependentUpon>SimpleInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleList.Designer.cs">
+      <DependentUpon>SimpleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleProgress.Designer.cs">
+      <DependentUpon>SimpleProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleYes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleYes.Designer.cs">
+      <DependentUpon>SimpleYes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools.cs" />
+    <Compile Include="VideoPlayerCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideoPlayerCtl.Designer.cs">
+      <DependentUpon>VideoPlayerCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vpSnapshotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vpSnapshotForm.Designer.cs">
+      <DependentUpon>vpSnapshotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZipView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZipView.Designer.cs">
+      <DependentUpon>ZipView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgainMessage.resx">
+      <DependentUpon>AgainMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltF7Form.de.resx">
+      <DependentUpon>AltF7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltF7Form.resx">
+      <DependentUpon>AltF7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignFKeys.resx">
+      <DependentUpon>AssignFKeys.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttributesEditor.resx">
+      <DependentUpon>AttributesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelDialog.resx">
+      <DependentUpon>CancelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDOpenClose.resx">
+      <DependentUpon>CDOpenClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMB.resx">
+      <DependentUpon>CustomMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlyingLabel.resx">
+      <DependentUpon>FlyingLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexEdit.resx">
+      <DependentUpon>HexEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexView.resx">
+      <DependentUpon>HexView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexViewerForm.resx">
+      <DependentUpon>HexViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IpEtc.resx">
+      <DependentUpon>IpEtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loupe.resx">
+      <DependentUpon>Loupe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.de.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyStringResource.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyStringResource.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CopyProgressForm.resx">
+      <DependentUpon>CopyProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crmdDialog.resx">
+      <DependentUpon>crmdDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileComparer.resx">
+      <DependentUpon>FileComparer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileSystemTreeView.resx">
+      <DependentUpon>FileSystemTreeView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileView.resx">
+      <DependentUpon>FileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileViewer.resx">
+      <DependentUpon>FileViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBox.resx">
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImgView.resx">
+      <DependentUpon>ImgView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyStringResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyStringResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetworkMapping.resx">
+      <DependentUpon>NetworkMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortIO.resx">
+      <DependentUpon>PortIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewCtl.resx">
+      <DependentUpon>PreviewCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewMode.resx">
+      <DependentUpon>PreviewMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyForm.resx">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RS232Form.resx">
+      <DependentUpon>RS232Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectFolderOrFile.resx">
+      <DependentUpon>SelectFolderOrFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowShortcuts.resx">
+      <DependentUpon>ShowShortcuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleInput.resx">
+      <DependentUpon>SimpleInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleList.resx">
+      <DependentUpon>SimpleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleProgress.resx">
+      <DependentUpon>SimpleProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleYes.resx">
+      <DependentUpon>SimpleYes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoPlayerCtl.resx">
+      <DependentUpon>VideoPlayerCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZipView.resx">
+      <DependentUpon>ZipView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CDO">
+      <Guid>{CD000000-8B95-11D1-82DB-00C04FB1625D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Scripting">
+      <Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cfw.ico" />
+    <Content Include="inpout32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="inpoutx64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ptls1.png" />
+    <None Include="Resources\ptls2.png" />
+    <Content Include="x64\cvextern.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\msvcp120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\opencv_ffmpeg310_64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\pdfium.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\cvextern.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\msvcp120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\opencv_ffmpeg310.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\pdfium.dll" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\permanent.png" />
+    <Content Include="Resources\document.ico" />
+    <None Include="Resources\exe.png" />
+    <Content Include="Resources\Files-Exe-icon.png" />
+    <Content Include="Resources\Folder.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\restartAsAdministratorToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
