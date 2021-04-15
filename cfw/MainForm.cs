@@ -296,7 +296,9 @@ namespace cfw {
             if ( this.folderHistoryToolStripMenuItem.Checked ) {
                 string fldFile = System.Windows.Forms.Application.ExecutablePath + ".fld";
                 if ( File.Exists(fldFile) ) {
-                    this.m_Panel.folders = Panel.ReadFromBinaryFile<Panel.FolderHistory>(fldFile);
+                    try {
+                        this.m_Panel.folders = Panel.ReadFromBinaryFile<Panel.FolderHistory>(fldFile);
+                    } catch {; }
                 }
             }
 
