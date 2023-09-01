@@ -2280,6 +2280,16 @@ namespace GrzTools {
             return ret;
         }
 
+        // wait cursor helper
+        public class WaitCursor : IDisposable {
+            public WaitCursor() {
+                Application.UseWaitCursor = true;
+            }
+            public void Dispose() {
+                Application.UseWaitCursor = false;
+            }
+        }
+
         // find top level files and folders: MainForm.LoadListView
         public List<ListViewItem> FindFilesFolders(string sStartDir, out int maxLen2, out int maxLen3, string[] iconsInfo, ref ImageList imgLst, int iLimit = int.MaxValue, string filter = "*.*", bool bSlowDrive = false, bool bHighlightEmptyFolder = false) {
             //            Stopwatch sw = Stopwatch.StartNew();
@@ -2310,98 +2320,112 @@ namespace GrzTools {
 
             bool bFilter = (filter == "*.*") ? false : true;          // winsxs: RegEx and one loop for folders&files gains ca. 50ms compared to a second file loop and no RegEx
             Regex regex = FindFilesPatternToRegex.Convert(filter);
-
             dHandle = FindFirstFile(path, out dData);
             if ( dHandle != INVALID_HANDLE_VALUE ) {
-                do {
-                    if ( (dData.dwFileAttributes & FileAttributes.Directory) != 0 ) {
-                        //
-                        // ALL DIRECTORIES
-                        //
-                        if ( (dData.cFileName[0] == '.') && (dData.cFileName.Length < 3) ) {
-                            continue;
-                        }
-                        // folder name
-                        strarr[0] = @dData.cFileName;
-                        // datetime
-                        long ft = (((long)dData.ftCreationTime.dwHighDateTime) << 32) + dData.ftCreationTime.dwLowDateTime;
-                        DateTime dtft = DateTime.FromFileTime(ft);
-                        strarr[1] = dtft.ToString("dd.MM.yyyy HH:mm:ss");
-                        strarr[2] = "<SUBDIR>"; //bShowFolderSize ? folderSize(@Path.Combine(@sStartDir, strarr[0])).ToString("0,0", CultureInfo.InvariantCulture) : "<SUBDIR>";
-                        maxLen2 = Math.Max(maxLen2, strarr[2].Length);
-                        strarr[3] = "";
-                        strarr[7] = dtft.ToString("yyyyMMddHHmmssfffff"); // allows faster sort 
-                        // 20150124: really nice to know, whether a folder is empty or not, will end up with a different image index --> DOWNSIDE: slows down winsxs dramatically
-                        int imageNndx = 3;
-                        if ( bHighlightEmptyFolder ) {
-                            if ( IsDirEmptyEx(@sStartDir + "\\" + strarr[0] + "\\*", findData, findHandle) ) {           // costs @winsxs 800ms
-                                imageNndx = 0;
+
+                // wait cursor
+                using ( new WaitCursor() ) {
+
+                    do {
+                        if ( (dData.dwFileAttributes & FileAttributes.Directory) != 0 ) {
+                            //
+                            // ALL DIRECTORIES
+                            //
+                            if ( (dData.cFileName[0] == '.') && (dData.cFileName.Length < 3) ) {
+                                continue;
                             }
-                        }
-                        // finally add folder to return list
-                        //strarr[3] = sw.ElapsedMilliseconds.ToString();
-                        retList.Add(new ListViewItem(strarr, imageNndx));
-                    } else {
-                        //
-                        // ALL FILES
-                        //
-                        // RegEx is slightly faster than a 2nd loop of FindFirstFile / FindNextFile
-                        if ( bFilter && !regex.IsMatch(@dData.cFileName) ) {
-                            continue;
-                        }
-                        long ft = (((long)dData.ftLastWriteTime.dwHighDateTime) << 32) + dData.ftLastWriteTime.dwLowDateTime;
-                        DateTime dtft = DateTime.FromFileTime(ft);
-                        string ext = Path.GetExtension(@dData.cFileName).ToLower();
-                        strarr[0] = @dData.cFileName;
-                        strarr[1] = dtft.ToString("dd.MM.yyyy HH:mm:ss"); // https://msdn.microsoft.com/en-us/library/8kb3ddd4.aspx
-                        strarr[7] = dtft.ToString("yyyyMMddHHmmssfffff"); // allows faster sort for filetime 
-                        ulong fs = dData.nFileSizeHigh;
-                        fs <<= 0x20; // aka sizeof(uint) * 8;
-                        fs |= dData.nFileSizeLow;
-                        // 20160206: we memorize the string length - makes later setting of column width much easier
-                        strarr[2] = fs.ToString("0,0", CultureInfo.InvariantCulture);
-                        maxLen2 = Math.Max(maxLen2, strarr[2].Length);
-                        strarr[3] = GetMimeType(ext);
-                        maxLen3 = Math.Max(maxLen3, strarr[3].Length);
-                        // 20160221: get matching file icon
-                        int imageindex = 1;                                   // default icon index is simple file  
-                        if ( ext == ".dll" ) {                                // .dll has a homebrewn icon
-                            imageindex = 11;
+                            // folder name
+                            strarr[0] = @dData.cFileName;
+                            // datetime
+                            long ft = (((long)dData.ftCreationTime.dwHighDateTime) << 32) + dData.ftCreationTime.dwLowDateTime;
+                            DateTime dtft = DateTime.FromFileTime(ft);
+                            strarr[1] = dtft.ToString("dd.MM.yyyy HH:mm:ss");
+                            strarr[2] = "<SUBDIR>"; //bShowFolderSize ? folderSize(@Path.Combine(@sStartDir, strarr[0])).ToString("0,0", CultureInfo.InvariantCulture) : "<SUBDIR>";
+                            maxLen2 = Math.Max(maxLen2, strarr[2].Length);
+                            strarr[3] = "";
+                            strarr[7] = dtft.ToString("yyyyMMddHHmmssfffff"); // allows faster sort 
+                                                                              // 20150124: really nice to know, whether a folder is empty or not, will end up with a different image index --> DOWNSIDE: slows down winsxs dramatically
+                            int imageNndx = 3;
+                            if ( bHighlightEmptyFolder ) {
+                                if ( IsDirEmptyEx(@sStartDir + "\\" + strarr[0] + "\\*", findData, findHandle) ) {           // costs @winsxs 800ms
+                                    imageNndx = 0;
+                                }
+                            }
+                            // finally add folder to return list
+                            //strarr[3] = sw.ElapsedMilliseconds.ToString();
+                            retList.Add(new ListViewItem(strarr, imageNndx));
                         } else {
-                            if ( ext == ".exe" ) {                            // .exe has its own icon stored within executable
-                                if ( bSlowDrive ) {
-                                    imageindex = 12;
-                                } else {
-                                    //                                  supposed to give identical results as explorer: has hickups too 
-                                    Icon icon = Icon.ExtractAssociatedIcon(Path.Combine(@sStartDir, @dData.cFileName));
-                                    //                                  sometimes hickups up to 13s ?   
-                                    //                                    Icon icon = GrzTools.RegisteredFileType.ExtractIconFromFile(Path.Combine(@sStartDir, @dData.cFileName), false);
-                                    //                                  20160626: test --> hickups up to 10s 
-                                    //                                    Icon icon = GrzTools.RegisteredFileType.GetIcon(Path.Combine(@sStartDir, @dData.cFileName), false);
-                                    if ( icon != null ) {
-                                        imgLst.Images.Add(icon);
-                                        imageindex = imgLst.Images.Count - 1;
-                                    } else {
+                            //
+                            // ALL FILES
+                            //
+                            // RegEx is slightly faster than a 2nd loop of FindFirstFile / FindNextFile
+                            if ( bFilter && !regex.IsMatch(@dData.cFileName) ) {
+                                continue;
+                            }
+                            long ft = (((long)dData.ftLastWriteTime.dwHighDateTime) << 32) + dData.ftLastWriteTime.dwLowDateTime;
+                            DateTime dtft = DateTime.FromFileTime(ft);
+                            string ext = Path.GetExtension(@dData.cFileName).ToLower();
+                            strarr[0] = @dData.cFileName;
+                            strarr[1] = dtft.ToString("dd.MM.yyyy HH:mm:ss"); // https://msdn.microsoft.com/en-us/library/8kb3ddd4.aspx
+                            strarr[7] = dtft.ToString("yyyyMMddHHmmssfffff"); // allows faster sort for filetime 
+                            ulong fs = dData.nFileSizeHigh;
+                            fs <<= 0x20; // aka sizeof(uint) * 8;
+                            fs |= dData.nFileSizeLow;
+                            // 20160206: we memorize the string length - makes later setting of column width much easier
+                            strarr[2] = fs.ToString("0,0", CultureInfo.InvariantCulture);
+                            maxLen2 = Math.Max(maxLen2, strarr[2].Length);
+                            strarr[3] = GetMimeType(ext);
+                            maxLen3 = Math.Max(maxLen3, strarr[3].Length);
+                            // 20160221: get matching file icon
+                            int imageindex = 1;                                   // default icon index is simple file  
+                            if ( ext == ".dll" ) {                                // .dll has a homebrewn icon
+                                imageindex = 11;
+                            } else {
+                                if ( ext == ".exe" ) {                            // .exe has its own icon stored within executable
+                                    if ( bSlowDrive ) {
                                         imageindex = 12;
+                                    } else {
+                                        Icon icon = null;
+                                        try {
+                                            // supposed to give identical results as explorer: has hickups too 
+                                            icon = Icon.ExtractAssociatedIcon(Path.Combine(@sStartDir, @dData.cFileName));
+                                        } catch ( ArgumentException ) {
+                                            ;
+                                        } catch ( Exception ) {
+                                            ;
+                                        }
+                                        // sometimes hickups up to 13s ?   
+                                        //   Icon icon = GrzTools.RegisteredFileType.ExtractIconFromFile(Path.Combine(@sStartDir, @dData.cFileName), false);
+                                        // 20160626: test --> hickups up to 10s 
+                                        //   Icon icon = GrzTools.RegisteredFileType.GetIcon(Path.Combine(@sStartDir, @dData.cFileName), false);
+                                        if ( icon != null ) {
+                                            imgLst.Images.Add(icon);
+                                            imageindex = imgLst.Images.Count - 1;
+                                        } else {
+                                            imageindex = 12;
+                                        }
+                                    }
+                                } else {
+                                    int iconPos = Array.IndexOf(iconsInfo, ext);  // all other files' extensions are stored in iconsInfo, we simply look up the matching index 
+                                    if ( iconPos != -1 ) {
+                                        imageindex = iconPos + 13;
                                     }
                                 }
-                            } else {
-                                int iconPos = Array.IndexOf(iconsInfo, ext);  // all other files' extensions are stored in iconsInfo, we simply look up the matching index 
-                                if ( iconPos != -1 ) {
-                                    imageindex = iconPos + 13;
-                                }
                             }
+                            // finally add file to return list
+                            //strarr[3] = sw.ElapsedMilliseconds.ToString();
+                            retList.Add(new ListViewItem(strarr, imageindex));
                         }
-                        // finally add file to return list
-                        //strarr[3] = sw.ElapsedMilliseconds.ToString();
-                        retList.Add(new ListViewItem(strarr, imageindex));
-                    }
-                    // 20160417: stop iterating, if number is >iLimit - nobody knows how many files we could find
-                    if ( retList.Count > iLimit ) {
-                        break;
-                    }
-                } while ( FindNextFile(dHandle, out dData) );
+                        // 20160417: stop iterating, if number is >iLimit - nobody knows how many files we could find else
+                        if ( retList.Count > iLimit ) {
+                            break;
+                        }
+                    } while ( FindNextFile(dHandle, out dData) );
+
+                } // end of wait cursor
+                
                 FindClose(dHandle);
+
             }
 
             // enable redirection

@@ -90,7 +90,7 @@ namespace cfw {
         bool m_bCopyConMode = false;
         bool m_bDirChangeDetected = false;
         List<string> m_CmdFilesFoldersList = new List<string>();
-        readonly int m_iListViewLimit = 1500;
+        int m_iListViewLimit = 1500;
         SimpleList m_sl = null;                                     // a simple list of last visited folders 
         int m_iSplitterPosition = -1;                               // split container position: -1 indicates 50:50
         ShowShortcuts m_frm = null;                                 // a window showing shortcuts
@@ -2712,7 +2712,7 @@ namespace cfw {
         }
 
         // central function to load a listview: side --> left/right, folder --> path to load, selectItem --> text select matching item / * select a new item / ? keep current selection, filter --> file mask pattern
-        private int LoadListView(Side side, string folder, string selectItem, string filter = "*.*") {
+        async private Task<int> LoadListView(Side side, string folder, string selectItem, string filter = "*.*") {
             // if cfw was started from altf7dlg a valid filename is provided to select it
             if ( side == Side.left ) {
                 if ( this.m_startfile.Length > 0 ) {
@@ -2831,10 +2831,19 @@ namespace cfw {
                                             true/*di.DriveType != DriveType.Fixed*/,
                                             this.highlightEmptyFolderToolStripMenuItem.Checked);
             } else {
+
+                // éxpect huge lag in case of network drives
+                if ( NetworkMapping.MappedDriveResolver.isNetworkDrive(folder) ) {
+                    this.m_iListViewLimit = 101;
+                }
+
                 // Stopwatch sw = Stopwatch.StartNew();
                 // 20160424: retrieve just m_iListViewLimit items (winsxs slowdown), null returned is the indicator for a non accessible folder, only .Text == "[..]" is an empty folder
                 this.m_Panel.listType[(int)side] = ListType.FileSystem;
-                data = this.m_fff.FindFilesFolders(folder,
+
+                this.m_Panel.listview(side).Enabled = false;
+                await Task.Run(()=> {
+                    data = this.m_fff.FindFilesFolders(folder,
                                                out this.m_Panel.maxLen2[(int)side, this.m_Panel.GetActiveTabIndex(side)],
                                                out this.m_Panel.maxLen3[(int)side, this.m_Panel.GetActiveTabIndex(side)],
                                                this.m_ExtensionIconIndexArray,
@@ -2843,6 +2852,9 @@ namespace cfw {
                                                filter,
                                                true/*di.DriveType != DriveType.Fixed*/,
                                                this.highlightEmptyFolderToolStripMenuItem.Checked);
+                });
+                this.m_Panel.listview(side).Enabled = true;
+
                 // this.Text = DateTime.Now.ToString("HH:mm:ss ", CultureInfo.InvariantCulture) + sw.ElapsedMilliseconds.ToString() + "ms";
             }
 
@@ -3134,6 +3146,7 @@ namespace cfw {
                 this.m_bgRunWorkerCompleted = false;
                 bool bSlowDrive = (di == null) ? false : (di.DriveType != DriveType.Fixed);
                 string theFolder = this.m_Panel.button(side).Tag.ToString();
+                this.Cursor = Cursors.WaitCursor;
                 bg.RunWorkerAsync(new DoWorkFinishListViewArgs(side, null, selectItem, theFolder, 0, 0, this.m_ExtensionIconIndexArray, this.imageListLv, filter, bSlowDrive, this.highlightEmptyFolderToolStripMenuItem.Checked));
             } else {
                 // 20160626: get exe icons in a background thread, only in case of "no final full load" (it already runs in bgw including exe icon files)
@@ -3186,7 +3199,11 @@ namespace cfw {
                 Icon icon = null;
                 try {
                     icon = Icon.ExtractAssociatedIcon(Path.Combine(@args.path, args.lviArr[i].Text));
-                } catch ( Exception ) {; }
+                } catch ( ArgumentException ) {
+                    ;
+                } catch ( Exception ) {
+                    ; 
+                }
                 if ( icon != null ) {
                     // add icon to global list
                     args.imgLst.Images.Add(icon);
@@ -3400,6 +3417,12 @@ namespace cfw {
             // 1501 limit is finally processed
             this.m_bgRunWorkerCompleted = true;
 
+            // back to 1500 list count
+            if ( this.m_iListViewLimit == 101 ) {
+                this.m_iListViewLimit = 1500;
+            }
+
+            this.Cursor = Cursors.Default;
             //this.Text = DateTime.Now.ToString("HH:mm:ss ", CultureInfo.InvariantCulture) + m_sw.ElapsedMilliseconds.ToString() + "ms";
         }
 
@@ -3575,7 +3598,7 @@ namespace cfw {
             this.listViewLeftRight_DoubleClick(realSender, null);
         }
         // double click event on listview item: in short, it should "open" whatever is selected - meaning of "open" varies depending on the context 
-        private void listViewLeftRight_DoubleClick(object sender, EventArgs e) {
+        async private void listViewLeftRight_DoubleClick(object sender, EventArgs e) {
             // what side was clicked? 
             Side side = Side.left;
             if ( sender == this.m_listViewR ) {
@@ -3677,7 +3700,7 @@ namespace cfw {
                 // unconditionally reset the stored symlink folder
                 this.m_Panel.SetSymLink(side, this.m_Panel.GetActiveTabIndex(side), "");
                 // load listview
-                if ( this.LoadListView(side, selection, "") == -1 ) {
+                if ( await this.LoadListView(side, selection, "") == -1 ) {
                     return;
                 }
                 // memorize folder change
@@ -3700,7 +3723,7 @@ namespace cfw {
             return lnk.Target.Path;
         }
         // listview goes one level up
-        void ListviewOneLevelUp(Side side) {
+        async void ListviewOneLevelUp(Side side) {
             this.m_bRunSize = false;
             string folder = "";
             string selectItem = "";
@@ -3728,7 +3751,7 @@ namespace cfw {
             }
             // selectItem == "" we are in root
             if ( (selectItem != null) && (selectItem.Length > 0) ) {
-                if ( this.LoadListView(side, folder, selectItem) == -1 ) {
+                if ( await this.LoadListView(side, folder, selectItem) == -1 ) {
                     folder = this.DRVC;
                     this.LoadListView(side, folder, "");
                 }
