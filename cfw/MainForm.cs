@@ -2832,9 +2832,10 @@ namespace cfw {
                                             this.highlightEmptyFolderToolStripMenuItem.Checked);
             } else {
 
-                // éxpect huge lag in case of network drives
+                // expect huge lag in case of network drives
+                bool highlightEmpty = this.highlightEmptyFolderToolStripMenuItem.Checked;
                 if ( NetworkMapping.MappedDriveResolver.isNetworkDrive(folder) ) {
-                    this.m_iListViewLimit = 101;
+                    highlightEmpty = false;
                 }
 
                 // Stopwatch sw = Stopwatch.StartNew();
@@ -2851,7 +2852,7 @@ namespace cfw {
                                                this.m_iListViewLimit,
                                                filter,
                                                true/*di.DriveType != DriveType.Fixed*/,
-                                               this.highlightEmptyFolderToolStripMenuItem.Checked);
+                                               highlightEmpty);
                 });
                 this.m_Panel.listview(side).Enabled = true;
 
@@ -3416,11 +3417,6 @@ namespace cfw {
 
             // 1501 limit is finally processed
             this.m_bgRunWorkerCompleted = true;
-
-            // back to 1500 list count
-            if ( this.m_iListViewLimit == 101 ) {
-                this.m_iListViewLimit = 1500;
-            }
 
             this.Cursor = Cursors.Default;
             //this.Text = DateTime.Now.ToString("HH:mm:ss ", CultureInfo.InvariantCulture) + m_sw.ElapsedMilliseconds.ToString() + "ms";
