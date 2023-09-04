@@ -3195,7 +3195,7 @@ namespace cfw {
             GetExeIconArgs args = (GetExeIconArgs)e.Argument;
 
             // process input
-            for ( int i = 0; i < args.lviArr.Length; i++ ) {
+            Parallel.For(1, args.lviArr.Length, i => {
                 // default .exe file icon index
                 int imageindex = 11;
                 // get exe icon
@@ -3205,7 +3205,7 @@ namespace cfw {
                 } catch ( ArgumentException ) {
                     ;
                 } catch ( Exception ) {
-                    ; 
+                    ;
                 }
                 if ( icon != null ) {
                     // add icon to global list
@@ -3215,7 +3215,7 @@ namespace cfw {
                 }
                 // set icon index for listview item accordingly
                 args.lviArr[i].ImageIndex = imageindex;
-            }
+            });
 
             // hand over modified input data to bg_GetExeIconCompleted
             e.Result = new GetExeIconArgs(args.lviArr, args.path, args.imgLst, args.side);
@@ -3234,12 +3234,12 @@ namespace cfw {
             if ( lviFin == null ) {
                 return;
             }
-            for ( int i = 0; i < lviArr.Length; i++ ) {
+            Parallel.For(1, args.lviArr.Length, i => {
                 int ndx = Array.FindIndex(lviFin, o => o.Text == lviArr[i].Text);
                 if ( ndx != -1 ) {
                     lviFin[ndx].ImageIndex = args.lviArr[i].ImageIndex;
                 }
-            }
+            });
 
             // redraw listview
             this.m_Panel.listview(args.side).Invalidate();
