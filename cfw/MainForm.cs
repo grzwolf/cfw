@@ -3346,6 +3346,14 @@ namespace cfw {
                 }
             }
 
+            // selLst.Count > 1 overvotes selectitemtext: user might made a selection in the span between return from folder until bg_RunWorkerCompleted
+            if ( selLst.Count > 1 ) {
+                selectitemtext = "";
+            }
+
+            // get the first visible item 
+            int firstVisibleIndex = lv.TopItem.Index;
+
             // stop UI updates
             lv.BeginUpdate();
             lv.Enabled = false;
@@ -3401,12 +3409,9 @@ namespace cfw {
                 }
             }
 
-            // keep selected & focused item visible 
-            if ( lv.SelectedIndices.Count > 0 ) {
-                int ndx = lv.SelectedIndices[0];
-                lv.FocusedItem = this.m_Panel.listview(side).Items[ndx];
-                lv.EnsureVisible(ndx);
-            }
+            // always keep the previously first visible item visible even after sorting
+            lv.FocusedItem = this.m_Panel.listview(side).Items[firstVisibleIndex];
+            lv.EnsureVisible(firstVisibleIndex);
 
             // block resize events
             this.m_bBlockListViewActivity = false;
