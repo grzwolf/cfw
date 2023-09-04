@@ -10167,7 +10167,7 @@ namespace cfw {
             this.m_bRunSize = true;
             this.m_lstTasksRunSize = new List<Task>();
             ListViewItem[] arr = this.m_Panel.GetListViewArr(side);
-            for ( int i = 0; i < arr.Length; i++ ) {
+            Parallel.For(1, arr.Length, i => {
                 if ( (arr[i].ImageIndex == 3) || (arr[i].ImageIndex == 0) ) {
                     string path = Path.Combine(this.m_Panel.button(side).Tag.ToString(), arr[i].Text);
                     int ndx = i;                   // strange: I cannot forward i
@@ -10177,7 +10177,7 @@ namespace cfw {
                     t.Start();
                     this.m_lstTasksRunSize.Add(t);
                 }
-            }
+            });
             // we need to resort if current sort order is "by size == 2": then we start a timer, which checks for completion status of stored tasks
             if ( ((side == Side.left) ? this.m_Panel.LastSortedColumnLhs[this.m_Panel.GetActiveTabIndex(side)] : this.m_Panel.LastSortedColumnRhs[this.m_Panel.GetActiveTabIndex(side)]) == 2 ) {
                 this.Invoke(new Action(() => {
