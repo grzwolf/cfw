@@ -2816,6 +2816,14 @@ namespace cfw {
 
             List<ListViewItem> data = null;
 
+            // expect huge lag in case of network drives
+            bool networkDrive = false;
+            bool highlightEmpty = this.highlightEmptyFolderToolStripMenuItem.Checked;
+            if ( NetworkMapping.MappedDriveResolver.isNetworkDrive(folder) ) {
+                highlightEmpty = false;
+                networkDrive = true; ;
+            }
+
             if ( wpdIndex != -1 ) {
                 this.m_Panel.listType[(int)side] = ListType.WPDsrc;
                 data = this.FindFilesFoldersWPD(side,
@@ -2831,13 +2839,6 @@ namespace cfw {
                                             true/*di.DriveType != DriveType.Fixed*/,
                                             this.highlightEmptyFolderToolStripMenuItem.Checked);
             } else {
-
-                // expect huge lag in case of network drives
-                bool highlightEmpty = this.highlightEmptyFolderToolStripMenuItem.Checked;
-                if ( NetworkMapping.MappedDriveResolver.isNetworkDrive(folder) ) {
-                    highlightEmpty = false;
-                }
-
                 // Stopwatch sw = Stopwatch.StartNew();
                 // 20160424: retrieve just m_iListViewLimit items (winsxs slowdown), null returned is the indicator for a non accessible folder, only .Text == "[..]" is an empty folder
                 this.m_Panel.listType[(int)side] = ListType.FileSystem;
@@ -3136,9 +3137,11 @@ namespace cfw {
             this.timerRefeshComputerView.Start();
             //            }
 
-            // 20160424: a bgw shall reload ListView, but now all items (even incl. exe icons), if there are more items than m_iListViewLimit + 1 (+ 1 is "[..]")
+            // a bgw shall reload ListView, all items (even incl. exe icons, empty folders):
+            //    a) if there are more items than m_iListViewLimit + 1 (+ 1 is "[..]")
+            //    b) if network drive, which may lag when getting empty folder info
             this.m_bBlockListViewActivity = true;
-            if ( data.Count == this.m_iListViewLimit + 1 ) {
+            if ( data.Count == this.m_iListViewLimit + 1 || networkDrive ) {
                 BackgroundWorker bg = new BackgroundWorker();
                 bg.WorkerSupportsCancellation = true;
                 bg.WorkerReportsProgress = true;
@@ -3147,7 +3150,6 @@ namespace cfw {
                 this.m_bgRunWorkerCompleted = false;
                 bool bSlowDrive = (di == null) ? false : (di.DriveType != DriveType.Fixed);
                 string theFolder = this.m_Panel.button(side).Tag.ToString();
-                this.Cursor = Cursors.WaitCursor;
                 bg.RunWorkerAsync(new DoWorkFinishListViewArgs(side, null, selectItem, theFolder, 0, 0, this.m_ExtensionIconIndexArray, this.imageListLv, filter, bSlowDrive, this.highlightEmptyFolderToolStripMenuItem.Checked));
             } else {
                 // 20160626: get exe icons in a background thread, only in case of "no final full load" (it already runs in bgw including exe icon files)
@@ -3418,7 +3420,6 @@ namespace cfw {
             // 1501 limit is finally processed
             this.m_bgRunWorkerCompleted = true;
 
-            this.Cursor = Cursors.Default;
             //this.Text = DateTime.Now.ToString("HH:mm:ss ", CultureInfo.InvariantCulture) + m_sw.ElapsedMilliseconds.ToString() + "ms";
         }
 
