@@ -10148,12 +10148,15 @@ namespace cfw {
             if ( this.m_Panel == null ) {
                 return;
             }
-
             bool completed = true;
             for ( int i = 0; i < this.m_lstTasksRunSize.Count; i++ ) {
-                if ( !this.m_lstTasksRunSize[i].IsCompleted ) {
-                    completed = false;
-                    break;
+                if ( this.m_lstTasksRunSize[i] != null ) {
+                    if ( !this.m_lstTasksRunSize[i].IsCompleted ) {
+                        completed = false;
+                        break;
+                    }
+                } else {
+                    this.m_lstTasksRunSize.RemoveAt(i);
                 }
             }
             if ( completed ) {
