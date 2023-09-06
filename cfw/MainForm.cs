@@ -2800,11 +2800,10 @@ namespace cfw {
 
             // check whether folder exists
             int wpdIndex = -1;
-            if ( !GrzTools.FileTools.PathExists(folder, 1000) ) { // 20161016: !System.IO.Directory.Exists(folder) hangs for 20s on a not connected network drive 
+            if ( !GrzTools.FileTools.PathExists(folder, 2000) ) { // 20161016: !System.IO.Directory.Exists(folder) hangs for 20s on a not connected network drive 
                 wpdIndex = this.getIndexOfWPD(folder);
                 if ( wpdIndex == -1 ) {
-                    GrzTools.AutoMessageBox.Show("Destination path is not accessible:\n\n" + folder, "Error", 2000);
-                    return -1;
+                    GrzTools.AutoMessageBox.Show("Destination path might not be accessible:\n\n" + folder, "Error", 2000);
                 }
             }
 
