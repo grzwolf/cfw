@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cfw {
@@ -24,13 +25,36 @@ namespace cfw {
         // progress text could be set from calling thread
         public string LabelText {
             set {
-                this.labelText.Text = value;
+                string newText = value;
+                Size textSize = TextRenderer.MeasureText(value, this.Font);
+                if ( textSize.Width >= this.labelText.ClientSize.Width ) {
+                    int charCount = 10;
+                    string mid = " ... ";
+                    do {
+                        string lead = value.Substring(0, charCount);
+                        string trail = value.Substring(value.Length - charCount, charCount);
+                        newText = lead + mid + trail;
+                        textSize = TextRenderer.MeasureText(newText, this.Font);
+                        charCount++;
+                    } while ( textSize.Width < this.labelText.ClientSize.Width - 5 );
+                }
+                this.labelText.Text = newText;
             }
         }
         // progress Percent could be set from calling thread
         public string LabelPercent {
             set {
                 this.labelPct.Text = value;
+            }
+        }
+
+        // optional cancel button
+        public bool ShowCancelButton {
+            get {
+                return this.buttonCancel.Visible;
+            }
+            set {
+                this.buttonCancel.Visible = value;
             }
         }
 
@@ -91,6 +115,11 @@ namespace cfw {
                 // delete progress update frequency is faster than 5s
                 this.labelTimer.Text = "";
             }
+        }
+
+        // closing progress may cancel all running operations from caller
+        private void buttonCancel_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }

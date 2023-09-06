@@ -6661,6 +6661,7 @@ namespace cfw {
             sp.Text = "Delete Progress";
             sp.LabelPercent = "0%";
             sp.ProgressValue = 0;
+            sp.ShowCancelButton = true;
             sp.Show(this);
 
             // there is a need to distinguish between FS und WPD files/folders
@@ -6740,10 +6741,14 @@ namespace cfw {
             double pct = 100.0f / Math.Max(1, max);
             // execute deletion 
             foreach ( string entry in source ) {
+                // cancel op
+                if ( sp != null && !sp.Visible ) {
+                    break;
+                }
                 // single file delete result
                 bDeleteFailed = false;
                 // report progress
-                DoWorkDeleteArgs dwda = new DoWorkDeleteArgs(null, ro, "deleting " + entry, sp);
+                DoWorkDeleteArgs dwda = new DoWorkDeleteArgs(null, ro, entry, sp);
                 worker.ReportProgress((int)((i++) * pct), dwda);
                 // if for whatever reason [..] is selected, it will throw an exception
                 try {

@@ -32,7 +32,8 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelTimer = new System.Windows.Forms.Label();
-            this.labelText = new System.Windows.Forms.Label();
+            this.labelText = new System.Windows.Forms.TextBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPct
@@ -48,7 +49,7 @@
             // 
             this.progressBar1.Location = new System.Drawing.Point(13, 50);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(272, 23);
+            this.progressBar1.Size = new System.Drawing.Size(273, 23);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 1;
             // 
@@ -60,27 +61,38 @@
             // labelTimer
             // 
             this.labelTimer.AutoSize = true;
-            this.labelTimer.Location = new System.Drawing.Point(18, 109);
+            this.labelTimer.Location = new System.Drawing.Point(16, 109);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(10, 13);
+            this.labelTimer.Size = new System.Drawing.Size(31, 13);
             this.labelTimer.TabIndex = 2;
-            this.labelTimer.Text = ".";
+            this.labelTimer.Text = "........";
             // 
             // labelText
             // 
-            this.labelText.AutoSize = true;
-            this.labelText.Location = new System.Drawing.Point(18, 87);
+            this.labelText.Location = new System.Drawing.Point(13, 86);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(10, 13);
+            this.labelText.ReadOnly = true;
+            this.labelText.Size = new System.Drawing.Size(273, 20);
             this.labelText.TabIndex = 3;
-            this.labelText.Text = ".";
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(110, 173);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // SimpleProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 163);
+            this.ClientSize = new System.Drawing.Size(310, 263);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelText);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.progressBar1);
@@ -104,6 +116,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelTimer;
-        private System.Windows.Forms.Label labelText;
+        private System.Windows.Forms.TextBox labelText;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }
