@@ -107,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(274, 203);
+            this.ClientSize = new System.Drawing.Size(290, 229);
             this.ControlBox = false;
             this.Controls.Add(this.comboBoxFilter);
             this.Controls.Add(this.buttonReset);
