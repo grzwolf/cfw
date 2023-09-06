@@ -3469,7 +3469,7 @@ namespace cfw {
             this.buttonLeftRight_Click(this.buttonRight, null);
         }
         // click event handler for button (left, right) on top of the listviews
-        private void buttonLeftRight_Click(object sender, EventArgs e) {
+        async private void buttonLeftRight_Click(object sender, EventArgs e) {
             this.m_bRunSize = false;
             Side side = Side.left;
             if ( (sender == this.buttonRight) || (sender == this.tabControlRight) ) {
@@ -3505,7 +3505,7 @@ namespace cfw {
                         }
                     }
                     // go for it 
-                    this.LoadListView(side, path, "");
+                    await this.LoadListView(side, path, "");
                     this.m_Panel.folders.InsertTopFolder(side, this.m_Panel.GetActiveTabIndex(side), path);
                 }
             }
@@ -3632,7 +3632,7 @@ namespace cfw {
                 string linkpath = GetLnkTarget(fullpath);                // this is a win32 specific thing
                 if ( GrzTools.FileTools.PathExists(linkpath, 500) ) {    // we only treat a link to a directory
                     this.m_Panel.SetSymLink(side, this.m_Panel.GetActiveTabIndex(side), fullpath);                  // SymLink stores, where a lnk-directory was originally called from
-                    this.LoadListView(side, linkpath, "");
+                    await this.LoadListView(side, linkpath, "");
                     this.m_Panel.folders.InsertTopFolder(side, this.m_Panel.GetActiveTabIndex(side), linkpath);     // memorize folder change
                     return;
                 }
@@ -3650,7 +3650,7 @@ namespace cfw {
                 // unconditionally reset the stored symlink folder
                 this.m_Panel.SetSymLink(side, this.m_Panel.GetActiveTabIndex(side), "");
                 // load listview
-                this.LoadListView(side, folder, "");
+                await this .LoadListView(side, folder, "");
                 // memorize folder change
                 this.m_Panel.folders.InsertTopFolder(side, this.m_Panel.GetActiveTabIndex(side), folder);
                 return;
@@ -6344,7 +6344,7 @@ namespace cfw {
             }
         }
         // --> ... new folder
-        private void newFolderToolStripMenuItem_Click(object sender, EventArgs e) {
+        async private void newFolderToolStripMenuItem_Click(object sender, EventArgs e) {
             // Desktop & Shared Folders have drives in the ListView - they are not allowed to copy/move/delete/mkdir/rename
             ListViewItem[] lva = this.m_Panel.GetListViewArr(this.m_Panel.GetActiveSide());
             foreach ( ListViewItem lvi in lva ) {
@@ -6368,7 +6368,7 @@ namespace cfw {
                 this.m_WPD[wpdIndex].wpd.Connect();
                 this.m_WPD[wpdIndex].wpd.CreateFolder(dlg.Input, this.m_Panel.GetWPD(this.m_Panel.GetActiveSide(), this.m_Panel.GetActiveTabIndex(this.m_Panel.GetActiveSide())).currentFolderID);
                 this.m_WPD[wpdIndex].wpd.Disconnect();
-                this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), dlg.Input);
+                await this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), dlg.Input);
                 return;
             }
 
@@ -6391,10 +6391,10 @@ namespace cfw {
             this.m_bFileSystemChangeActionRight = false;
             // re load listviews manually
             if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {
-                this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "");
-                this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "");
+                await this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "");
+                await this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "");
             } else {
-                this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), "");
+                await this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), "");
             }
             // select the recently generated directory
             string text = Path.GetFileName(newFolder);
@@ -6408,7 +6408,7 @@ namespace cfw {
             } catch ( Exception ) {; }
         }
         // --> ... new file
-        private void fileToolStripMenuItem_DropDownOpened(object sender, EventArgs e) {
+        async private void fileToolStripMenuItem_DropDownOpened(object sender, EventArgs e) {
             // WPD entry point
             string currentFolder = this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString();
             int wpdIndex = this.getIndexOfWPD(currentFolder);
@@ -6437,10 +6437,10 @@ namespace cfw {
             this.m_bFileSystemChangeActionRight = false;
             // re load listviews manually
             if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {
-                this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "");
-                this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "");
+                await this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "");
+                await this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "");
             } else {
-                this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), "");
+                await this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), "");
             }
             // select the recently generated entry
             string fileNameOnly = Path.GetFileName(newFile);
@@ -6457,7 +6457,7 @@ namespace cfw {
         //
         // 20161016: rename a selection of files
         //
-        private void renameSelectionToolStripMenuItem_Click(object sender, EventArgs e) {
+        async private void renameSelectionToolStripMenuItem_Click(object sender, EventArgs e) {
             // sanity check skips no selection and [..] 
             ListView lv = this.m_Panel.listview(this.m_Panel.GetActiveSide());
             if ( lv.SelectedIndices.Count == 0 ) {
@@ -6510,14 +6510,14 @@ namespace cfw {
             }
 
             // list view reload
-            this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), "?");
+            await this.LoadListView(this.m_Panel.GetActiveSide(), this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString(), "?");
             // restore original selection (doesn't work thru LoadListview with '?', because the originally selected files do not exist anymore after renaming)
             foreach ( int i in lstSel ) {
                 lv.Items[i].Selected = true;
             }
             // take care about other listview
             if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {
-                this.LoadListView(this.m_Panel.GetPassiveSide(), this.m_Panel.button(this.m_Panel.GetPassiveSide()).Tag.ToString(), "?");
+                await this.LoadListView(this.m_Panel.GetPassiveSide(), this.m_Panel.button(this.m_Panel.GetPassiveSide()).Tag.ToString(), "?");
             }
             // restart fs watchers
             this.fileSystemWatcherLeft.EnableRaisingEvents = true;
@@ -6691,6 +6691,10 @@ namespace cfw {
                 bool success = true;
                 // execute deletion 
                 foreach ( string entry in source ) {
+                    // cancel op
+                    if ( sp != null && !sp.Visible ) {
+                        break;
+                    }
                     sp.LabelPercent = ((int)(i * pct)).ToString() + "%";
                     sp.ProgressValue += (int)pct;
                     string[] arr = entry.Split('?');
@@ -6704,7 +6708,9 @@ namespace cfw {
                 this.m_WPD[wpdIndex].wpd.Disconnect();
                 this.LoadListView(side, this.m_Panel.button(side).Tag.ToString(), utext);
                 // close progress
-                sp.Close();
+                if ( sp != null ) {
+                    sp.Close();
+                }
                 if ( !success ) {
                     MessageBox.Show("Not all items could be deleted", "Delete Error");
                 }
@@ -6743,6 +6749,7 @@ namespace cfw {
             foreach ( string entry in source ) {
                 // cancel op
                 if ( sp != null && !sp.Visible ) {
+                    returnText = "aborted";
                     break;
                 }
                 // single file delete result
@@ -6869,14 +6876,16 @@ namespace cfw {
             }
 
             // close progress
-            sp.Close();
+            if ( sp != null ) {
+                sp.Close();
+            }
 
             // show error msg
             if ( text == "error" ) {
                 MessageBox.Show("Not all files/folders could be deleted.", "Error");
             }
-            if ( text == "interrupted" ) {
-                GrzTools.AutoMessageBox.Show("Not all files/folders were deleted.", "User break", 2000);
+            if ( text == "aborted" ) {
+                MessageBox.Show("Not all files/folders were deleted.", "User aborted");
             }
         }
 
@@ -7400,7 +7409,7 @@ namespace cfw {
             }
             this.m_bFileSystemChangeActionRight = true;
         }
-        private void fileSystemWatcherLeft_Changed(object sender, FileSystemEventArgs e) {
+        async private void fileSystemWatcherLeft_Changed(object sender, FileSystemEventArgs e) {
             if ( this.m_bFileSystemChangeActionLeft ) {
                 // negative side effect --> it would overlook when the folder becomes empty OR if an empty folder gets filled 
                 //if ( !listsShowFolderSizesToolStripMenuItem.Checked && (e.ChangeType == WatcherChangeTypes.Changed) && System.IO.Directory.Exists(e.FullPath) ) {
@@ -7409,23 +7418,23 @@ namespace cfw {
                 //}
                 this.m_bFileSystemChangeActionLeft = false;                                                           // disable list refresh
                 string signal = this.m_shfoIsActive ? "*" : "?";                                                      // refresh list: "*" show new item VERSUS "?" keep current selection 
-                this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);
+                await this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);
                 if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {   // just in case
-                    this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), signal);
+                    await this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), signal);
                 }
                 this.timerFileSystemMonitorLeft.Start();                                                         // start timer to re enable list refresh
             }
         }
-        private void fileSystemWatcherRight_Changed(object sender, FileSystemEventArgs e) {
+        async private void fileSystemWatcherRight_Changed(object sender, FileSystemEventArgs e) {
             if ( this.m_bFileSystemChangeActionRight ) {
                 //if ( !listsShowFolderSizesToolStripMenuItem.Checked && (e.ChangeType == WatcherChangeTypes.Changed) && System.IO.Directory.Exists(e.FullPath) ) {
                 //    return;
                 //}
                 this.m_bFileSystemChangeActionRight = false;
                 string signal = this.m_shfoIsActive ? "*" : "?";
-                this.LoadListView(Side.right, (this.m_Panel.button(Side.right)).Tag.ToString(), signal);
+                await this.LoadListView(Side.right, (this.m_Panel.button(Side.right)).Tag.ToString(), signal);
                 if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {
-                    this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);
+                    await this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);
                 }
                 this.timerFileSystemMonitorRight.Start();
             }
@@ -7597,7 +7606,7 @@ namespace cfw {
         //
         int m_evtNdx = 0;
         double m_pctStep = 0;
-        private void fileAttributeToolStripMenuItem_Click(object sender, EventArgs e) {
+        async private void fileAttributeToolStripMenuItem_Click(object sender, EventArgs e) {
             // no selection
             if ( this.m_Panel.GetActiveView().SelectedIndices.Count == 0 ) {
                 return;
@@ -7724,10 +7733,10 @@ namespace cfw {
                     bError = true;
                 }
                 if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {
-                    this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "*");
-                    this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "*");
+                    await this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "*");
+                    await this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "*");
                 } else {
-                    this.LoadListView(side, this.m_Panel.button(side).Tag.ToString(), "*");
+                    await this.LoadListView(side, this.m_Panel.button(side).Tag.ToString(), "*");
                 }
                 if ( System.IO.Directory.Exists(this.fileSystemWatcherLeft.Path) && this.filesystemMonitoringToolStripMenuItem.Checked ) {
                     this.fileSystemWatcherLeft.EnableRaisingEvents = true;
@@ -8280,26 +8289,26 @@ namespace cfw {
 
         // media change has to be delayed, otherwise I get an error
         string m_sDriveToComputer = "";
-        private void timerMediaChangeDelayedRefresh_Tick(object sender, EventArgs e) {
+        async private void timerMediaChangeDelayedRefresh_Tick(object sender, EventArgs e) {
             // stop timer
             this.timerMediaChangeDelayedRefresh.Stop();
 
             // update "Computer" view
             if ( this.m_Panel.button(Side.left).Text == "Computer" ) {
-                this.LoadListView(Side.left, "Computer", "");
+                await this.LoadListView(Side.left, "Computer", "");
             }
             if ( this.m_Panel.button(Side.right).Text == "Computer" ) {
-                this.LoadListView(Side.right, "Computer", "");
+                await this.LoadListView(Side.right, "Computer", "");
             }
 
             // switch to "Computer" view
             if ( this.m_sDriveToComputer.Length > 0 ) {
                 if ( this.m_Panel.button(Side.left).Text.StartsWith(this.m_sDriveToComputer) ) {
-                    this.LoadListView(Side.left, "Computer", "");
+                    await this.LoadListView(Side.left, "Computer", "");
                     this.m_Panel.folders.InsertTopFolder(Side.left, this.m_Panel.GetActiveTabIndex(Side.left), "Computer");
                 }
                 if ( this.m_Panel.button(Side.right).Text.StartsWith(this.m_sDriveToComputer) ) {
-                    this.LoadListView(Side.right, "Computer", "");
+                    await this.LoadListView(Side.right, "Computer", "");
                     this.m_Panel.folders.InsertTopFolder(Side.right, this.m_Panel.GetActiveTabIndex(Side.right), "Computer");
                 }
             }
@@ -9933,7 +9942,7 @@ namespace cfw {
             }
         }
         // convert a sequence of images to video
-        private void imageSequenceToToolStripMenuItem_Click(object sender, EventArgs e) {
+        async private void imageSequenceToToolStripMenuItem_Click(object sender, EventArgs e) {
             // WPD
             if ( this.m_Panel.listType[(int)this.m_Panel.GetActiveSide()] != ListType.FileSystem ) {
                 MessageBox.Show("Not yet implemented for WPD.", "Sorry");
@@ -10049,9 +10058,9 @@ namespace cfw {
 
             // re load list
             string lookForFile = Path.GetFileName(finalOutFile);
-            this.LoadListView(side, this.m_Panel.button(side).Tag.ToString(), lookForFile);
+            await this.LoadListView(side, this.m_Panel.button(side).Tag.ToString(), lookForFile);
             if ( this.m_Panel.button(side).Tag.ToString() == this.m_Panel.button(this.m_Panel.GetPassiveSide()).Tag.ToString() ) {
-                this.LoadListView(this.m_Panel.GetPassiveSide(), this.m_Panel.button(this.m_Panel.GetPassiveSide()).Tag.ToString(), lookForFile);
+                await this.LoadListView(this.m_Panel.GetPassiveSide(), this.m_Panel.button(this.m_Panel.GetPassiveSide()).Tag.ToString(), lookForFile);
             }
 
             // 1501 limit not yet processed
