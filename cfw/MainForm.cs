@@ -3376,7 +3376,7 @@ namespace cfw {
 
             // selection in ListView
             lv.SelectedIndices.Clear();
-            if ( selectitemtext.Length != 0 ) {
+            if ( selectitemtext.Length != 0  && selectitemtext != "?" ) {
                 // if returned from a subfolder, "selectitemtext" has a meaningful value
                 ListViewItem lvi = this.m_Panel.FindListViewArrItemWithText(side, selectitemtext, -1);
                 if ( lvi != null ) {
@@ -7567,14 +7567,14 @@ namespace cfw {
             if ( this.m_Panel.GetActiveSide() == Side.left ) {
                 // reload left
                 if ( this.m_Panel.button(Side.left).Tag.ToString() != "Computer" ) {
-                    this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "");
+                    this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), "?");
                 } else {
                     this.timerRefeshComputerView_Tick(null, null);
                 }
             }
             if ( this.m_Panel.GetActiveSide() == Side.right ) {
                 // sync left side according to right path
-                this.LoadListView(Side.left, this.m_Panel.button(Side.right).Tag.ToString(), "");
+                this.LoadListView(Side.left, this.m_Panel.button(Side.right).Tag.ToString(), "?");
                 this.m_Panel.folders.InsertTopFolder(Side.left, this.m_Panel.GetActiveTabIndex(Side.left), this.m_Panel.button(Side.right).Tag.ToString());
                 this.m_Panel.RenderListviewLabel(Side.left);
             }
@@ -7582,14 +7582,14 @@ namespace cfw {
         private void refreshRightToolStripMenuItem_Click(object sender, EventArgs e) {
             if ( this.m_Panel.GetActiveSide() == Side.left ) {
                 // sync right side according to left path 
-                this.LoadListView(Side.right, this.m_Panel.button(Side.left).Tag.ToString(), "");
+                this.LoadListView(Side.right, this.m_Panel.button(Side.left).Tag.ToString(), "?");
                 this.m_Panel.folders.InsertTopFolder(Side.right, this.m_Panel.GetActiveTabIndex(Side.right), this.m_Panel.button(Side.left).Tag.ToString());
                 this.m_Panel.RenderListviewLabel(Side.right);
             }
             if ( this.m_Panel.GetActiveSide() == Side.right ) {
                 // reload right
                 if ( this.m_Panel.button(Side.right).Tag.ToString() != "Computer" ) {
-                    this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "");
+                    this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), "?");
                 } else {
                     this.timerRefeshComputerView_Tick(null, null);
                 }
