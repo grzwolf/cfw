@@ -2818,14 +2818,17 @@ namespace cfw {
             // expect huge lag in case of network drives
             bool networkDrive = false;
             bool highlightEmpty = this.highlightEmptyFolderToolStripMenuItem.Checked;
-            if ( NetworkMapping.MappedDriveResolver.isNetworkDrive(folder) ) {
-                highlightEmpty = false;
-                networkDrive = true; ;
+            if ( wpdIndex == -1 ) {
+                if ( NetworkMapping.MappedDriveResolver.isNetworkDrive(folder) ) {
+                    highlightEmpty = false;
+                    networkDrive = true; ;
+                }
             }
 
             if ( wpdIndex != -1 ) {
                 this.m_Panel.listType[(int)side] = ListType.WPDsrc;
-                data = this.FindFilesFoldersWPD(side,
+                await Task.Run(() => {
+                    data = this.FindFilesFoldersWPD(side,
                                             this.m_Panel.GetActiveTabIndex(side),
                                             wpdIndex,
                                             folder,
@@ -2837,6 +2840,7 @@ namespace cfw {
                                             filter,
                                             true/*di.DriveType != DriveType.Fixed*/,
                                             this.highlightEmptyFolderToolStripMenuItem.Checked);
+                });
             } else {
                 // Stopwatch sw = Stopwatch.StartNew();
                 // 20160424: retrieve just m_iListViewLimit items (winsxs slowdown), null returned is the indicator for a non accessible folder, only .Text == "[..]" is an empty folder
