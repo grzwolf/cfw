@@ -2738,27 +2738,30 @@ namespace cfw {
                 if ( (folder == "Computer") || (folder == "My Computer") ) {
                     // the 3rd param sizeinfo == 'false' skips size, it's deferred till refresh and UI feels more responsive | 4th param skips network drives on first show because GetDrives may hang on not available netdrives
                     this.LoadDrivesList(side, selectItem, false, true);
-                    if ( side == this.m_Panel.GetActiveSide() ) {
-                        this.RenderCommandline("Computer");
-                    }
-                    // no FS watchdog in case of Computer View
-                    if ( side == Side.left ) {
-                        if ( this.m_driveDetector[0] != null ) {
-                            this.m_driveDetector[0].DisableQueryRemove();
-                            this.m_driveDetector[0].Dispose();
-                            this.m_driveDetector[0] = null;
+                    this.Invoke(new Action(() => {
+                        if ( side == this.m_Panel.GetActiveSide() ) {
+                            this.RenderCommandline("Computer");
                         }
+                        // no FS watchdog in case of Computer View
+                        if ( side == Side.left ) {
+                            if ( this.m_driveDetector[0] != null ) {
+                                this.m_driveDetector[0].DisableQueryRemove();
+                                this.m_driveDetector[0].Dispose();
+                                this.m_driveDetector[0] = null;
+                            }
                         this.fileSystemWatcherLeft.EnableRaisingEvents = false;
-                    }
-                    if ( side == Side.right ) {
-                        if ( this.m_driveDetector[1] != null ) {
-                            this.m_driveDetector[1].DisableQueryRemove();
-                            this.m_driveDetector[1].Dispose();
-                            this.m_driveDetector[1] = null;
                         }
-                        this.fileSystemWatcherRight.EnableRaisingEvents = false;
-                    }
-                    this.m_Panel.listType[(int)side] = ListType.FileSystem;
+                        if ( side == Side.right ) {
+                            if ( this.m_driveDetector[1] != null ) {
+                                this.m_driveDetector[1].DisableQueryRemove();
+                                this.m_driveDetector[1].Dispose();
+                                this.m_driveDetector[1] = null;
+                            }
+                            this.fileSystemWatcherRight.EnableRaisingEvents = false;
+                        }
+                        this.m_Panel.listType[(int)side] = ListType.FileSystem;
+                        this.m_Panel.SetActiveSide(this.m_Panel.GetActiveSide());
+                    }));
                     return 0;
                 }
                 // Did we select "Shared Folders"
@@ -2767,6 +2770,7 @@ namespace cfw {
                     if ( side == this.m_Panel.GetActiveSide() ) {
                         this.RenderCommandline("Shared Folders");
                     }
+                    this.m_Panel.SetActiveSide(this.m_Panel.GetActiveSide());
                     return 0;
                 }
                 // Did we select "Network"
@@ -2878,6 +2882,7 @@ namespace cfw {
                 if ( data == null ) {
                     GrzTools.AutoMessageBox.Show("Destination is not accessible:\n\n" + folder, "Error", 2000);
                     this.m_Panel.listType[(int)side] = ListType.Error;
+                    this.m_Panel.SetActiveSide(this.m_Panel.GetActiveSide());
                     return -1;
                 }
             }
@@ -2951,19 +2956,28 @@ namespace cfw {
             Cursor.Current = Cursors.WaitCursor;                                              // now we begin being busy
             this.m_Panel.button(side).BackColor = SystemColors.Control;                            // set button text color to normal
             this.m_Panel.button(side).Tag = folder;                                                // set button Tag according to folder  
-            this.m_Panel.SetListPath(side, this.m_Panel.GetActiveTabIndex(side), folder, false);
+            bool pathOk = this.m_Panel.SetListPath(side, this.m_Panel.GetActiveTabIndex(side), folder, false);
             this.m_Panel.SetButtonText(side, folder, filter);                                      // set button Text according to folder 
             this.setTabControlText(side, this.m_Panel.GetActiveTabIndex(side), folder);
-            if ( side == Side.left ) {
-                try {
-                    if ( di != null ) {
-                        if ( di.DriveType == DriveType.Removable ) {                          // removable devices need a drive detector monitoring the query remove question from OS
-                            if ( this.m_driveDetector[0] != null ) {                               // it's crucial to unregister/dispose DriveDetector before attaching a new detector to a drive
-                                this.m_driveDetector[0].DisableQueryRemove();
-                                this.m_driveDetector[0].Dispose();
-                                this.m_driveDetector[0] = null;
+            if ( pathOk ) {
+                if ( side == Side.left ) {
+                    try {
+                        if ( di != null ) {
+                            if ( di.DriveType == DriveType.Removable ) {                          // removable devices need a drive detector monitoring the query remove question from OS
+                                if ( this.m_driveDetector[0] != null ) {                               // it's crucial to unregister/dispose DriveDetector before attaching a new detector to a drive
+                                    this.m_driveDetector[0].DisableQueryRemove();
+                                    this.m_driveDetector[0].Dispose();
+                                    this.m_driveDetector[0] = null;
+                                }
+                                this.m_driveDetector[0] = new GrzTools.DriveDetector(this, di.RootDirectory.FullName);
+                            } else {
+                                if ( this.m_driveDetector[0] != null ) {
+                                    this.m_driveDetector[0].DisableQueryRemove();
+                                    this.m_driveDetector[0].Dispose();
+                                    this.m_driveDetector[0] = null;
+                                }
                             }
-                            this.m_driveDetector[0] = new GrzTools.DriveDetector(this, di.RootDirectory.FullName);
+
                         } else {
                             if ( this.m_driveDetector[0] != null ) {
                                 this.m_driveDetector[0].DisableQueryRemove();
@@ -2971,32 +2985,32 @@ namespace cfw {
                                 this.m_driveDetector[0] = null;
                             }
                         }
-
-                    } else {
-                        if ( this.m_driveDetector[0] != null ) {
-                            this.m_driveDetector[0].DisableQueryRemove();
-                            this.m_driveDetector[0].Dispose();
-                            this.m_driveDetector[0] = null;
+                        this.fileSystemWatcherLeft.Path = this.m_Panel.button(Side.left).Tag.ToString(); // FS watcher monitors file/folder changes to any folder connected here
+                        this.fileSystemWatcherLeft.Filter = "*";
+                        this.m_Panel.InitFileSystemWatcher(Side.left, this.fileSystemWatcherLeft);
+                        if ( System.IO.Directory.Exists(this.fileSystemWatcherLeft.Path) ) {
+                            this.fileSystemWatcherLeft.EnableRaisingEvents = true;
                         }
-                    }
-                    this.fileSystemWatcherLeft.Path = this.m_Panel.button(Side.left).Tag.ToString(); // FS watcher monitors file/folder changes to any folder connected here
-                    this.fileSystemWatcherLeft.Filter = "*";
-                    this.m_Panel.InitFileSystemWatcher(Side.left, this.fileSystemWatcherLeft);
-                    if ( System.IO.Directory.Exists(this.fileSystemWatcherLeft.Path) ) {
-                        this.fileSystemWatcherLeft.EnableRaisingEvents = true;
-                    }
-                } catch ( Exception ) {; }
-            }
-            if ( side == Side.right ) {
-                try {
-                    if ( di != null ) {
-                        if ( di.DriveType == DriveType.Removable ) {
-                            if ( this.m_driveDetector[1] != null ) {
-                                this.m_driveDetector[1].DisableQueryRemove();
-                                this.m_driveDetector[1].Dispose();
-                                this.m_driveDetector[1] = null;
+                    } catch ( Exception ) {; }
+                }
+                if ( side == Side.right ) {
+                    try {
+                        if ( di != null ) {
+                            if ( di.DriveType == DriveType.Removable ) {
+                                if ( this.m_driveDetector[1] != null ) {
+                                    this.m_driveDetector[1].DisableQueryRemove();
+                                    this.m_driveDetector[1].Dispose();
+                                    this.m_driveDetector[1] = null;
+                                }
+                                this.m_driveDetector[1] = new GrzTools.DriveDetector(this, di.RootDirectory.FullName);
+                            } else {
+                                if ( this.m_driveDetector[1] != null ) {
+                                    this.m_driveDetector[1].DisableQueryRemove();
+                                    this.m_driveDetector[1].Dispose();
+                                    this.m_driveDetector[1] = null;
+                                }
                             }
-                            this.m_driveDetector[1] = new GrzTools.DriveDetector(this, di.RootDirectory.FullName);
+
                         } else {
                             if ( this.m_driveDetector[1] != null ) {
                                 this.m_driveDetector[1].DisableQueryRemove();
@@ -3004,21 +3018,14 @@ namespace cfw {
                                 this.m_driveDetector[1] = null;
                             }
                         }
-
-                    } else {
-                        if ( this.m_driveDetector[1] != null ) {
-                            this.m_driveDetector[1].DisableQueryRemove();
-                            this.m_driveDetector[1].Dispose();
-                            this.m_driveDetector[1] = null;
+                        this.fileSystemWatcherRight.Path = this.m_Panel.button(Side.right).Tag.ToString();
+                        this.fileSystemWatcherRight.Filter = "*";
+                        this.m_Panel.InitFileSystemWatcher(Side.right, this.fileSystemWatcherRight);
+                        if ( System.IO.Directory.Exists(this.fileSystemWatcherRight.Path) && this.filesystemMonitoringToolStripMenuItem.Checked ) {
+                            this.fileSystemWatcherRight.EnableRaisingEvents = true;
                         }
-                    }
-                    this.fileSystemWatcherRight.Path = this.m_Panel.button(Side.right).Tag.ToString();
-                    this.fileSystemWatcherRight.Filter = "*";
-                    this.m_Panel.InitFileSystemWatcher(Side.right, this.fileSystemWatcherRight);
-                    if ( System.IO.Directory.Exists(this.fileSystemWatcherRight.Path) && this.filesystemMonitoringToolStripMenuItem.Checked ) {
-                        this.fileSystemWatcherRight.EnableRaisingEvents = true;
-                    }
-                } catch ( Exception ) {; }
+                    } catch ( Exception ) {; }
+                }
             }
 
             // the listview we deal with
@@ -3175,6 +3182,7 @@ namespace cfw {
 
             // ok
             int returnValue = 0;
+            this.m_Panel.SetActiveSide(this.m_Panel.GetActiveSide());
             return returnValue;
         }
         //
@@ -3294,26 +3302,33 @@ namespace cfw {
             bool bHighlightEmptyFolder = ((DoWorkFinishListViewArgs)e.Argument).bHighlightEmptyFolders;
 
             // reload listview - now for all items, but leave directories' empty status out
-            lviarr = this.m_fff.FindFilesFolders(path,
-                                             out len2,
-                                             out len3,
-                                             extIconArr,
-                                             ref il,
-                                             int.MaxValue,
-                                             filter,
-                                             slowdrive,
-                                             false).ToArray();
+            try {
+                lviarr = this.m_fff.FindFilesFolders(path,
+                                                 out len2,
+                                                 out len3,
+                                                 extIconArr,
+                                                 ref il,
+                                                 int.MaxValue,
+                                                 filter,
+                                                 slowdrive,
+                                                 false).ToArray();
+            } catch ( Exception ) {
+                List<ListViewItem> retList = new List<ListViewItem>();
+                string[] strarr = new string[8] { "[..]", " ", "<PARENT>", " ", " ", " ", " ", "0" };
+                retList.Add(new ListViewItem(strarr, 2));
+                lviarr = retList.ToArray();
+            }
 
             // if enabled, folder view looks better
             if ( bHighlightEmptyFolder ) {
-                GrzTools.FastFileFind.WIN32_FIND_DATA fdata = new GrzTools.FastFileFind.WIN32_FIND_DATA();
-                //GrzTools.FastFileFind.Win32FindData winFindData = new GrzTools.FastFileFind.Win32FindData();
+//                GrzTools.FastFileFind.WIN32_FIND_DATA fdata = new GrzTools.FastFileFind.WIN32_FIND_DATA();
+                GrzTools.FastFileFind.Win32FindData winFindData = new GrzTools.FastFileFind.Win32FindData();
                 IntPtr findHandle = IntPtr.Zero;
-                // 20160501: Parallel.For(..) of IsDirEmpty (aka FindFirst/FindNext) to obtain empty status of directories, gains up to 1000ms on winsxs of gerw206 compared to serial op 
+                // 20160501: Parallel.For(..) of IsDirEmpty (aka FindFirst/FindNext) to obtain empty status of directories, gains some time compared to serial op 
                 Parallel.For(1, lviarr.Length, i => {
                     if ( lviarr[i].ImageIndex == 3 ) {
-                        //if ( GrzTools.FastFileFind.IsDirEmptyEx(Path.Combine(path, lviarr[i].SubItems[0].Text + "\\*"), winFindData, findHandle) ) {
-                        if ( GrzTools.FastFileFind.IsDirEmpty(Path.Combine(path, lviarr[i].SubItems[0].Text + "\\*"), fdata, findHandle) ) {
+                        if ( GrzTools.FastFileFind.IsDirEmptyEx(Path.Combine(path, lviarr[i].SubItems[0].Text + "\\*"), winFindData, findHandle) ) {
+//                        if ( GrzTools.FastFileFind.IsDirEmpty(Path.Combine(path, lviarr[i].SubItems[0].Text + "\\*"), fdata, findHandle) ) {
                             lviarr[i].ImageIndex = 0;
                         }
                     }
@@ -3375,41 +3390,46 @@ namespace cfw {
             lv.EndUpdate();
 
             // selection in ListView
-            lv.SelectedIndices.Clear();
-            if ( selectitemtext.Length != 0  && selectitemtext != "?" ) {
-                // if returned from a subfolder, "selectitemtext" has a meaningful value
-                ListViewItem lvi = this.m_Panel.FindListViewArrItemWithText(side, selectitemtext, -1);
-                if ( lvi != null ) {
-                    // subfolder was found
-                    lv.Items[(int)lvi.Tag].Focused = true;  // important for keyup/keydown messages 
-                    lv.Items[(int)lvi.Tag].Selected = true;
-                    int selNdx = (int)lvi.Tag + 1;
-                    if ( selNdx >= lv.Items.Count ) {
-                        selNdx = lv.Items.Count - 1;
+            try {
+                lv.SelectedIndices.Clear();
+                if ( selectitemtext.Length != 0 && selectitemtext != "?" ) {
+                    // if returned from a subfolder, "selectitemtext" has a meaningful value
+                    ListViewItem lvi = this.m_Panel.FindListViewArrItemWithText(side, selectitemtext, -1);
+                    if ( lvi != null ) {
+                        // subfolder was found
+                        lv.Items[(int)lvi.Tag].Focused = true;  // important for keyup/keydown messages 
+                        lv.Items[(int)lvi.Tag].Selected = true;
+                        int selNdx = (int)lvi.Tag + 1;
+                        if ( selNdx >= lv.Items.Count ) {
+                            selNdx = lv.Items.Count - 1;
+                        }
+                        lv.EnsureVisible(selNdx);
+                    } else {
+                        if ( lv.Items.Count > 0 ) {
+                            lv.SelectedIndices.Add(0);
+                        }
                     }
-                    lv.EnsureVisible(selNdx);
                 } else {
                     if ( lv.Items.Count > 0 ) {
-                        lv.SelectedIndices.Add(0);
-                    }
-                }
-            } else {
-                if ( lv.Items.Count > 0 ) {
-                    if ( selLst.Count > 0 ) {
-                        // there was some selection before the reload was done
-                        if ( selLst.Count == this.m_iListViewLimit ) {
-                            // TRICK: that is a signal to select all (the op pushed + to select all items) --> function param 3 means unconditionally "select all"
-                            this.SelectListViewItems(3);
-                        } else {
-                            // restore the selection before the reload was done
-                            foreach ( int ndx in selLst ) {
-                                lv.SelectedIndices.Add(ndx);
+                        if ( selLst.Count > 0 ) {
+                            // there was some selection before the reload was done
+                            if ( selLst.Count == this.m_iListViewLimit ) {
+                                // TRICK: that is a signal to select all (the op pushed + to select all items) --> function param 3 means unconditionally "select all"
+                                this.SelectListViewItems(3);
+                            } else {
+                                // restore the selection before the reload was done
+                                foreach ( int ndx in selLst ) {
+                                    lv.SelectedIndices.Add(ndx);
+                                }
                             }
+                        } else {
+                            lv.SelectedIndices.Add(0);
                         }
-                    } else {
-                        lv.SelectedIndices.Add(0);
                     }
                 }
+            } catch ( Exception exc ) {
+                this.m_bgRunWorkerCompleted = true;
+                return;
             }
 
             // always keep the previously first visible item visible even after sorting
@@ -3432,7 +3452,7 @@ namespace cfw {
         }
 
         // the buttons (left/right) have their own context menu, this method jumps directly to "Computer"
-        private void computerToolStripMenuItem_Click(object sender, EventArgs e) {
+        async private void computerToolStripMenuItem_Click(object sender, EventArgs e) {
             // determine which button (left or right) is the owner of the ToolStripItem
             Control ctl = null;
             ToolStripItem item = (sender as ToolStripItem);
@@ -3448,7 +3468,7 @@ namespace cfw {
                 side = Side.right;
             }
             // load Computer view
-            this.LoadListView(side, "Computer", "");
+            await this.LoadListView(side, "Computer", "");
             this.m_Panel.folders.InsertTopFolder(side, this.m_Panel.GetActiveTabIndex(side), "Computer");
         }
         // the buttons (left/right) have their own context menu: this method select a folder, which is later shown in listview - Alt-F1 / Alt-F2 / right click popup menu are calling the buttons left/right 
@@ -3503,7 +3523,7 @@ namespace cfw {
                     if ( path.StartsWith("%") && path.EndsWith("%") ) {
                         string envvar = path.ToLower().Substring(1, path.Length - 2);
                         path = Environment.GetEnvironmentVariable(envvar);
-                        if ( !System.IO.Directory.Exists(path) ) {
+                        if ( !GrzTools.FileTools.PathExists(@path, 500, this.m_WPD) ) {
                             return;
                         }
                     }
@@ -7390,25 +7410,25 @@ namespace cfw {
         // Frequent file system changes are therefore ignored, until timer tick re enables the list refresh.
         // Whenever the timer expires, we need to make a final cleanup. During the last timer interval, we might have ignored a couple of file system changes. 
         */
-        private void timerFileSystemMonitorLeft_Tick(object sender, EventArgs e) {
+        async private void timerFileSystemMonitorLeft_Tick(object sender, EventArgs e) {
             this.timerFileSystemMonitorLeft.Stop();                                                                 // stop timer
 
             string signal = this.m_shfoIsActive ? "*" : "?";                                                             // "*" mark new item ... vs. ... "?" keep current selection 
             this.m_shfoIsActive = false;
-            this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);                              // this is the final cleanup, after there was no file system change event anymore
+            await this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);                              // this is the final cleanup, after there was no file system change event anymore
             if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {
-                this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), signal);
+                await this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), signal);
             }
 
             this.m_bFileSystemChangeActionLeft = true;                                                                   // enable list refresh
         }
-        private void timerFileSystemMonitorRight_Tick(object sender, EventArgs e) {
+        async private void timerFileSystemMonitorRight_Tick(object sender, EventArgs e) {
             this.timerFileSystemMonitorRight.Stop();
             string signal = this.m_shfoIsActive ? "*" : "?";
             this.m_shfoIsActive = false;
-            this.LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), signal);
+            await this .LoadListView(Side.right, this.m_Panel.button(Side.right).Tag.ToString(), signal);
             if ( this.m_Panel.button(Side.left).Tag.ToString() == this.m_Panel.button(Side.right).Tag.ToString() ) {
-                this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);
+                await this.LoadListView(Side.left, this.m_Panel.button(Side.left).Tag.ToString(), signal);
             }
             this.m_bFileSystemChangeActionRight = true;
         }
@@ -10115,6 +10135,14 @@ namespace cfw {
             this.imageSequenceToToolStripMenuItem.DropDown.AutoClose = true;
         }
 
+        // update listview headers
+        private void timerUpdateHeaders_Tick(object sender, EventArgs e) {
+            if ( this.m_Panel == null ) {
+                return;
+            }
+            this.m_Panel.SetActiveSide(this.m_Panel.GetActiveSide());
+        }
+
         // hide/show immediate folder sizes
         void removeFolderSizes(Side side) {
             string text = "<SUBDIR>";
@@ -10130,14 +10158,20 @@ namespace cfw {
             }
             this.listViewFitColumns(side);
         }
-        void updateFolderSize(ListViewItem item, int itemNdx, string oriText, string path, Side side) {
+        async void updateFolderSize(ListViewItem item, int itemNdx, string oriText, string path, Side side) {
             if ( !this.m_bRunSize ) {
                 return;
             }
-            // get the space consumption of a folder incl. its subfolders
-            long size = 0;
-            GrzTools.FastFileFind.FileSizes(ref this.m_bRunSize, path, ref size);
             try {
+                // get the space consumption of a folder incl. its subfolders
+                DirectoryInfo dirInfo = new DirectoryInfo(@path);
+                long size = 0;
+                try {
+                    size = await Task.Run(() => dirInfo.EnumerateFiles("*", System.IO.SearchOption.AllDirectories).Sum(file => file.Length));
+                } catch ( Exception ex ) {
+                    size = -1;
+                }
+
                 // since the call comes from another thread, we need to Invoke
                 this.Invoke(new Action(() => {
                     if ( item.Text == oriText ) {
@@ -10159,50 +10193,33 @@ namespace cfw {
                         this.m_bRunSize = false;
                     }
                 }));
-            } catch {; }
-        }
-        private void timerRunSize_Tick(object sender, EventArgs e) {
-            if ( this.m_Panel == null ) {
-                return;
-            }
-            bool completed = true;
-            for ( int i = 0; i < this.m_lstTasksRunSize.Count; i++ ) {
-                if ( this.m_lstTasksRunSize[i] != null ) {
-                    if ( !this.m_lstTasksRunSize[i].IsCompleted ) {
-                        completed = false;
-                        break;
-                    }
-                } else {
-                    this.m_lstTasksRunSize.RemoveAt(i);
-                }
-            }
-            if ( completed ) {
-                this.m_lstTasksRunSize.Clear();
-                this.timerRunSize.Stop();
-                Side side = this.m_Panel.GetActiveSide();
-                this.SortListView(side, side == Side.left ? this.m_Panel.LastSortedColumnLhs[this.m_Panel.GetActiveTabIndex(side)] : this.m_Panel.LastSortedColumnRhs[this.m_Panel.GetActiveTabIndex(side)], true);
+            } catch (Exception e) {
+                ; 
             }
         }
+
         void updateFolderSizes(Side side) {
             this.m_bRunSize = true;
-            this.m_lstTasksRunSize = new List<Task>();
-            ListViewItem[] arr = this.m_Panel.GetListViewArr(side);
-            Parallel.For(1, arr.Length, i => {
-                if ( (arr[i].ImageIndex == 3) || (arr[i].ImageIndex == 0) ) {
-                    string path = Path.Combine(this.m_Panel.button(side).Tag.ToString(), arr[i].Text);
-                    int ndx = i;                   // strange: I cannot forward i
-                    ListViewItem item = arr[i];    //   -"-    I cannot froward arr[i]
-                    string oriText = arr[i].Text;  //   -"-    I cannot froward arr[i].Text
-                    Task t = new Task(() => this.updateFolderSize(item, ndx, oriText, path, side));
-                    t.Start();
-                    this.m_lstTasksRunSize.Add(t);
+            try {
+                List<Task> lstTasks = new List<Task>();
+                ListViewItem[] arr = this.m_Panel.GetListViewArr(side);
+                for ( int i = 0; i < arr.Length; i++ ) {
+                    if ( (arr[i].ImageIndex == 3) || (arr[i].ImageIndex == 0) ) {
+                        string path = Path.Combine(this.m_Panel.button(side).Tag.ToString(), arr[i].Text);
+                        int ndx = i;                   // strange: I cannot forward i
+                        ListViewItem item = arr[i];    //   -"-    I cannot froward arr[i]
+                        string oriText = arr[i].Text;  //   -"-    I cannot froward arr[i].Text
+                        this.updateFolderSize(item, ndx, oriText, path, side);
+                    }
                 }
-            });
-            // we need to resort if current sort order is "by size == 2": then we start a timer, which checks for completion status of stored tasks
-            if ( ((side == Side.left) ? this.m_Panel.LastSortedColumnLhs[this.m_Panel.GetActiveTabIndex(side)] : this.m_Panel.LastSortedColumnRhs[this.m_Panel.GetActiveTabIndex(side)]) == 2 ) {
                 this.Invoke(new Action(() => {
-                    this.timerRunSize.Start();
-                }));
+                    this.SortListView(side, 
+                        side == Side.left ? this.m_Panel.LastSortedColumnLhs[this.m_Panel.GetActiveTabIndex(side)] : this.m_Panel.LastSortedColumnRhs[this.m_Panel.GetActiveTabIndex(side)], 
+                        true);
+                })); 
+                this.m_Panel.SetActiveSide(this.m_Panel.GetActiveSide());
+            } catch ( Exception e ) {
+                ;
             }
         }
         private void listsShowFolderSizesToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -11055,24 +11072,29 @@ namespace cfw {
         public string GetListPath(Side side, int index) {
             return this.m_ListViewPaths[(int)side][index];
         }
-        public void SetListPath(Side side, int tabIndex, string path, bool refreshListviewOnNextActivation) {
+        public bool SetListPath(Side side, int tabIndex, string path, bool refreshListviewOnNextActivation) {
+            bool pathIsSettable = false;
             //TBD GrzTools.FileTools.GetProperDirectoryCapitalization(di);
             // store "path" according to "side", "tabIndex" in a 2:5 array
             this.m_ListViewPaths[(int)side][tabIndex] = path;
             // activate a background fsw per path
-            if ( System.IO.Directory.Exists(path) ) {
+            if ( GrzTools.FileTools.PathExists(path, 500) ) { 
                 try {
                     this.m_fswb[(int)side, tabIndex].Path = path;
                     this.m_fswb[(int)side, tabIndex].Filter = "*";
                     this.m_fswb[(int)side, tabIndex].EnableRaisingEvents = true;
+                    pathIsSettable = true;
                 } catch {
                     this.m_fswb[(int)side, tabIndex].EnableRaisingEvents = false;
+                    pathIsSettable = false;
                 }
             } else {
                 this.m_fswb[(int)side, tabIndex].EnableRaisingEvents = false;
+                pathIsSettable = false;
             }
             // the flag indicates, whether the listview needs to be reloaded NEXT time this tab is navigated to: needed after clearing a tab
             this.m_bRefreshListRequired[(int)side, tabIndex] = refreshListviewOnNextActivation;
+            return pathIsSettable;
         }
         // only one listview is active determined by: side, listview, tabindex
         public void SetActiveListView(Side side, ListView lv, int tabIndex) {
@@ -11229,10 +11251,10 @@ namespace cfw {
         public void SetActiveSide(Side side) {
             this.m_ActiveSide = side;
             if ( side == Side.left ) {
-                if ( File.Exists(this.m_button[(int)Side.left].Text) ) {
+                if ( !GrzTools.FileTools.PathExists(this.m_button[(int)Side.left].Text, 100) ) { 
                     this.m_button[(int)Side.left].BackColor = Color.LightPink;
                 } else {
-                    this.m_button[(int)Side.left].BackColor = Color.AliceBlue;
+                    this.m_button[(int)Side.left].BackColor = Color.LightSkyBlue;
                 }
                 this.m_button[(int)Side.right].BackColor = SystemColors.Control;
                 this.m_ActiveView = this.m_listview[(int)Side.left];
@@ -11240,10 +11262,10 @@ namespace cfw {
             }
             if ( side == Side.right ) {
                 this.m_button[(int)Side.left].BackColor = SystemColors.Control;
-                if ( File.Exists(this.m_button[(int)Side.right].Text) ) {
+                if ( !GrzTools.FileTools.PathExists(this.m_button[(int)Side.right].Text, 100) ) { 
                     this.m_button[(int)Side.right].BackColor = Color.LightPink;
                 } else {
-                    this.m_button[(int)Side.right].BackColor = Color.AliceBlue;
+                    this.m_button[(int)Side.right].BackColor = Color.LightSkyBlue;
                 }
                 this.m_ActiveView = this.m_listview[(int)Side.right];
                 this.m_PassiveSide = Side.left;

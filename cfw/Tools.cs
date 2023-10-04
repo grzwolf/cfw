@@ -1058,14 +1058,16 @@ namespace GrzTools {
             }
 
             // Computer, Desktop, Downloads, Shared Folders are local ressources
-            if ( drive[1] != ':' ) {
+            if ( drive[1] != ':' && drive[1] != '\\' ) {
                 return true;
             }
 
             // local drives are supposed to be always ok
-            DriveInfo di = new DriveInfo(drive);
-            if ( di.DriveType != DriveType.Network ) {
-                return true;
+            if ( drive.Length == 2 ) {
+                DriveInfo di = new DriveInfo(drive);
+                if ( di.DriveType != DriveType.Network ) {
+                    return true;
+                }
             }
 
             // check network function via a Win32 API call
@@ -1074,16 +1076,16 @@ namespace GrzTools {
             }
 
             // check unc path
-            if ( drive[1] == '\\' ) {
-            }
-
-            // convert a local drive name to a mapped network drive's connect string
-            string unc = LocalToUNC(drive);
-            if ( !unc.Contains('\\') ) {
-                if ( unc == drive ) {
-                    return true;
-                } else {
-                    return false;
+            string unc = drive;
+            if ( drive[0] != '\\' ) {
+                // convert a local drive name to a mapped network drive's connect string
+                unc = LocalToUNC(drive);
+                if ( !unc.Contains('\\') ) {
+                    if ( unc == drive ) {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             }
 
@@ -1203,8 +1205,13 @@ namespace GrzTools {
     public class FileTools {
         // 20161016: fast alternative to Directory.Exists, which may hang for ca. 20s on a not connected network drive
         public static bool PathExists(string path, int timeout, List<MainForm.WPD> wpd = null) {
+
             if ( (path == null) || (path.Length == 0) ) {
                 return false;
+            }
+
+            if ( path == "Computer" || path == "My Computer" ) {
+                return true;
             }
 
             if ( wpd != null ) {
@@ -1218,13 +1225,16 @@ namespace GrzTools {
             if ( !Network.PingNetDriveOk(path/*.Substring(0, 2)*/) ) {
                 return false;
             }
+
             Task<bool> task = new Task<bool>(() => {
-                bool exist = System.IO.Directory.Exists(path);
-                return exist;
+                return System.IO.Directory.Exists(path);
             });
             task.Start();
-            bool exists = task.Wait(timeout) && task.Result;
-            return exists;
+            if ( task.Wait(timeout) ) {
+                return task.Result;
+            } else {
+                return false;
+            } 
         }
 
         // 20161016: retrieve write permission status of a folder, answer 3 http://stackoverflow.com/questions/1410127/c-sharp-test-if-user-has-write-access-to-a-folder
@@ -2290,9 +2300,49 @@ namespace GrzTools {
             }
         }
 
+        // Win32 FindFirstFile extended with timeout
+        class FFFT {
+            public IntPtr handle;
+            public WIN32_FIND_DATA data;
+        }
+        static FFFT FindFirstFileTimeout(string path, WIN32_FIND_DATA dData, int timeout) {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            Task<FFFT> task = new Task<FFFT>(() => {
+                IntPtr dHandle = FindFirstFile(path, out dData);
+                var res = new FFFT {
+                    handle = dHandle,
+                    data = dData
+                };
+                return res;
+            });
+            task.Start();
+            try {
+                if ( task.Wait(timeout, cts.Token) ) {
+                    return task.Result;
+                } else {
+                    return new FFFT {
+                        handle = INVALID_HANDLE_VALUE,
+                        data = dData
+                    };
+                }
+            } catch ( OperationCanceledException ) {
+                cts.Dispose();
+                return new FFFT {
+                    handle = INVALID_HANDLE_VALUE,
+                    data = dData
+                };
+            }
+        }
+        static IntPtr FindFirstFileT(string lpFileName, out WIN32_FIND_DATA lpFindFileData, int timeout = 500) {
+            lpFindFileData = new WIN32_FIND_DATA();
+            FFFT ffft = FindFirstFileTimeout(lpFileName, lpFindFileData, timeout);
+            lpFindFileData = ffft.data;
+            return ffft.handle;
+        }
+
         // find top level files and folders: MainForm.LoadListView
         public List<ListViewItem> FindFilesFolders(string sStartDir, out int maxLen2, out int maxLen3, string[] iconsInfo, ref ImageList imgLst, int iLimit = int.MaxValue, string filter = "*.*", bool bSlowDrive = false, bool bHighlightEmptyFolder = false) {
-            //            Stopwatch sw = Stopwatch.StartNew();
+//            Stopwatch sw = Stopwatch.StartNew();
 
             maxLen2 = 8;
             maxLen3 = 7;
@@ -2308,11 +2358,11 @@ namespace GrzTools {
             string[] strarr = new string[8] { "[..]", " ", "<PARENT>", " ", " ", " ", " ", "0" };
 
             // we always have a "level up", at least to "Computer"
-            //            strarr[2] = sw.ElapsedMilliseconds.ToString();
+//            strarr[2] = sw.ElapsedMilliseconds.ToString();
             retList.Add(new ListViewItem(strarr, 2));
 
             // vars
-            WIN32_FIND_DATA dData;
+            WIN32_FIND_DATA dData = new WIN32_FIND_DATA();
             IntPtr dHandle;
             string path = @Path.Combine(@sStartDir, @"*.*");
             Win32FindData findData = new Win32FindData();             // winsxs: providing the 2 vars gains a bit IsDirEmpty(..)
@@ -2320,9 +2370,11 @@ namespace GrzTools {
 
             bool bFilter = (filter == "*.*") ? false : true;          // winsxs: RegEx and one loop for folders&files gains ca. 50ms compared to a second file loop and no RegEx
             Regex regex = FindFilesPatternToRegex.Convert(filter);
-            dHandle = FindFirstFile(path, out dData);
-            if ( dHandle != INVALID_HANDLE_VALUE ) {
+            dHandle = FindFirstFileT(path, out dData);
 
+            if ( dHandle == INVALID_HANDLE_VALUE ) {
+                return null;
+            } else { 
                 // wait cursor
                 using ( new WaitCursor() ) {
 
@@ -2655,23 +2707,6 @@ namespace GrzTools {
             FindClose(findHandle);
             return true;
         }
-
-        // winsxs - method to find out whether a directory is empty or not 
-        public static bool IsDirEmpty(string path, WIN32_FIND_DATA winFindData, IntPtr findHandle) {
-            findHandle = FindFirstFile(path, out winFindData);
-            if ( findHandle != INVALID_HANDLE_VALUE ) {
-                do {
-                    if ( (winFindData.cFileName[0] != '.') || (winFindData.cFileName.Length > 2) ) {
-                        FindClose(findHandle);
-                        return false;
-                    }
-                } while ( FindNextFile(findHandle, out winFindData) );
-            }
-            FindClose(findHandle);
-            return true;
-        }
-
-
 
         //
         // extended file find: 

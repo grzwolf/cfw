@@ -336,6 +336,7 @@ namespace cfw
             this.toolTipButtons = new System.Windows.Forms.ToolTip(this.components);
             this.timerDragDropDebouncer = new System.Windows.Forms.Timer(this.components);
             this.timerRunSize = new System.Windows.Forms.Timer(this.components);
+            this.timerUpdateHeaders = new System.Windows.Forms.Timer(this.components);
             this.previewCtl = new cfw.PreviewCtl();
             this.connectHtmWithItsFilesFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -2843,10 +2844,11 @@ namespace cfw
             this.timerDragDropDebouncer.Interval = 1000;
             this.timerDragDropDebouncer.Tick += new System.EventHandler(this.timerDragDropDebouncer_Tick);
             // 
-            // timerRunSize
-            // 
-            this.timerRunSize.Enabled = true;
-            this.timerRunSize.Tick += new System.EventHandler(this.timerRunSize_Tick);
+            // timerUpdateHeaders
+            //
+            this.timerUpdateHeaders.Interval = 2000;
+            this.timerUpdateHeaders.Enabled = true;
+            this.timerUpdateHeaders.Tick += new System.EventHandler(this.timerUpdateHeaders_Tick);
             // 
             // previewCtl
             // 
@@ -3126,6 +3128,7 @@ namespace cfw
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
         private System.Windows.Forms.Timer timerRunSize;
+        private System.Windows.Forms.Timer timerUpdateHeaders;
         private System.Windows.Forms.ToolStripMenuItem compareFoldersToolStripMenuItem1;
         private System.Windows.Forms.TabControl tabControlLeft;
         private System.Windows.Forms.TabPage tabPageLeft0;
