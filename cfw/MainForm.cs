@@ -9070,9 +9070,9 @@ namespace cfw {
 
         // cfw localization via menu command
         private void setlanguageToolStripMenuItem_Click(object sender, EventArgs e) {
-            // the toolstripitem which was clicked on carries in its Tag the selected culture info
+            // the toolstripitem which was clicked on, carries in its Tag the selected culture info
             string toolitemtagstr = ((ToolStripMenuItem)sender).Tag.ToString();
-            // we iterate all suitems to languageToolStripMenuItem and set the chaeckmark accordingly
+            // we iterate all subitems to languageToolStripMenuItem and set the checkmark accordingly
             foreach ( ToolStripMenuItem ti in this.languageToolStripMenuItem.DropDownItems ) {
                 if ( ti.Tag.ToString().Contains(toolitemtagstr) ) {
                     ti.Checked = true;
@@ -9082,7 +9082,7 @@ namespace cfw {
                     ti.Checked = false;
                 }
             }
-            // Restart cfw with changed culture setting
+            // restart cfw with changed culture setting
             string exeName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
             ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
             try {
