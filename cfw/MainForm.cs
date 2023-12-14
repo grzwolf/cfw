@@ -8086,11 +8086,15 @@ namespace cfw {
                 this.deleteSelectionF8ToolStripMenuItem.Image = cfw.Properties.Resources.permanent;
                 this.linkOnDesktopToolStripMenuItem.Text = "Link here";
                 this.printToolStripMenuItem.Text = "Print Preview";
+                this.runAsAdministratorToolStripMenuItem.Text = "Run as User";
+                this.runAsAdministratorToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
             } else {
                 this.deleteSelectionF8ToolStripMenuItem.Text = "Delete to Trash";
                 this.deleteSelectionF8ToolStripMenuItem.Image = cfw.Properties.Resources.trash;
                 this.linkOnDesktopToolStripMenuItem.Text = "Link to Desktop";
                 this.printToolStripMenuItem.Text = "Print";
+                this.runAsAdministratorToolStripMenuItem.Text = "Run as Administrator";
+                this.runAsAdministratorToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             }
             this.copyFilePathToolStripMenuItem.Enabled = true;
             this.cutToolStripMenuItem.Enabled = true;
@@ -9146,18 +9150,34 @@ namespace cfw {
             if ( (file == "[..]") && (lvi.ImageIndex == 2) ) {  // aka "LevelUp"
                 return;
             }
+            // admin?
+            bool runAsAdmin = false;
+            if ( (((ToolStripMenuItem)sender).Text.EndsWith("Administrator")) ) {
+                runAsAdmin = true;
+            }
             // selected file
             string path = this.m_Panel.button(this.m_Panel.GetActiveSide()).Tag.ToString();
             string full = Path.Combine(path, file);
-            // start program and run as admin
-            ProcessStartInfo startInfo = new ProcessStartInfo(full);
-            startInfo.Verb = "runas";
-            try {
-                System.Diagnostics.Process.Start(startInfo);
-            } catch ( Exception ) {
-                // exception is thrown, when selection is not an executable - now we start this like normal 
-                startInfo = new ProcessStartInfo(full);
-                System.Diagnostics.Process.Start(startInfo);
+            // batch files need extra care
+            if ( file.EndsWith(".bat") ) {
+                Process p = new Process();
+                p.StartInfo.FileName = "cmd";
+                p.StartInfo.Arguments = "/k " + "cd /D " + path + " && " + full;
+                p.StartInfo.WorkingDirectory = path;
+                p.StartInfo.Verb = runAsAdmin ? "runas" : "";
+                p.Start();
+            } else {
+                // start regular exe program
+                ProcessStartInfo startInfo = new ProcessStartInfo(full);
+                startInfo.Verb = runAsAdmin ? "runas" : "";
+                try {
+                    System.Diagnostics.Process.Start(startInfo);
+                } catch ( Exception ) {
+                    // exception is thrown, if selected file is not an executable - file is simply opened 
+                    startInfo = new ProcessStartInfo(full);
+                    startInfo.Verb = "open";
+                    System.Diagnostics.Process.Start(startInfo);
+                }
             }
         }
 
