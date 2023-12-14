@@ -240,6 +240,10 @@ namespace cfw {
         private void textBoxOutput_Enter(object sender, EventArgs e) {
             this.m_FolderHistoryMode = true;
         }
+        private void textBoxOutput_SelectText(object sender, EventArgs e) {
+            this.textBoxOutput.SelectAll();
+            this.textBoxOutput.Focus();
+        }
 
         // maintain folder history combobox
         private void toolStripMenuItemTakeIt_Click(object sender, EventArgs e) {

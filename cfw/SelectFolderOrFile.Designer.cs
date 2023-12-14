@@ -85,6 +85,9 @@
             resources.ApplyResources(this.textBoxOutput, "textBoxOutput");
             this.textBoxOutput.Name = "textBoxOutput";
             this.textBoxOutput.Enter += new System.EventHandler(this.textBoxOutput_Enter);
+            this.textBoxOutput.HideSelection = false;
+            this.textBoxOutput.GotFocus += new System.EventHandler(this.textBoxOutput_SelectText);
+            this.textBoxOutput.Click += new System.EventHandler(this.textBoxOutput_SelectText);
             // 
             // progressBar1
             // 
