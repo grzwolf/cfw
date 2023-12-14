@@ -3683,7 +3683,6 @@ namespace cfw {
             if ( (lvi.ImageIndex == 1) || (lvi.ImageIndex > 10) ) {
                 string file = @Path.Combine((this.m_Panel.button(side)).Tag.ToString(), selection);
                 ProcessStartInfo pi = new ProcessStartInfo(file);
-                //                pi.Arguments = Path.GetFileName(file);               // <-- this line prevents coldeyed.exe from starting
                 if ( (ModifierKeys & Keys.Alt) == Keys.Alt ) {
                     SimpleInput dlg = new SimpleInput();
                     dlg.Text = "Start argument";
@@ -3698,7 +3697,6 @@ namespace cfw {
                 pi.WorkingDirectory = Path.GetDirectoryName(file);
                 pi.FileName = file;
                 pi.Verb = "OPEN";
-                //                Environment.CurrentDirectory = pi.WorkingDirectory;  // not needed, because pi.WorkingDirectory works if pi.UseShellExecute is set to true
                 try {
                     Process.Start(pi);
                 } catch ( Exception ) {
