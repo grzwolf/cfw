@@ -3248,7 +3248,9 @@ namespace cfw {
             Parallel.For(1, args.lviArr.Length, i => {
                 int ndx = Array.FindIndex(lviFin, o => o.Text == lviArr[i].Text);
                 if ( ndx != -1 ) {
-                    lviFin[ndx].ImageIndex = args.lviArr[i].ImageIndex;
+                    try {
+                        lviFin[ndx].ImageIndex = args.lviArr[i].ImageIndex;
+                    } catch (Exception) {;}
                 }
             });
 
