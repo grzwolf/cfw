@@ -4946,7 +4946,7 @@ namespace cfw {
             // show folders sizes
             ini.IniWriteValue("cfw", "ComputerFoldersSizes", this.computerShowsFolderSizesToolStripMenuItem.Checked.ToString());
             ini.IniWriteValue("cfw", "ListsFoldersSizes", this.listsShowFolderSizesToolStripMenuItem.Checked.ToString());
-            // INI: automatic network can 
+            // INI: automatic network scan 
             ini.IniWriteValue("cfw", "AutoNetworkScan", this.autoNetworkScanToolStripMenuItem.Checked.ToString());
             // INI: highlight empty folders
             ini.IniWriteValue("cfw", "HighlightEmptyFolders", this.highlightEmptyFolderToolStripMenuItem.Checked.ToString());

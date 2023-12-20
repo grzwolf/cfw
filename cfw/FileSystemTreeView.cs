@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;                                     // - " -
 using System.Net.NetworkInformation;                  // enum PCs in local network via ping
 using System.Net.Sockets;                             // - " -
+using System.Reflection;
 using System.Runtime.InteropServices;                 // DLLImport
 using System.Runtime.Serialization.Formatters.Binary; // - " -
 using System.Text;
@@ -72,8 +73,10 @@ namespace cfw {
                 this.timerRefresh.Start();
                 return;
             }
-            // silent update in case of non matching IP count in the network
-            if ( this.m_HostList.Count != this.m_HostListNew.Count ) {
+            // silent update in case of non matching IP lists in the network
+            var firstNotSecond = this.m_HostList.Except(this.m_HostListNew).ToList();
+            var secondNotFirst = this.m_HostListNew.Except(this.m_HostList).ToList();
+            if ( firstNotSecond.Any() || secondNotFirst.Any() ) {
                 if ( this.bg != null ) {
                     this.bg.CancelAsync();
                     this.bg.Dispose();
@@ -85,6 +88,11 @@ namespace cfw {
                 this.bg.DoWork += new DoWorkEventHandler(this.SilentNetworkRefresh);
                 this.bg.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.bg_RunWorkerCompleted);
                 this.bg.RunWorkerAsync();
+            } else {
+                if ( this.m_bAutoNetworkScan ) {
+                    this.timerRefresh.Interval = 300000;
+                    this.timerRefresh.Start();
+                }
             }
         }
         void bg_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
@@ -265,7 +273,7 @@ namespace cfw {
                     if ( split.Length == 3 ) {
                         // if workstation is root == 3x string inside split array: gets populated with shares
                         this.treeView1.SelectedNode.Nodes.Clear();
-                        SHARENFO[] si = this.EnumNetShares(this.treeView1.SelectedNode.Text);
+                        SHAREINFO[] si = this.EnumNetShares(this.treeView1.SelectedNode.Text);
                         for ( int r = 0; r < si.Length; r++ ) {
                             Application.DoEvents();
                             string sharename = si[r].shi.shi2_netname;
@@ -697,7 +705,7 @@ namespace cfw {
         static CountdownEvent _countdown;
         static int _upCount = 0;
         static readonly object _lockObj = new object();
-        void Search(string ip, bool bSilent) {
+        void SearchActiveIpAddresses(string ip, bool bSilent) {
             this.m_HostList.Clear();
 
             //
@@ -734,7 +742,7 @@ namespace cfw {
             }
             // start parallel tasks as much IP Addresses were found previously 
             List<Task<host>> tasks = new List<Task<host>>();
-            //            Parallel.For(1, m_HostList.Count, i => {
+//            Parallel.For(1, m_HostList.Count, i => {
             for ( int i = 0; i < this.m_HostList.Count; i++ ) {
                 try {
                     try {
@@ -871,7 +879,7 @@ namespace cfw {
             //
             // builds "List<host> m_HostList" of found IP Addresses + Hostnames in the searched network
             // 
-            this.Search(ip, true);
+            this.SearchActiveIpAddresses(ip, true);
             if ( (this.bg == null) || this.bg.CancellationPending ) {
                 e.Cancel = true;
                 return;
@@ -884,9 +892,9 @@ namespace cfw {
             // get network shares of all Hostnames
             //
             // ask with parallel tasks for shared folders at living ip addresses
-            List<Task<SHARENFO[]>> tasks = new List<Task<SHARENFO[]>>();
+            List<Task<String[]>> tasks = new List<Task<String[]>>();
             foreach ( host h in this.m_HostList ) {
-                Task<SHARENFO[]> t = new Task<SHARENFO[]>(n => this.EnumNetShares(n.ToString()), h.hostip);
+                Task<String[]> t = new Task<String[]>(n => this.GetDirectoriesInNetworkLocation(n.ToString()), h.hostip);
                 t.Start();
                 tasks.Add(t);
             }
@@ -898,28 +906,22 @@ namespace cfw {
                     // Application.DoEvents();
                     if ( tasks[i].IsCompleted ) {
                         // get returned data from thread
-                        SHARENFO[] si = tasks[i].Result;
+                        String[] si = tasks[i].Result;
                         // add a network workstation node, first find its literal machine name
-                        string ipadd = si[0].ipaddress;
+                        string ipadd = si[0];
                         host hst = this.m_HostList.Find(o => o.hostip == ipadd);
                         TreeNode wsn = new TreeNode(hst.hostname, 6, 6);
                         wsn.Tag = ipadd;
                         tnl.Add(wsn);
                         // add to workstation node subnodes (if any) with the network shares
                         int entries = si.Length;
-                        string sharename = si[0].shi.shi2_netname;
+                        string sharename = si[0];
                         if ( sharename.Length > 0 ) {
-                            for ( int r = 0; r < entries; r++ ) {
+                            for ( int r = 1; r < entries; r++ ) {
                                 Application.DoEvents();
-                                sharename = si[r].shi.shi2_netname;
-                                uint type = si[r].shi.shi2_type;
-                                string remark = si[r].shi.shi2_remark;
-                                string path = si[r].shi.shi2_path;
-                                if ( type == 0 ) {
-                                    TreeNode subTn = tnl[tnl.Count - 1].Nodes.Add(sharename + " (" + path + ")");  // node.Text: sharename (sharepath)
-                                    subTn.Tag = sharename;                                                       // node.Tag:  sharename 
-                                }
-                            }
+                                sharename = si[r];
+                                TreeNode subTn = tnl[tnl.Count - 1].Nodes.Add(sharename); 
+                                subTn.Tag = sharename;                                                                }
                         }
                         // remove the just completed task from the tasklist
                         tasks.RemoveAt(i);
@@ -964,7 +966,7 @@ namespace cfw {
             tn.Nodes.Clear();
 
             // builds "List<host> m_HostList" of found IP Addresses + Hostnames in the searched network
-            this.Search(ip, false);
+            this.SearchActiveIpAddresses(ip, false);
             if ( this.Break ) {
                 return;
             }
@@ -982,10 +984,10 @@ namespace cfw {
             if ( handler != null ) {
                 handler(null, new SelectionChangedEventArgs("Get Network Shares from Hostnames"));
             }
-            // ask with parallel tasks for shared folders at living ip addresses
-            List<Task<SHARENFO[]>> tasks = new List<Task<SHARENFO[]>>();
+            // ask in parallel tasks for shared folders at living ip addresses
+            List<Task<String[]>> tasks = new List<Task<String[]>>();
             foreach ( host h in this.m_HostList ) {
-                Task<SHARENFO[]> t = new Task<SHARENFO[]>(n => this.EnumNetShares(n.ToString()), h.hostip);
+                Task<String[]> t = new Task<String[]>(n => GetDirectoriesInNetworkLocation(n.ToString()), h.hostip);
                 t.Start();
                 tasks.Add(t);
             }
@@ -997,28 +999,20 @@ namespace cfw {
                     Application.DoEvents();
                     if ( tasks[i].IsCompleted ) {
                         // get returned data from thread
-                        SHARENFO[] si = tasks[i].Result;
+                        String[] si = tasks[i].Result;
                         // add a network workstation node, first find its literal machine name
-                        string ipadd = si[0].ipaddress;
+                        string ipadd = si[0];
                         host hst = this.m_HostList.Find(o => o.hostip == ipadd);
                         TreeNode wsn = new TreeNode(hst.hostname, 6, 6);
                         wsn.Tag = ipadd;
                         tnl.Add(wsn);
                         // add to workstation node subnodes (if any) with the network shares
                         int entries = si.Length;
-                        string sharename = si[0].shi.shi2_netname;
-                        if ( sharename.Length > 0 ) {
-                            for ( int r = 0; r < entries; r++ ) {
-                                Application.DoEvents();
-                                sharename = si[r].shi.shi2_netname;
-                                uint type = si[r].shi.shi2_type;
-                                string remark = si[r].shi.shi2_remark;
-                                string path = si[r].shi.shi2_path;
-                                if ( type == 0 ) {
-                                    TreeNode subTn = tnl[tnl.Count - 1].Nodes.Add(sharename + " (" + path + ")");  // node.Text: sharename (sharepath)
-                                    subTn.Tag = sharename;                                                       // node.Tag:  sharename 
-                                }
-                            }
+                        for ( int r = 1; r < entries; r++ ) {
+                            Application.DoEvents();
+                            string sharename = si[r];
+                            TreeNode subTn = tnl[tnl.Count - 1].Nodes.Add(sharename);
+                            subTn.Tag = sharename;
                         }
                         // show what we have so far
                         tn.Nodes.Add(wsn);
@@ -1059,7 +1053,7 @@ namespace cfw {
                 handler(null, new SelectionChangedEventArgs(this.SelectedPath));
             }
         }
-        // NetShareEnum is a reliable way to obtain network shares, works with Windows and Linux because it's actually SMB/Samba
+        // NetShareEnum shall obtain network shares, works with Windows and Linux because it's actually SMB/Samba
         [DllImport("Netapi32.dll", SetLastError = true)]
         static extern int NetApiBufferFree(IntPtr Buffer);
         [DllImport("Netapi32.dll", CharSet = CharSet.Unicode)]
@@ -1088,7 +1082,7 @@ namespace cfw {
                 return this.shi2_netname;
             }
         }
-        public struct SHARENFO {
+        public struct SHAREINFO {
             public SHARE_INFO_2 shi;
             public string ipaddress;
         }
@@ -1108,8 +1102,10 @@ namespace cfw {
             STYPE_IPC = 3,
             STYPE_SPECIAL = 0x80000000,
         }
-        private List<string> GetDirectoriesInNetworkLocation(string Server) {
-            // exec cmd 
+
+        // exec cmd.exe with net view seems to be the fastest and most reliable solution (WMI is slow, NetApi32.NetShareEnum skips folders)
+        private String[] GetDirectoriesInNetworkLocation(string Server) {
+            // a hidden cmd window with redirections
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
@@ -1124,33 +1120,30 @@ namespace cfw {
             string output = cmd.StandardOutput.ReadToEnd();
             cmd.WaitForExit();
             cmd.Close();
-            // reduce output to network shares + comments
-            output = output.Substring(output.LastIndexOf('-') + 3);
-            output = output.Substring(0, output.LastIndexOf("."));
-            output = output.Substring(0, output.LastIndexOf("\r\n"));
-            // get a list of network shared folders
-            List<string> retval = output.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            // remove comments
-            for ( int i = 0; i < retval.Count; i++ ) {
-                retval[i] = retval[i].TrimEnd();
-                string toDelete = "";
-                for ( int r = retval[i].Length - 1; r > 0; r-- ) {
-                    if ( retval[i][r] != ' ' ) {
-                        toDelete = retval[i][r] + toDelete;
-                    } else {
-                        break;
-                    }
-                }
-                retval[i] = retval[i].Substring(0, retval[i].LastIndexOf(toDelete));
-                retval[i] = retval[i].TrimEnd();
+            // retval collects the shares of a network device
+            List<string> retval = new List<string>();
+            // only process, if there are shares at all
+            if ( output.Contains("Disk") ) {
+                // take care, the path is allowed to contain "--", something we later search for
+                string CurrentExecutePath = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                output = output.Replace(CurrentExecutePath, "");
+                // get to know the end of the ----- sequence
+                int firstindex = output.LastIndexOf("--") + 2;
+                // the index of the last share
+                int lastindex = output.LastIndexOf("Disk");
+                // useful info
+                output = output.Substring(firstindex, lastindex - firstindex);
+                // all share names are followed by a " Disk", remove them
+                output = output.Replace("Disk", string.Empty);
+                // finally split & trim
+                retval = output.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToList();
             }
-            // have server name on top of the list
+            // at least return the network device
             retval.Insert(0, Server);
-            //return
-            return retval;
+            return retval.ToArray();
         }
-        public SHARENFO[] EnumNetShares(string Server) {
-            List<SHARENFO> ShareInfos = new List<SHARENFO>();
+        public SHAREINFO[] EnumNetShares(string Server) {
+            List<SHAREINFO> ShareInfos = new List<SHAREINFO>();
             int entriesread = 0;
             int totalentries = 0;
             int resume_handle = 0;
@@ -1162,7 +1155,7 @@ namespace cfw {
                 IntPtr currentPtr = bufPtr;
                 for ( int i = 0; i < entriesread; i++ ) {
                     SHARE_INFO_2 shi2 = (SHARE_INFO_2)Marshal.PtrToStructure(currentPtr, typeof(SHARE_INFO_2));
-                    SHARENFO shnfo = new SHARENFO();
+                    SHAREINFO shnfo = new SHAREINFO();
                     shnfo.shi = shi2;
                     shnfo.ipaddress = Server;
                     ShareInfos.Add(shnfo);
@@ -1176,7 +1169,7 @@ namespace cfw {
                 NetApiBufferFree(bufPtr);
             } else {
                 SHARE_INFO_2 shi2 = new SHARE_INFO_2("", 10, "", 0, 0, 0, "", "");
-                SHARENFO shnfo = new SHARENFO();
+                SHAREINFO shnfo = new SHAREINFO();
                 shnfo.shi = shi2;
                 shnfo.ipaddress = Server;
                 ShareInfos.Add(shnfo);
@@ -1243,26 +1236,20 @@ namespace cfw {
                 this.LoadTree(nodeCurrent);
                 // anytime there is something other than "-empty-" underneath Network AND networkautorefresh is off, then we want to ask for refresh as an option
                 if ( nodeCurrent.Nodes[0].Text != "-empty-" ) {
-                    if ( !this.m_bAutoNetworkScan ) {
-                        // show simple Yes dialog
-                        using ( SimpleYes sy = new SimpleYes() ) {
-                            sy.Left = MousePosition.X - sy.Width / 2;
-                            Point pt = this.PointToScreen(new Point(nodeCurrent.Bounds.X, nodeCurrent.Bounds.Y - 3));
-                            sy.Top = pt.Y;
-                            // move mouse into Yes dialog window: mouse leaves Yes dialog == Cancel dialog  
-                            this.Cursor = new Cursor(Cursor.Current.Handle);
-                            Cursor.Position = new Point(MousePosition.X, sy.Top + nodeCurrent.Bounds.Height / 2);
-                            DialogResult dr = sy.ShowDialog();
-                            if ( dr != DialogResult.Yes ) {
-                                // this decision keeps/reuses the previously stored/loaded network tree
-                                m_bDoNotDisturb = false;
-                                return;
-                            }
+                    // show simple Yes dialog
+                    using ( SimpleYes sy = new SimpleYes() ) {
+                        sy.Left = MousePosition.X - sy.Width / 2;
+                        Point pt = this.PointToScreen(new Point(nodeCurrent.Bounds.X, nodeCurrent.Bounds.Y - 3));
+                        sy.Top = pt.Y;
+                        // move mouse into Yes dialog window: mouse leaves Yes dialog == Cancel dialog  
+                        this.Cursor = new Cursor(Cursor.Current.Handle);
+                        Cursor.Position = new Point(MousePosition.X, sy.Top + nodeCurrent.Bounds.Height / 2);
+                        DialogResult dr = sy.ShowDialog();
+                        if ( dr != DialogResult.Yes ) {
+                            // this decision keeps/reuses the previously stored/loaded network tree
+                            m_bDoNotDisturb = false;
+                            return;
                         }
-                    } else {
-                        // this situation keeps/reuses the previously stored/loaded network tree
-                        m_bDoNotDisturb = false;
-                        return;
                     }
                 }
                 // refresh network information
@@ -1443,7 +1430,11 @@ namespace cfw {
             if ( handler != null ) {
                 handler(sender, new SelectionChangedEventArgs(this.SelectedPath));
             }
-            // populate files
+            // ignore top level network devices having no shares from further processing (it sometimes lags)
+            if ( nodeCurrent.FullPath.Count(f => f == '\\') == 2 && nodeCurrent.FirstNode == null ) {
+                return;
+            }
+            // populate right hand side window with folders & files
             this.PopulateFiles(nodeCurrent, true);
         }
         protected void PopulateFiles(TreeNode nodeCurrent, bool noFlicker) {
