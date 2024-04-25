@@ -11271,7 +11271,7 @@ namespace cfw {
         public void SetActiveSide(Side side) {
             this.m_ActiveSide = side;
             if ( side == Side.left ) {
-                if ( !GrzTools.FileTools.PathExists(this.m_button[(int)Side.left].Text, 100) ) { 
+                if ( !GrzTools.FileTools.PathExists(this.m_button[(int)Side.left].Tag.ToString(), 100) ) { 
                     this.m_button[(int)Side.left].BackColor = Color.LightPink;
                 } else {
                     this.m_button[(int)Side.left].BackColor = Color.LightSkyBlue;
@@ -11282,7 +11282,7 @@ namespace cfw {
             }
             if ( side == Side.right ) {
                 this.m_button[(int)Side.left].BackColor = SystemColors.Control;
-                if ( !GrzTools.FileTools.PathExists(this.m_button[(int)Side.right].Text, 100) ) { 
+                if ( !GrzTools.FileTools.PathExists(this.m_button[(int)Side.right].Tag.ToString(), 100) ) { 
                     this.m_button[(int)Side.right].BackColor = Color.LightPink;
                 } else {
                     this.m_button[(int)Side.right].BackColor = Color.LightSkyBlue;
