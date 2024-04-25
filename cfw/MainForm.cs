@@ -9622,14 +9622,9 @@ namespace cfw {
                     this.fileSystemWatcherRight.EnableRaisingEvents = false;
                     this.m_Panel.SetFileSystemWatcher(Side.right, drivename, false);
                 }
+                // finally eject
                 drivename = drivename.Substring(0, 2);
-                GrzTools.UsbEject.VolumeDeviceClass volumes = new GrzTools.UsbEject.VolumeDeviceClass();
-                foreach ( GrzTools.UsbEject.Volume vol in volumes.Devices ) {
-                    if ( (vol.LogicalDrive != null) && vol.LogicalDrive.Equals(drivename) ) {
-                        vol.Eject(false);
-                        break;
-                    }
-                }
+                ejectUsbDrive(drivename);
                 // update SelectFileFolder dlg
                 if ( this.m_sff != null ) {
                     if ( this.m_sff.Visible ) {
@@ -9713,13 +9708,7 @@ namespace cfw {
             // USB drive
             if ( lvi.ImageIndex == 7 ) {
                 // finally eject
-                GrzTools.UsbEject.VolumeDeviceClass volumes = new GrzTools.UsbEject.VolumeDeviceClass();
-                foreach ( GrzTools.UsbEject.Volume vol in volumes.Devices ) {
-                    if ( (vol.LogicalDrive != null) && vol.LogicalDrive.Equals(eject_drive) ) {
-                        vol.Eject(false);
-                        break;
-                    }
-                }
+                ejectUsbDrive(eject_drive);
             }
             // 20160320: open ROM
             if ( lvi.ImageIndex == 6 ) {
@@ -9741,6 +9730,23 @@ namespace cfw {
                 GrzTools.DriveSettings.DisconnectNetworkDrive(driveLetter, true, false);
             }
         }
+
+        // eject USB drive via powershell command
+        private void ejectUsbDrive(String driveLetterWithColumn) {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = @"powershell.exe";
+            startInfo.Arguments = "(New-Object -comObject Shell.Application).Namespace(17).ParseName('" + driveLetterWithColumn + "').InvokeVerb('Eject')";
+            startInfo.RedirectStandardOutput = true;
+            startInfo.RedirectStandardError = true;
+            startInfo.UseShellExecute = false;
+            startInfo.CreateNoWindow = true;
+            Process process = new Process();
+            process.StartInfo = startInfo;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            string errors = process.StandardError.ReadToEnd();
+        }
+
         // Hex Viewer
         private void viewHexModeToolStripMenuItem_Click(object sender, EventArgs e) {
             if ( this.m_Panel.GetActiveView().SelectedIndices.Count == 0 ) {
